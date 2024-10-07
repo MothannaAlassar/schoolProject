@@ -1,0 +1,1065 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F58E02E4-7B50-4ABB-9695-A5ACB3777645}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SchoolProject</RootNamespace>
+    <AssemblyName>SchoolProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SamClientIco.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ConvertImage">
+      <HintPath>F:\Govermentproject\hdson\bin\Debug\ConvertImage.dll</HintPath>
+    </Reference>
+    <Reference Include="Cx.Windows.Forms">
+      <HintPath>..\..\..\..\..\Desktop\النسخه الجديده\BuildingSystem\smForBuilding\hdson\bin\Debug\Cx.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.ManagedConnections, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsFormcustom">
+      <HintPath>C:\Users\waleed\Documents\Visual Studio 2015\Projects\WindowsFormcustom\WindowsFormcustom\obj\Debug\WindowsFormcustom.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assests\Animation.cs" />
+    <Compile Include="Assests\CLS_Setting.cs" />
+    <Compile Include="Assests\CLS_SqlToStringDate.cs" />
+    <Compile Include="Assests\ImageDeal.cs" />
+    <Compile Include="Assests\MyButtonBuy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Assests\MyButtonSem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Assests\MyCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Assests\MyComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Assests\MyDataGrid.cs" />
+    <Compile Include="Assests\MyDataTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Assests\MyLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Assests\MyTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Assests\Notificator.cs" />
+    <Compile Include="Assests\TimeAndDate.cs" />
+    <Compile Include="BaseBasicDialogeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseBasicDialogeForm.designer.cs">
+      <DependentUpon>BaseBasicDialogeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BL\CLS_Class.cs" />
+    <Compile Include="BL\CLS_ComeLeave.cs" />
+    <Compile Include="BL\CLS_Level.cs" />
+    <Compile Include="BL\CLS_Prof.cs" />
+    <Compile Include="BL\CLS_RegStudent.cs" />
+    <Compile Include="BL\CLS_Room.cs" />
+    <Compile Include="ControlExtensions.cs" />
+    <Compile Include="CustControl\EnumCollection.cs" />
+    <Compile Include="CustControl\GreenLightToolstripRender.cs" />
+    <Compile Include="CustControl\LightBlueRender.cs" />
+    <Compile Include="CustControl\ReportStackRenderer.cs" />
+    <Compile Include="CustControl\SamControlToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustControl\SamControlToolStrip.designer.cs">
+      <DependentUpon>SamControlToolStrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustControl\SamDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustControl\SamDataGridView.Designer.cs">
+      <DependentUpon>SamDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustControl\ThemeSettings.cs" />
+    <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="DataModel\BasicStudentDataV.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Coding.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ConfigIni.cs" />
+    <Compile Include="DataModel\Connection.cs" />
+    <Compile Include="DataModel\ConnectionData.cs" />
+    <Compile Include="DataModel\course.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\CustomOperationCall.cs" />
+    <Compile Include="DataModel\CustomPropertiesClass.cs" />
+    <Compile Include="DataModel\CustomTeatcher.cs" />
+    <Compile Include="DataModel\ExamPeriod.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Factory.cs" />
+    <Compile Include="DataModel\GetAllDistrubuteStudent_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\GetAnalyticResultForStidentForTerm_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\GetAnalyticResultForStident_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\GetCourseNewsLine_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\getCourseWithLevel_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\GetDataTHatNoAddDegreePerTerm_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\GetDistributeStudent_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\GetProfileHorizontalNew_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\GetProfileHorizontal_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\GetProfilePermanence_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\getSchoolData_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\GetStatisticalStudent_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\getStudentDataFinal_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\GetStudentDataForTermNew_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\GetStudentData_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\GetStudentThatNoAddToDegree_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\GradeRank.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Group.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\LectureWeek.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\level.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\LevelCourse.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\NamingColumn.cs" />
+    <Compile Include="DataModel\Page.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\PageCategory.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\PageOperaion.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\PageOperationRole.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Period.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Plan.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Proc_GetFinalResultDataForTermNew_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\proc_GetFinalResultStudentNew_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\proc_GetResultFinalStudent_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Proc_GetStudentDataForTerm_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProfilePermanence.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Role.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\RoleAuthorizedOperations_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Room.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\RoomStudentInExam.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SamConfiguration.cs" />
+    <Compile Include="DataModel\schoolData.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SchoolEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchoolEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SchoolEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SchoolEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchoolEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\sp_helpdiagrams_Result.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\student.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\StudentAbsent.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\studentdegree.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\StudentLevel.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\studyYear.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SubTasks.cs" />
+    <Compile Include="DataModel\sysdiagram.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TableExam.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TblNotify.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Teacher.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\term.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TermPlan.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TypeLevel.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TypeTeatcher.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\User.cs">
+      <DependentUpon>SchoolEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\DlgCourseWithLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\DlgCourseWithLevel.Designer.cs">
+      <DependentUpon>DlgCourseWithLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\DlgCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\DlgCourse.Designer.cs">
+      <DependentUpon>DlgCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\DlgLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\DlgLevel.Designer.cs">
+      <DependentUpon>DlgLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\DlgStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\DlgStudent.Designer.cs">
+      <DependentUpon>DlgStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\DlgStudyYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\DlgStudyYear.Designer.cs">
+      <DependentUpon>DlgStudyYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\DlgTeatcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\DlgTeatcher.Designer.cs">
+      <DependentUpon>DlgTeatcher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\lookupRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\lookupRole.designer.cs">
+      <DependentUpon>lookupRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1.Designer.cs">
+      <DependentUpon>Frm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBaseOpration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaseOpration.Designer.cs">
+      <DependentUpon>FrmBaseOpration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBasicSimpleDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBasicSimpleDialogue.designer.cs">
+      <DependentUpon>FrmBasicSimpleDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConnectionSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConnectionSetting.designer.cs">
+      <DependentUpon>FrmConnectionSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLog.Designer.cs">
+      <DependentUpon>FrmLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\AddSem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\AddSem.designer.cs">
+      <DependentUpon>AddSem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\ComeAndLeave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\ComeAndLeave.designer.cs">
+      <DependentUpon>ComeAndLeave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmActiveTerm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmActiveTerm.Designer.cs">
+      <DependentUpon>FrmActiveTerm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmAddTypeTeatcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmAddTypeTeatcher.Designer.cs">
+      <DependentUpon>FrmAddTypeTeatcher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmBackUpRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmBackUpRestore.designer.cs">
+      <DependentUpon>FrmBackUpRestore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmChanagePassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmChanagePassWord.Designer.cs">
+      <DependentUpon>FrmChanagePassWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmClass.Designer.cs">
+      <DependentUpon>FrmClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmCourse.Designer.cs">
+      <DependentUpon>FrmCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmDegreeTestNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmDegreeTestNew.Designer.cs">
+      <DependentUpon>FrmDegreeTestNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmDistrabuteInGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmDistrabuteInGroup.Designer.cs">
+      <DependentUpon>FrmDistrabuteInGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmDistrubuteStudentForRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmDistrubuteStudentForRoom.Designer.cs">
+      <DependentUpon>FrmDistrubuteStudentForRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmExamTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmExamTable.Designer.cs">
+      <DependentUpon>FrmExamTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmLectureWeekNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmLectureWeekNew.Designer.cs">
+      <DependentUpon>FrmLectureWeekNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmLectureWeek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmLectureWeek.Designer.cs">
+      <DependentUpon>FrmLectureWeek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmLevelCourseold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmLevelCourseold.Designer.cs">
+      <DependentUpon>FrmLevelCourseold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmLogoLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmPageOperationRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmPageOperationRole.Designer.cs">
+      <DependentUpon>FrmPageOperationRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmLevelCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmLevelCourse.Designer.cs">
+      <DependentUpon>FrmLevelCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmPeriodExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmPeriodExam.Designer.cs">
+      <DependentUpon>FrmPeriodExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmRole.Designer.cs">
+      <DependentUpon>FrmRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmRoom.Designer.cs">
+      <DependentUpon>FrmRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmSchoolData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmSchoolData.Designer.cs">
+      <DependentUpon>FrmSchoolData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmUpdateStudentDegree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmUpdateStudentDegree.designer.cs">
+      <DependentUpon>FrmUpdateStudentDegree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmShowDatacsForTerm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmShowDatacsForTerm.designer.cs">
+      <DependentUpon>FrmShowDatacsForTerm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmShowDatacs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmShowDatacs.designer.cs">
+      <DependentUpon>FrmShowDatacs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmStdnt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmStdnt.Designer.cs">
+      <DependentUpon>FrmStdnt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmStudent.Designer.cs">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnumType.cs" />
+    <Compile Include="frm\FrmStudentAbsent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmStudentAbsent.Designer.cs">
+      <DependentUpon>FrmStudentAbsent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmStudentDegree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmStudentDegree.Designer.cs">
+      <DependentUpon>FrmStudentDegree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmStudyYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmStudyYear.Designer.cs">
+      <DependentUpon>FrmStudyYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmTeacher.Designer.cs">
+      <DependentUpon>FrmTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\FrmViewTeatcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\FrmViewTeatcher.Designer.cs">
+      <DependentUpon>FrmViewTeatcher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\MyMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\MyMessageBox.designer.cs">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\NotifiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\NotifiForm.designer.cs">
+      <DependentUpon>NotifiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\ProgramContinue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\ProgramContinue.designer.cs">
+      <DependentUpon>ProgramContinue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicSetting\ISysConfig.cs" />
+    <Compile Include="PublicSetting\PublicSettings.cs" />
+    <Compile Include="PublicSetting\SystemConfig.cs" />
+    <Compile Include="rpt\FrmRptShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rpt\FrmRptShow.designer.cs">
+      <DependentUpon>FrmRptShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserScope.cs" />
+    <EmbeddedResource Include="BaseBasicDialogeForm.resx">
+      <DependentUpon>BaseBasicDialogeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustControl\SamControlToolStrip.resx">
+      <DependentUpon>SamControlToolStrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\DlgCourse.resx">
+      <DependentUpon>DlgCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\DlgCourseWithLevel.resx">
+      <DependentUpon>DlgCourseWithLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\DlgLevel.resx">
+      <DependentUpon>DlgLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\DlgStudent.resx">
+      <DependentUpon>DlgStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\DlgStudyYear.resx">
+      <DependentUpon>DlgStudyYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\DlgTeatcher.resx">
+      <DependentUpon>DlgTeatcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\lookupRole.resx">
+      <DependentUpon>lookupRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1.resx">
+      <DependentUpon>Frm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBaseOpration.resx">
+      <DependentUpon>FrmBaseOpration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBasicSimpleDialogue.resx">
+      <DependentUpon>FrmBasicSimpleDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConnectionSetting.resx">
+      <DependentUpon>FrmConnectionSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLog.resx">
+      <DependentUpon>FrmLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\AddSem.resx">
+      <DependentUpon>AddSem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\ComeAndLeave.resx">
+      <DependentUpon>ComeAndLeave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmActiveTerm.resx">
+      <DependentUpon>FrmActiveTerm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmAddTypeTeatcher.resx">
+      <DependentUpon>FrmAddTypeTeatcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmBackUpRestore.resx">
+      <DependentUpon>FrmBackUpRestore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmChanagePassWord.resx">
+      <DependentUpon>FrmChanagePassWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmClass.resx">
+      <DependentUpon>FrmClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmCourse.resx">
+      <DependentUpon>FrmCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmDegreeTestNew.resx">
+      <DependentUpon>FrmDegreeTestNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmDistrabuteInGroup.resx">
+      <DependentUpon>FrmDistrabuteInGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmDistrubuteStudentForRoom.resx">
+      <DependentUpon>FrmDistrubuteStudentForRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmExamTable.resx">
+      <DependentUpon>FrmExamTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmLectureWeekNew.resx">
+      <DependentUpon>FrmLectureWeekNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmLectureWeek.resx">
+      <DependentUpon>FrmLectureWeek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmLevelCourseold.resx">
+      <DependentUpon>FrmLevelCourseold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmLogoLoad.resx">
+      <DependentUpon>FrmLogoLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmPageOperationRole.resx">
+      <DependentUpon>FrmPageOperationRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmLevelCourse.resx">
+      <DependentUpon>FrmLevelCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmPeriodExam.resx">
+      <DependentUpon>FrmPeriodExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmRole.resx">
+      <DependentUpon>FrmRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmRoom.resx">
+      <DependentUpon>FrmRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmSchoolData.resx">
+      <DependentUpon>FrmSchoolData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmUpdateStudentDegree.resx">
+      <DependentUpon>FrmUpdateStudentDegree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmShowDatacsForTerm.resx">
+      <DependentUpon>FrmShowDatacsForTerm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmShowDatacs.resx">
+      <DependentUpon>FrmShowDatacs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmStdnt.resx">
+      <DependentUpon>FrmStdnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmStudent.ar-YE.resx">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmStudent.ar.resx">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmStudent.resx">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmStudentAbsent.resx">
+      <DependentUpon>FrmStudentAbsent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmStudentDegree.resx">
+      <DependentUpon>FrmStudentDegree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmStudyYear.resx">
+      <DependentUpon>FrmStudyYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmTeacher.resx">
+      <DependentUpon>FrmTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmUser.resx">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\FrmViewTeatcher.resx">
+      <DependentUpon>FrmViewTeatcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\MyMessageBox.resx">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\NotifiForm.resx">
+      <DependentUpon>NotifiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\ProgramContinue.resx">
+      <DependentUpon>ProgramContinue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="rpt\alldegreeNewSacondary8.rdlc" />
+    <EmbeddedResource Include="rpt\alldegreeNew7Second.rdlc" />
+    <EmbeddedResource Include="rpt\alldegreeNew7.rdlc" />
+    <EmbeddedResource Include="rpt\alldegreeNew6.rdlc" />
+    <EmbeddedResource Include="rpt\alldegreeNw.rdlc" />
+    <EmbeddedResource Include="rpt\allStudentHoriWithTermWithForFullSecondary.rdlc" />
+    <EmbeddedResource Include="rpt\allStudentHoriWithTermWithResultNewNew.rdlc" />
+    <EmbeddedResource Include="rpt\allStudentHoriWithTermWithResultForTermNew.rdlc" />
+    <EmbeddedResource Include="rpt\allStudentHoriWithTermWithResult.rdlc" />
+    <EmbeddedResource Include="rpt\allStudentHoriWithTermWithForFullResult.rdlc" />
+    <EmbeddedResource Include="rpt\allStudentHoriWithTermWithResultEmpty.rdlc" />
+    <EmbeddedResource Include="rpt\allStudentHoriWithTermWithResultPrev.rdlc" />
+    <EmbeddedResource Include="rpt\allStudentHoriWithTermWithResultTerm1.rdlc" />
+    <EmbeddedResource Include="rpt\KashfDetailsdegreeNewScondary2.rdlc" />
+    <EmbeddedResource Include="rpt\allstudentwithdegree -laterNew.rdlc" />
+    <EmbeddedResource Include="rpt\PrintDistributeStudentTahdeerEng.rdlc" />
+    <EmbeddedResource Include="rpt\PrintKashWithNumPassEng.rdlc" />
+    <EmbeddedResource Include="rpt\PrintKashWithNumPassNoNameEng.rdlc" />
+    <EmbeddedResource Include="rpt\PrintStudentEntryLand.rdlc" />
+    <EmbeddedResource Include="rpt\RptAnalyticResultHoriyWithSecondary.rdlc" />
+    <EmbeddedResource Include="rpt\RptAnalyticResultHoriy.rdlc" />
+    <EmbeddedResource Include="rpt\RptLectureWeek3.rdlc" />
+    <EmbeddedResource Include="rpt\RptLectureWeek5.rdlc" />
+    <EmbeddedResource Include="rpt\RptLectureWeek4.rdlc" />
+    <EmbeddedResource Include="rpt\RptNew\alldegreeNew5.rdlc" />
+    <EmbeddedResource Include="rpt\RptNew\alldegreeNew7.rdlc" />
+    <EmbeddedResource Include="rpt\RptNew\alldegreeNew6.rdlc" />
+    <EmbeddedResource Include="rpt\RptNew\alldegreeNew7Second - Copy.rdlc" />
+    <EmbeddedResource Include="rpt\RptNew\alldegreeNewSacondary8.rdlc" />
+    <EmbeddedResource Include="rpt\RptNew\alldegreeNew7Second.rdlc" />
+    <EmbeddedResource Include="rpt\RptNew\reportfinalSecondary2.rdlc" />
+    <EmbeddedResource Include="rpt\RptNew\reportfinalSecondary2000.rdlc" />
+    <EmbeddedResource Include="rpt\RptNew\reportfinalSecondary1.rdlc" />
+    <EmbeddedResource Include="rpt\RptProfilePermanenceFromSatuToThurs.rdlc" />
+    <EmbeddedResource Include="rpt\RptProfilePermanenceFromSatuToWends.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\KashfDetailsdegreeNewScondary.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\FormalKashfSecondary1ByTermNewNew.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\FormalKashfSecondary1NewNewEmpty.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\FormalKashfSecondary1NewNew.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\FormalKashfSecondary2NewNew.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\allStudentHoriWithTermWithForFullSecondary.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\allStudentHoriWithTermWithForFullSecondaryFirst.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\FormalKashfSecondary2NewNewEmpty.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\FormalKashfSecondary2ByTermNewNew.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\PrintDistributeStudentTahdeer2.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\PrintDistributeStudentTahdeer.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\PrintKashWithNumPass2.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\PrintKashWithNumPass.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\PrintKashWithNumPassNoName2.rdlc" />
+    <EmbeddedResource Include="rpt\rptSecondary\PrintKashWithNumPassNoName.rdlc" />
+    <EmbeddedResource Include="rpt\RptStatisticalStudentHorizontal.rdlc" />
+    <EmbeddedResource Include="rpt\RptTableExam5.rdlc" />
+    <EmbeddedResource Include="rpt\RptLectureWeek6.rdlc" />
+    <EmbeddedResource Include="rpt\RptTableExamByLevelPageBreak.rdlc" />
+    <EmbeddedResource Include="rpt\RptTableExamByLevel.rdlc" />
+    <EmbeddedResource Include="rpt\RptTableExam3.rdlc" />
+    <EmbeddedResource Include="rpt\RptTableExam6.rdlc" />
+    <EmbeddedResource Include="rpt\RptTableExam.rdlc" />
+    <EmbeddedResource Include="rpt\RptProfilePermanenceHorizontal.rdlc" />
+    <EmbeddedResource Include="rpt\RptProfilePermanence.rdlc" />
+    <EmbeddedResource Include="rpt\FrmRptShow.resx">
+      <DependentUpon>FrmRptShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rpt\printDegreeCourse - Empty.rdlc" />
+    <EmbeddedResource Include="rpt\printDegreeCourse.rdlc" />
+    <EmbeddedResource Include="rpt\PrintDistributeStudentTahdeer.rdlc" />
+    <EmbeddedResource Include="rpt\PrintDistributeStudent.rdlc" />
+    <EmbeddedResource Include="rpt\PrintKashWithNumPassForTahdeer.rdlc" />
+    <EmbeddedResource Include="rpt\PrintKashWithNumPassNoName.rdlc" />
+    <EmbeddedResource Include="rpt\PrintKashWithNumPass.rdlc" />
+    <EmbeddedResource Include="rpt\PrintStudent.rdlc" />
+    <EmbeddedResource Include="rpt\PrintTeatchers.rdlc" />
+    <EmbeddedResource Include="rpt\reportfinal2.rdlc" />
+    <EmbeddedResource Include="rpt\RptAnalyticResult.rdlc" />
+    <EmbeddedResource Include="rpt\RptEmptyCourse.rdlc" />
+    <EmbeddedResource Include="rpt\RptGetReportStudent.rdlc" />
+    <EmbeddedResource Include="rpt\RptGetReportStudentFail.rdlc" />
+    <EmbeddedResource Include="rpt\RptGetReportStudentFailFinalPublic.rdlc" />
+    <EmbeddedResource Include="rpt\RptGetReportStudentFailFinal.rdlc" />
+    <EmbeddedResource Include="rpt\RptGetReportStudentfailMoreOne.rdlc" />
+    <EmbeddedResource Include="rpt\RptGetReportStudentfinalSuc.rdlc" />
+    <EmbeddedResource Include="rpt\RptStatisticalStudent.rdlc" />
+    <EntityDeploy Include="DataModel\SchoolEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SchoolEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataModel\SchoolEntity.edmx.diagram">
+      <DependentUpon>SchoolEntity.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.BasicStudentDataV.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.course.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.CustomTeatcher.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.ExamPeriod.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.GetAllDistrubuteStudent_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.GetAnalyticResultForStident_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.getCourseWithLevel_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.GetDistributeStudent_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.GetFinalResultStudent_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.GetProfileHorizontal_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.GetProfilePermanence_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.getReportStudentFunc_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.GetResultFinalFunction_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.getSchoolData_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.GetStatisticalStudent_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.GetStudenFailMorethanOne_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.getStudentDataFinal_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.GetStudentDataForTermNew_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.GetStudentData_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.getStudentForManipulate_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.getStudentForTertmResult_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.GradeRank.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.Group.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.LectureWeek.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.level.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.LevelCourse.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.PageOperaion.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.PageOperationRole.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.Period.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.Plan.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.Proc_GetFinalResultDataForTermNew_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.proc_GetFinalResultStudentNew_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.proc_GetResultFinalStudent_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.Proc_GetStudentDataForTerm_Result.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.ProfilePermanence.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.Role.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.Room.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.RoomStudentInExam.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.schoolData.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.student.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.StudentAbsent.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.StudentData.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.studentdegree.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.StudentLevel.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.studyYear.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.TableExam.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.Teacher.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.term.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.TermPlan.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.TypeLevel.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.TypeTeatcher.datasource" />
+    <None Include="Properties\DataSources\SchoolProject.DataModel.User.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\samlogo.bmp" />
+    <None Include="bin\Debug\image\add.png" />
+    <None Include="bin\Debug\image\edit.png" />
+    <None Include="bin\Debug\image\SubmitNew.png" />
+    <None Include="bin\Debug\image\cancel.png" />
+    <None Include="bin\Debug\image\printStand.png" />
+    <None Include="bin\Debug\image\delete.png" />
+    <None Include="bin\Debug\image\ok.png" />
+    <None Include="bin\Debug\image\search1.png" />
+    <None Include="bin\Debug\image\showbutton.png" />
+    <None Include="Resources\background232.jpg" />
+    <None Include="Resources\btnNewBlue28.png" />
+    <None Include="Resources\btnCancelBlack28.png" />
+    <None Include="Resources\btnCancelBlue28.png" />
+    <None Include="Resources\btnDelete.png" />
+    <None Include="Resources\btnDeleteBlue28.png" />
+    <None Include="Resources\btnPostBlack28.png" />
+    <None Include="Resources\btnPostBlue28.png" />
+    <None Include="Resources\btnSave.png" />
+    <None Include="Resources\btnSaveBlue28.png" />
+    <None Include="Resources\printBlack25.png" />
+    <None Include="Resources\btnAntiEntryBlack28.png" />
+    <None Include="Resources\btnDeletebalck28_1.png" />
+    <None Include="Resources\btnDelteBlue28_1.png" />
+    <None Include="Resources\btnEditBlack28.png" />
+    <None Include="Resources\btnEditBlue28.png" />
+    <None Include="Resources\btnSearchSelectblack25.png" />
+    <None Include="Resources\btnNewBlack28.png" />
+    <None Include="Resources\btnNewBlue281.png" />
+    <None Include="Resources\student.png" />
+    <Content Include="SamClientIco.ico" />
+    <Content Include="samico.ico" />
+    <None Include="bin\Debug\image\stdbk.jpg" />
+    <Content Include="DataModel\SchoolEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SchoolEntity.edmx</DependentUpon>
+      <LastGenOutput>SchoolEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataModel\SchoolEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SchoolEntity.edmx</DependentUpon>
+      <LastGenOutput>SchoolEntity.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\شعار الرفيق للتنمية والإستشارات_كامل.jpg" />
+    <None Include="Resources\butt.png" />
+    <None Include="Resources\aa.png" />
+    <None Include="Resources\gradeButton.png" />
+    <None Include="Resources\FrmStockTakingNew.png" />
+    <None Include="Resources\Print - Copy.png" />
+    <None Include="Resources\ed-item.gif" />
+    <None Include="Resources\checks1.png" />
+    <None Include="Resources\exam.jpg" />
+    <None Include="Resources\new_title.jpg" />
+    <None Include="Resources\atmad.jpg" />
+    <None Include="Resources\error_2.png" />
+    <None Include="Resources\Cancel - Copy.png" />
+    <None Include="Resources\newsave.png" />
+    <None Include="Resources\AddNew.jpg" />
+    <None Include="Resources\بحث.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

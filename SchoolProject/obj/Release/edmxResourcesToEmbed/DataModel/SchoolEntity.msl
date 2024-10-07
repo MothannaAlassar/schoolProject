@@ -1,0 +1,1238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="alhaqldbModelStoreContainer" CdmEntityContainer="alhaqldbEntities">
+    <EntitySetMapping Name="courses">
+      <EntityTypeMapping TypeName="alhaqldbModel.course">
+        <MappingFragment StoreEntitySet="course">
+          <ScalarProperty Name="CourseLevelType" ColumnName="CourseLevelType" />
+          <ScalarProperty Name="courseid" ColumnName="courseid" />
+          <ScalarProperty Name="coursename" ColumnName="coursename" />
+          <ScalarProperty Name="sortshowInReport" ColumnName="sortshowInReport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="studyYears">
+      <EntityTypeMapping TypeName="alhaqldbModel.studyYear">
+        <MappingFragment StoreEntitySet="studyYear">
+          <ScalarProperty Name="ToYear" ColumnName="ToYear" />
+          <ScalarProperty Name="FormYear" ColumnName="FormYear" />
+          <ScalarProperty Name="NextYear" ColumnName="NextYear" />
+          <ScalarProperty Name="seqid" ColumnName="seqid" />
+          <ScalarProperty Name="studyYearEngl" ColumnName="studyYearEngl" />
+          <ScalarProperty Name="studyYearArab" ColumnName="studyYearArab" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="alhaqldbModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="terms">
+      <EntityTypeMapping TypeName="alhaqldbModel.term">
+        <MappingFragment StoreEntitySet="terms">
+          <ScalarProperty Name="termid" ColumnName="termid" />
+          <ScalarProperty Name="termname" ColumnName="termname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getMaxNumber" FunctionName="alhaqldbModel.Store.getMaxNumber" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="alhaqldbModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="alhaqldbModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="alhaqldbModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="alhaqldbModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="alhaqldbModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="alhaqldbModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="alhaqldbModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="upgradeDegreeForSuccessStudent" FunctionName="alhaqldbModel.Store.upgradeDegreeForSuccessStudent" />
+    <EntitySetMapping Name="Codings">
+      <EntityTypeMapping TypeName="alhaqldbModel.Coding">
+        <MappingFragment StoreEntitySet="Codings">
+          <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+          <ScalarProperty Name="CodeNo" ColumnName="CodeNo" />
+          <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="alhaqldbModel.Group">
+        <MappingFragment StoreEntitySet="Group">
+          <ScalarProperty Name="IsShowInList" ColumnName="IsShowInList" />
+          <ScalarProperty Name="NumberPlace" ColumnName="NumberPlace" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageCategories">
+      <EntityTypeMapping TypeName="alhaqldbModel.PageCategory">
+        <MappingFragment StoreEntitySet="PageCategories">
+          <ScalarProperty Name="DeletingDate" ColumnName="DeletingDate" />
+          <ScalarProperty Name="DeletingUserID" ColumnName="DeletingUserID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+          <ScalarProperty Name="EditUserID" ColumnName="EditUserID" />
+          <ScalarProperty Name="AddingDate" ColumnName="AddingDate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageOperaions">
+      <EntityTypeMapping TypeName="alhaqldbModel.PageOperaion">
+        <MappingFragment StoreEntitySet="PageOperaions">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="OperationSymbol" ColumnName="OperationSymbol" />
+          <ScalarProperty Name="OperationName" ColumnName="OperationName" />
+          <ScalarProperty Name="PageID" ColumnName="PageID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageOperationRoles">
+      <EntityTypeMapping TypeName="alhaqldbModel.PageOperationRole">
+        <MappingFragment StoreEntitySet="PageOperationRoles">
+          <ScalarProperty Name="DeletingDate" ColumnName="DeletingDate" />
+          <ScalarProperty Name="DeletingUserID" ColumnName="DeletingUserID" />
+          <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+          <ScalarProperty Name="EditUserID" ColumnName="EditUserID" />
+          <ScalarProperty Name="AddingDate" ColumnName="AddingDate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="PageOperationID" ColumnName="PageOperationID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pages">
+      <EntityTypeMapping TypeName="alhaqldbModel.Page">
+        <MappingFragment StoreEntitySet="Pages">
+          <ScalarProperty Name="PageCategoryID" ColumnName="PageCategoryID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="PageID" ColumnName="PageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="alhaqldbModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="IsRoleActive" ColumnName="IsRoleActive" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="RoleAuthorizedOperations" FunctionName="alhaqldbModel.Store.RoleAuthorizedOperations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.RoleAuthorizedOperations_Result">
+          <ScalarProperty Name="OperationSymbol" ColumnName="OperationSymbol" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateDegreeForStudentApsent" FunctionName="alhaqldbModel.Store.UpdateDegreeForStudentApsent" />
+    <EntitySetMapping Name="studentdegrees">
+      <EntityTypeMapping TypeName="alhaqldbModel.studentdegree">
+        <MappingFragment StoreEntitySet="studentdegree">
+          <ScalarProperty Name="amontapsentcourse" ColumnName="amontapsentcourse" />
+          <ScalarProperty Name="yearID" ColumnName="yearID" />
+          <ScalarProperty Name="TotalAll" ColumnName="TotalAll" />
+          <ScalarProperty Name="total2" ColumnName="total2" />
+          <ScalarProperty Name="forFull" ColumnName="forFull" />
+          <ScalarProperty Name="deg4" ColumnName="deg4" />
+          <ScalarProperty Name="deg3" ColumnName="deg3" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="deg2" ColumnName="deg2" />
+          <ScalarProperty Name="deg1" ColumnName="deg1" />
+          <ScalarProperty Name="termid" ColumnName="termid" />
+          <ScalarProperty Name="courseID" ColumnName="courseID" />
+          <ScalarProperty Name="courseLevelID" ColumnName="courseLevelID" />
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+          <ScalarProperty Name="studentid" ColumnName="studentid" />
+          <ScalarProperty Name="seqid" ColumnName="seqid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plans">
+      <EntityTypeMapping TypeName="alhaqldbModel.Plan">
+        <MappingFragment StoreEntitySet="Plans">
+          <ScalarProperty Name="YearID" ColumnName="YearID" />
+          <ScalarProperty Name="InstDeptSpecID" ColumnName="InstDeptSpecID" />
+          <ScalarProperty Name="IsRemoved" ColumnName="IsRemoved" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="edate" ColumnName="edate" />
+          <ScalarProperty Name="sadte" ColumnName="sadte" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="DelCourseDifferLevel" FunctionName="alhaqldbModel.Store.DelCourseDifferLevel" />
+    <EntitySetMapping Name="StudentAbsents">
+      <EntityTypeMapping TypeName="alhaqldbModel.StudentAbsent">
+        <MappingFragment StoreEntitySet="StudentAbsent">
+          <ScalarProperty Name="IsFind" ColumnName="IsFind" />
+          <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+          <ScalarProperty Name="NumAbsent" ColumnName="NumAbsent" />
+          <ScalarProperty Name="CDay" ColumnName="CDay" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CDate" ColumnName="CDate" />
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="UpgradeStudentForNextLevel" FunctionName="alhaqldbModel.Store.UpgradeStudentForNextLevel" />
+    <FunctionImportMapping FunctionImportName="GetCourseNewsLine" FunctionName="alhaqldbModel.Store.GetCourseNewsLine">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.GetCourseNewsLine_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="registeredCnt" ColumnName="registeredCnt" />
+          <ScalarProperty Name="Sdayno" ColumnName="Sdayno" />
+          <ScalarProperty Name="Shourno" ColumnName="Shourno" />
+          <ScalarProperty Name="Sminutno" ColumnName="Sminutno" />
+          <ScalarProperty Name="Edayno" ColumnName="Edayno" />
+          <ScalarProperty Name="Ehourno" ColumnName="Ehourno" />
+          <ScalarProperty Name="Eminutno" ColumnName="Eminutno" />
+          <ScalarProperty Name="STMNT" ColumnName="STMNT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="alhaqldbModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="DeletingDate" ColumnName="DeletingDate" />
+          <ScalarProperty Name="DeletingUserID" ColumnName="DeletingUserID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+          <ScalarProperty Name="EditUserID" ColumnName="EditUserID" />
+          <ScalarProperty Name="AddingDate" ColumnName="AddingDate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="BoxAccountID" ColumnName="BoxAccountID" />
+          <ScalarProperty Name="TempStop" ColumnName="TempStop" />
+          <ScalarProperty Name="branchID" ColumnName="branchID" />
+          <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentLevels">
+      <EntityTypeMapping TypeName="alhaqldbModel.StudentLevel">
+        <MappingFragment StoreEntitySet="StudentLevels">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="sgroup" ColumnName="sgroup" />
+          <ScalarProperty Name="lvlState" ColumnName="lvlState" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="YearID" ColumnName="YearID" />
+          <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+          <ScalarProperty Name="StdID" ColumnName="StdID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TermPlans">
+      <EntityTypeMapping TypeName="alhaqldbModel.TermPlan">
+        <MappingFragment StoreEntitySet="TermPlan">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Edate" ColumnName="Edate" />
+          <ScalarProperty Name="Sdate" ColumnName="Sdate" />
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="TermID" ColumnName="TermID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddCourseLevel" FunctionName="alhaqldbModel.Store.AddCourseLevel" />
+    <FunctionImportMapping FunctionImportName="AddCourseForStudent" FunctionName="alhaqldbModel.Store.AddCourseForStudent" />
+    <FunctionImportMapping FunctionImportName="getCourseWithLevel" FunctionName="alhaqldbModel.Store.getCourseWithLevel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.getCourseWithLevel_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+          <ScalarProperty Name="courseid" ColumnName="courseid" />
+          <ScalarProperty Name="coursename" ColumnName="coursename" />
+          <ScalarProperty Name="termID" ColumnName="termID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getSchoolData" FunctionName="alhaqldbModel.Store.getSchoolData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.getSchoolData_Result">
+          <ScalarProperty Name="seqid" ColumnName="seqid" />
+          <ScalarProperty Name="schoolName" ColumnName="schoolName" />
+          <ScalarProperty Name="LogoImage" ColumnName="LogoImage" />
+          <ScalarProperty Name="gover" ColumnName="gover" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="AdminSchool" ColumnName="AdminSchool" />
+          <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetStudentData" FunctionName="alhaqldbModel.Store.GetStudentData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.GetStudentData_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="bdate" ColumnName="bdate" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="EnteryLevelID" ColumnName="EnteryLevelID" />
+          <ScalarProperty Name="natianalityt" ColumnName="natianalityt" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+          <ScalarProperty Name="stdImage" ColumnName="stdImage" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="YearEntery" ColumnName="YearEntery" />
+          <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+          <ScalarProperty Name="lvlState" ColumnName="lvlState" />
+          <ScalarProperty Name="sgroup" ColumnName="sgroup" />
+          <ScalarProperty Name="YearID" ColumnName="YearID" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MergeStudenToGroup" FunctionName="alhaqldbModel.Store.MergeStudenToGroup" />
+    <FunctionImportMapping FunctionImportName="GetAnalyticResultForStident" FunctionName="alhaqldbModel.Store.GetAnalyticResultForStident">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.GetAnalyticResultForStident_Result">
+          <ScalarProperty Name="yearID" ColumnName="yearID" />
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+          <ScalarProperty Name="levelname" ColumnName="levelname" />
+          <ScalarProperty Name="countSuccessMail" ColumnName="countSuccessMail" />
+          <ScalarProperty Name="countSuccessFmail" ColumnName="countSuccessFmail" />
+          <ScalarProperty Name="countFailMail" ColumnName="countFailMail" />
+          <ScalarProperty Name="countFailFmail" ColumnName="countFailFmail" />
+          <ScalarProperty Name="countApsentMail" ColumnName="countApsentMail" />
+          <ScalarProperty Name="countApsentFmail" ColumnName="countApsentFmail" />
+          <ScalarProperty Name="countFail" ColumnName="countFail" />
+          <ScalarProperty Name="countApsent" ColumnName="countApsent" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetStatisticalStudent" FunctionName="alhaqldbModel.Store.GetStatisticalStudent">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.GetStatisticalStudent_Result">
+          <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+          <ScalarProperty Name="levelname" ColumnName="levelname" />
+          <ScalarProperty Name="contStudentNoLeaveMail" ColumnName="contStudentNoLeaveMail" />
+          <ScalarProperty Name="contStudentNoLeaveFmail" ColumnName="contStudentNoLeaveFmail" />
+          <ScalarProperty Name="contStudentLeaveMail" ColumnName="contStudentLeaveMail" />
+          <ScalarProperty Name="contStudentLeaveFmail" ColumnName="contStudentLeaveFmail" />
+          <ScalarProperty Name="contGroup" ColumnName="contGroup" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="alhaqldbModel.student">
+        <MappingFragment StoreEntitySet="student">
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="UserDelete" ColumnName="UserDelete" />
+          <ScalarProperty Name="UserEdit" ColumnName="UserEdit" />
+          <ScalarProperty Name="UserAdd" ColumnName="UserAdd" />
+          <ScalarProperty Name="DeletDate" ColumnName="DeletDate" />
+          <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="IsLeave" ColumnName="IsLeave" />
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="stdImage" ColumnName="stdImage" />
+          <ScalarProperty Name="bdate" ColumnName="bdate" />
+          <ScalarProperty Name="sgroup" ColumnName="sgroup" />
+          <ScalarProperty Name="lvlState" ColumnName="lvlState" />
+          <ScalarProperty Name="yearid" ColumnName="yearid" />
+          <ScalarProperty Name="natianalityt" ColumnName="natianalityt" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddEdit_student" FunctionName="alhaqldbModel.Store.AddEdit_student" />
+    <EntitySetMapping Name="schoolDatas">
+      <EntityTypeMapping TypeName="alhaqldbModel.schoolData">
+        <MappingFragment StoreEntitySet="schoolData">
+          <ScalarProperty Name="AdminHeadExamGover" ColumnName="AdminHeadExamGover" />
+          <ScalarProperty Name="AdminGeneralGover" ColumnName="AdminGeneralGover" />
+          <ScalarProperty Name="DeptStatistical" ColumnName="DeptStatistical" />
+          <ScalarProperty Name="Appropriate" ColumnName="Appropriate" />
+          <ScalarProperty Name="AdminCity" ColumnName="AdminCity" />
+          <ScalarProperty Name="HeaderExam" ColumnName="HeaderExam" />
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="AdminSchool" ColumnName="AdminSchool" />
+          <ScalarProperty Name="LogoImage" ColumnName="LogoImage" />
+          <ScalarProperty Name="gover" ColumnName="gover" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="schoolName" ColumnName="schoolName" />
+          <ScalarProperty Name="seqid" ColumnName="seqid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetStudentThatNoAddToDegree" FunctionName="alhaqldbModel.Store.GetStudentThatNoAddToDegree">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.GetStudentThatNoAddToDegree_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="natianalityt" ColumnName="natianalityt" />
+          <ScalarProperty Name="yearid" ColumnName="yearid" />
+          <ScalarProperty Name="lvlState" ColumnName="lvlState" />
+          <ScalarProperty Name="sgroup" ColumnName="sgroup" />
+          <ScalarProperty Name="bdate" ColumnName="bdate" />
+          <ScalarProperty Name="stdImage" ColumnName="stdImage" />
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="IsLeave" ColumnName="IsLeave" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+          <ScalarProperty Name="DeletDate" ColumnName="DeletDate" />
+          <ScalarProperty Name="UserAdd" ColumnName="UserAdd" />
+          <ScalarProperty Name="UserEdit" ColumnName="UserEdit" />
+          <ScalarProperty Name="UserDelete" ColumnName="UserDelete" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Teachers">
+      <EntityTypeMapping TypeName="alhaqldbModel.Teacher">
+        <MappingFragment StoreEntitySet="Teacher">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="UserDelete" ColumnName="UserDelete" />
+          <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+          <ScalarProperty Name="UserEdit" ColumnName="UserEdit" />
+          <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+          <ScalarProperty Name="UserAdd" ColumnName="UserAdd" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="Rateb" ColumnName="Rateb" />
+          <ScalarProperty Name="TypeTeacherID" ColumnName="TypeTeacherID" />
+          <ScalarProperty Name="TypeTeacher" ColumnName="TypeTeacher" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="QualiPlace" ColumnName="QualiPlace" />
+          <ScalarProperty Name="QualiDate" ColumnName="QualiDate" />
+          <ScalarProperty Name="Experties" ColumnName="Experties" />
+          <ScalarProperty Name="Quali" ColumnName="Quali" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeTeatchers">
+      <EntityTypeMapping TypeName="alhaqldbModel.TypeTeatcher">
+        <MappingFragment StoreEntitySet="TypeTeatcher">
+          <ScalarProperty Name="IsShowInCombo" ColumnName="IsShowInCombo" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddStudentToLevels" FunctionName="alhaqldbModel.Store.AddStudentToLevels" />
+    <FunctionImportMapping FunctionImportName="Edit_studentlevels" FunctionName="alhaqldbModel.Store.Edit_studentlevels" />
+    <FunctionImportMapping FunctionImportName="GetDataTHatNoAddDegreePerTerm" FunctionName="alhaqldbModel.Store.GetDataTHatNoAddDegreePerTerm">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.GetDataTHatNoAddDegreePerTerm_Result">
+          <ScalarProperty Name="YearID" ColumnName="YearID" />
+          <ScalarProperty Name="stdid" ColumnName="stdid" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="natianalityt" ColumnName="natianalityt" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+          <ScalarProperty Name="sgroup" ColumnName="sgroup" />
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="lvlState" ColumnName="lvlState" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ProfilePermanences">
+      <EntityTypeMapping TypeName="alhaqldbModel.ProfilePermanence">
+        <MappingFragment StoreEntitySet="ProfilePermanences">
+          <ScalarProperty Name="YearProfile" ColumnName="YearProfile" />
+          <ScalarProperty Name="YearID" ColumnName="YearID" />
+          <ScalarProperty Name="LogoutTime" ColumnName="LogoutTime" />
+          <ScalarProperty Name="PringTime" ColumnName="PringTime" />
+          <ScalarProperty Name="DayName" ColumnName="DayName" />
+          <ScalarProperty Name="NumberWeek" ColumnName="NumberWeek" />
+          <ScalarProperty Name="NumberDay" ColumnName="NumberDay" />
+          <ScalarProperty Name="Cdate" ColumnName="Cdate" />
+          <ScalarProperty Name="TeatcherID" ColumnName="TeatcherID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="levels">
+      <EntityTypeMapping TypeName="alhaqldbModel.level">
+        <MappingFragment StoreEntitySet="levels">
+          <ScalarProperty Name="LevelTypeID" ColumnName="LevelTypeID" />
+          <ScalarProperty Name="IsStop" ColumnName="IsStop" />
+          <ScalarProperty Name="nextLevelID" ColumnName="nextLevelID" />
+          <ScalarProperty Name="numbercourseterm1" ColumnName="numbercourseterm1" />
+          <ScalarProperty Name="levelname" ColumnName="levelname" />
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rooms">
+      <EntityTypeMapping TypeName="alhaqldbModel.Room">
+        <MappingFragment StoreEntitySet="Rooms">
+          <ScalarProperty Name="NumberOfPlace" ColumnName="NumberOfPlace" />
+          <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+          <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetAnalyticResultForStidentForTerm" FunctionName="alhaqldbModel.Store.GetAnalyticResultForStidentForTerm">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.GetAnalyticResultForStidentForTerm_Result">
+          <ScalarProperty Name="yearID" ColumnName="yearID" />
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+          <ScalarProperty Name="levelname" ColumnName="levelname" />
+          <ScalarProperty Name="countSuccessMail" ColumnName="countSuccessMail" />
+          <ScalarProperty Name="countSuccessFmail" ColumnName="countSuccessFmail" />
+          <ScalarProperty Name="countFailMail" ColumnName="countFailMail" />
+          <ScalarProperty Name="countFailFmail" ColumnName="countFailFmail" />
+          <ScalarProperty Name="countApsentMail" ColumnName="countApsentMail" />
+          <ScalarProperty Name="countApsentFmail" ColumnName="countApsentFmail" />
+          <ScalarProperty Name="countFail" ColumnName="countFail" />
+          <ScalarProperty Name="countApsent" ColumnName="countApsent" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateStudentDegree" FunctionName="alhaqldbModel.Store.UpdateStudentDegree" />
+    <FunctionImportMapping FunctionImportName="RollBackForFull" FunctionName="alhaqldbModel.Store.RollBackForFull" />
+    <FunctionImportMapping FunctionImportName="GetProfilePermanence" FunctionName="alhaqldbModel.Store.GetProfilePermanence">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.GetProfilePermanence_Result">
+          <ScalarProperty Name="TeatcherID" ColumnName="TeatcherID" />
+          <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="TypeTeacherID" ColumnName="TypeTeacherID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Cdate" ColumnName="Cdate" />
+          <ScalarProperty Name="DayName" ColumnName="DayName" />
+          <ScalarProperty Name="NumberDay" ColumnName="NumberDay" />
+          <ScalarProperty Name="NumberWeek" ColumnName="NumberWeek" />
+          <ScalarProperty Name="LogoutTime" ColumnName="LogoutTime" />
+          <ScalarProperty Name="PringTime" ColumnName="PringTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllDistrubuteStudent" FunctionName="alhaqldbModel.Store.GetAllDistrubuteStudent">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.GetAllDistrubuteStudent_Result">
+          <ScalarProperty Name="StdID" ColumnName="StdID" />
+          <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+          <ScalarProperty Name="termid" ColumnName="termid" />
+          <ScalarProperty Name="YearID" ColumnName="YearID" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="levelname" ColumnName="levelname" />
+          <ScalarProperty Name="studyYearEngl" ColumnName="studyYearEngl" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="LectureWeeks">
+      <EntityTypeMapping TypeName="alhaqldbModel.LectureWeek">
+        <MappingFragment StoreEntitySet="LectureWeek">
+          <ScalarProperty Name="YearID" ColumnName="YearID" />
+          <ScalarProperty Name="IDRoom" ColumnName="IDRoom" />
+          <ScalarProperty Name="termid" ColumnName="termid" />
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+          <ScalarProperty Name="courseid" ColumnName="courseid" />
+          <ScalarProperty Name="toDate" ColumnName="toDate" />
+          <ScalarProperty Name="fromdate" ColumnName="fromdate" />
+          <ScalarProperty Name="CdayNum" ColumnName="CdayNum" />
+          <ScalarProperty Name="cDay" ColumnName="cDay" />
+          <ScalarProperty Name="LectureName" ColumnName="LectureName" />
+          <ScalarProperty Name="NumLecture" ColumnName="NumLecture" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BasicStudentDataVs">
+      <EntityTypeMapping TypeName="alhaqldbModel.BasicStudentDataV">
+        <MappingFragment StoreEntitySet="BasicStudentDataV">
+          <ScalarProperty Name="IsLeave" ColumnName="IsLeave" />
+          <ScalarProperty Name="genderNumber" ColumnName="genderNumber" />
+          <ScalarProperty Name="ResultTxt" ColumnName="ResultTxt" />
+          <ScalarProperty Name="curseCount" ColumnName="curseCount" />
+          <ScalarProperty Name="avgst" ColumnName="avgst" />
+          <ScalarProperty Name="StudentRamkByLevel" ColumnName="StudentRamkByLevel" />
+          <ScalarProperty Name="StudentRamk" ColumnName="StudentRamk" />
+          <ScalarProperty Name="amontapsentcourse" ColumnName="amontapsentcourse" />
+          <ScalarProperty Name="coursFialCount" ColumnName="coursFialCount" />
+          <ScalarProperty Name="rnkTotal" ColumnName="rnkTotal" />
+          <ScalarProperty Name="studyYearEngl" ColumnName="studyYearEngl" />
+          <ScalarProperty Name="yearID" ColumnName="yearID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="levelname" ColumnName="levelname" />
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+          <ScalarProperty Name="termname" ColumnName="termname" />
+          <ScalarProperty Name="termid" ColumnName="termid" />
+          <ScalarProperty Name="TotalAll" ColumnName="TotalAll" />
+          <ScalarProperty Name="forFull" ColumnName="forFull" />
+          <ScalarProperty Name="deg4" ColumnName="deg4" />
+          <ScalarProperty Name="deg3" ColumnName="deg3" />
+          <ScalarProperty Name="deg2" ColumnName="deg2" />
+          <ScalarProperty Name="deg1" ColumnName="deg1" />
+          <ScalarProperty Name="coursename" ColumnName="coursename" />
+          <ScalarProperty Name="courseid" ColumnName="courseid" />
+          <ScalarProperty Name="courseLevelID" ColumnName="courseLevelID" />
+          <ScalarProperty Name="UserDelete" ColumnName="UserDelete" />
+          <ScalarProperty Name="UserEdit" ColumnName="UserEdit" />
+          <ScalarProperty Name="UserAdd" ColumnName="UserAdd" />
+          <ScalarProperty Name="DeletDate" ColumnName="DeletDate" />
+          <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="stdImage" ColumnName="stdImage" />
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="bdate" ColumnName="bdate" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="sgroup" ColumnName="sgroup" />
+          <ScalarProperty Name="lvlState" ColumnName="lvlState" />
+          <ScalarProperty Name="natianalityt" ColumnName="natianalityt" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="stdid" ColumnName="stdid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc_UpdateLevelStateForStudent" FunctionName="alhaqldbModel.Store.proc_UpdateLevelStateForStudent" />
+    <FunctionImportMapping FunctionImportName="proc_GetDegreeFromTermToAnother" FunctionName="alhaqldbModel.Store.proc_GetDegreeFromTermToAnother" />
+    <EntitySetMapping Name="LevelCourses">
+      <EntityTypeMapping TypeName="alhaqldbModel.LevelCourse">
+        <MappingFragment StoreEntitySet="LevelCourse">
+          <ScalarProperty Name="BredLevel" ColumnName="BredLevel" />
+          <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+          <ScalarProperty Name="TermPlanID" ColumnName="TermPlanID" />
+          <ScalarProperty Name="DefaultDegree" ColumnName="DefaultDegree" />
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="minDegree" ColumnName="minDegree" />
+          <ScalarProperty Name="maxDegree" ColumnName="maxDegree" />
+          <ScalarProperty Name="termID" ColumnName="termID" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc_UpdateGroupForStudent" FunctionName="alhaqldbModel.Store.proc_UpdateGroupForStudent" />
+    <FunctionImportMapping FunctionImportName="proc_GetResultFinalStudent" FunctionName="alhaqldbModel.Store.proc_GetResultFinalStudent">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.proc_GetResultFinalStudent_Result">
+          <ScalarProperty Name="stdid" ColumnName="stdid" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+          <ScalarProperty Name="bdate" ColumnName="bdate" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="sgroup" ColumnName="sgroup" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="lvlState" ColumnName="lvlState" />
+          <ScalarProperty Name="IsLeave" ColumnName="IsLeave" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+          <ScalarProperty Name="natianalityt" ColumnName="natianalityt" />
+          <ScalarProperty Name="levelname" ColumnName="levelname" />
+          <ScalarProperty Name="QrnDegTotal1" ColumnName="QrnDegTotal1" />
+          <ScalarProperty Name="QrnDegTotal2" ColumnName="QrnDegTotal2" />
+          <ScalarProperty Name="QrnForFull" ColumnName="QrnForFull" />
+          <ScalarProperty Name="IslamicDegTotal1" ColumnName="IslamicDegTotal1" />
+          <ScalarProperty Name="IslamicDegTotal2" ColumnName="IslamicDegTotal2" />
+          <ScalarProperty Name="IslamicForFull" ColumnName="IslamicForFull" />
+          <ScalarProperty Name="arDegTotal1" ColumnName="arDegTotal1" />
+          <ScalarProperty Name="arDegTotal2" ColumnName="arDegTotal2" />
+          <ScalarProperty Name="ArForFull" ColumnName="ArForFull" />
+          <ScalarProperty Name="EnDegTotal1" ColumnName="EnDegTotal1" />
+          <ScalarProperty Name="EnDegTotal2" ColumnName="EnDegTotal2" />
+          <ScalarProperty Name="EnForFull" ColumnName="EnForFull" />
+          <ScalarProperty Name="mathDegTotal1" ColumnName="mathDegTotal1" />
+          <ScalarProperty Name="mathDegTotal2" ColumnName="mathDegTotal2" />
+          <ScalarProperty Name="MathForFull" ColumnName="MathForFull" />
+          <ScalarProperty Name="scoDegTotal1" ColumnName="scoDegTotal1" />
+          <ScalarProperty Name="scoDegTotal2" ColumnName="scoDegTotal2" />
+          <ScalarProperty Name="ScoForFull" ColumnName="ScoForFull" />
+          <ScalarProperty Name="sciDegTotal1" ColumnName="sciDegTotal1" />
+          <ScalarProperty Name="sciDegTotal2" ColumnName="sciDegTotal2" />
+          <ScalarProperty Name="SciForFull" ColumnName="SciForFull" />
+          <ScalarProperty Name="compDegTotal1" ColumnName="compDegTotal1" />
+          <ScalarProperty Name="compDegTotal2" ColumnName="compDegTotal2" />
+          <ScalarProperty Name="CompForFull" ColumnName="CompForFull" />
+          <ScalarProperty Name="artDegTotal1" ColumnName="artDegTotal1" />
+          <ScalarProperty Name="artDegTotal2" ColumnName="artDegTotal2" />
+          <ScalarProperty Name="ArtForFull" ColumnName="ArtForFull" />
+          <ScalarProperty Name="sportDegTotal1" ColumnName="sportDegTotal1" />
+          <ScalarProperty Name="sportDegTotal2" ColumnName="sportDegTotal2" />
+          <ScalarProperty Name="SportForFull" ColumnName="SportForFull" />
+          <ScalarProperty Name="CountCourseForFull" ColumnName="CountCourseForFull" />
+          <ScalarProperty Name="TotalAllForFull" ColumnName="TotalAllForFull" />
+          <ScalarProperty Name="LevelCrsCounts" ColumnName="LevelCrsCounts" />
+          <ScalarProperty Name="coursFialCount" ColumnName="coursFialCount" />
+          <ScalarProperty Name="amontapsentcourse" ColumnName="amontapsentcourse" />
+          <ScalarProperty Name="ttl" ColumnName="ttl" />
+          <ScalarProperty Name="prcnt" ColumnName="prcnt" />
+          <ScalarProperty Name="StudentRamk" ColumnName="StudentRamk" />
+          <ScalarProperty Name="GroupIDStudentRamk" ColumnName="GroupIDStudentRamk" />
+          <ScalarProperty Name="yearID" ColumnName="yearID" />
+          <ScalarProperty Name="ResultTxt" ColumnName="ResultTxt" />
+          <ScalarProperty Name="genderNumber" ColumnName="genderNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="TypeLevels">
+      <EntityTypeMapping TypeName="alhaqldbModel.TypeLevel">
+        <MappingFragment StoreEntitySet="TypeLevel">
+          <ScalarProperty Name="LevelTypeName" ColumnName="LevelTypeName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GradeRanks">
+      <EntityTypeMapping TypeName="alhaqldbModel.GradeRank">
+        <MappingFragment StoreEntitySet="GradeRank">
+          <ScalarProperty Name="RankName" ColumnName="RankName" />
+          <ScalarProperty Name="ToGrade" ColumnName="ToGrade" />
+          <ScalarProperty Name="FromGrade" ColumnName="FromGrade" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetTypSchool" FunctionName="alhaqldbModel.Store.GetTypSchool" />
+    <FunctionImportMapping FunctionImportName="UpdateBreeders" FunctionName="alhaqldbModel.Store.UpdateBreeders" />
+    <EntitySetMapping Name="ExamPeriods">
+      <EntityTypeMapping TypeName="alhaqldbModel.ExamPeriod">
+        <MappingFragment StoreEntitySet="ExamPeriod">
+          <ScalarProperty Name="TermID" ColumnName="TermID" />
+          <ScalarProperty Name="YearID" ColumnName="YearID" />
+          <ScalarProperty Name="ExamTime" ColumnName="ExamTime" />
+          <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+          <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+          <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Periods">
+      <EntityTypeMapping TypeName="alhaqldbModel.Period">
+        <MappingFragment StoreEntitySet="Periods">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomStudentInExams">
+      <EntityTypeMapping TypeName="alhaqldbModel.RoomStudentInExam">
+        <MappingFragment StoreEntitySet="RoomStudentInExam">
+          <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+          <ScalarProperty Name="NumperPass" ColumnName="NumperPass" />
+          <ScalarProperty Name="NumberPlace" ColumnName="NumberPlace" />
+          <ScalarProperty Name="YearID" ColumnName="YearID" />
+          <ScalarProperty Name="TermID" ColumnName="TermID" />
+          <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="StdID" ColumnName="StdID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableExams">
+      <EntityTypeMapping TypeName="alhaqldbModel.TableExam">
+        <MappingFragment StoreEntitySet="TableExam">
+          <ScalarProperty Name="ExamPeriodTime" ColumnName="ExamPeriodTime" />
+          <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+          <ScalarProperty Name="CDateString" ColumnName="CDateString" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="YearID" ColumnName="YearID" />
+          <ScalarProperty Name="TermID" ColumnName="TermID" />
+          <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+          <ScalarProperty Name="DayNumber" ColumnName="DayNumber" />
+          <ScalarProperty Name="DayName" ColumnName="DayName" />
+          <ScalarProperty Name="CDate" ColumnName="CDate" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetDistributeStudent" FunctionName="alhaqldbModel.Store.GetDistributeStudent">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.GetDistributeStudent_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StdID" ColumnName="StdID" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+          <ScalarProperty Name="TermID" ColumnName="TermID" />
+          <ScalarProperty Name="YearID" ColumnName="YearID" />
+          <ScalarProperty Name="NumberPlace" ColumnName="NumberPlace" />
+          <ScalarProperty Name="NumperPass" ColumnName="NumperPass" />
+          <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="levelname" ColumnName="levelname" />
+          <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+          <ScalarProperty Name="NumberOfPlace" ColumnName="NumberOfPlace" />
+          <ScalarProperty Name="termname" ColumnName="termname" />
+          <ScalarProperty Name="studyYearEngl" ColumnName="studyYearEngl" />
+          <ScalarProperty Name="PeriodName" ColumnName="PeriodName" />
+          <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+          <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTypSchoolByYear" FunctionName="alhaqldbModel.Store.GetTypSchoolByYear" />
+    <FunctionImportMapping FunctionImportName="Proc_AddProfilPermanences" FunctionName="alhaqldbModel.Store.Proc_AddProfilPermanences" />
+    <FunctionImportMapping FunctionImportName="Proc_GetFinalResultDataForTermNew" FunctionName="alhaqldbModel.Store.Proc_GetFinalResultDataForTermNew">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.Proc_GetFinalResultDataForTermNew_Result">
+          <ScalarProperty Name="stdid" ColumnName="stdid" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+          <ScalarProperty Name="bdate" ColumnName="bdate" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="sgroup" ColumnName="sgroup" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="lvlState" ColumnName="lvlState" />
+          <ScalarProperty Name="IsLeave" ColumnName="IsLeave" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+          <ScalarProperty Name="NumberPass" ColumnName="NumberPass" />
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="natianalityt" ColumnName="natianalityt" />
+          <ScalarProperty Name="levelname" ColumnName="levelname" />
+          <ScalarProperty Name="termid" ColumnName="termid" />
+          <ScalarProperty Name="Qrndeg1" ColumnName="Qrndeg1" />
+          <ScalarProperty Name="Qrndeg2" ColumnName="Qrndeg2" />
+          <ScalarProperty Name="QrnForFull" ColumnName="QrnForFull" />
+          <ScalarProperty Name="QrnTotalAll" ColumnName="QrnTotalAll" />
+          <ScalarProperty Name="Islamicdeg1" ColumnName="Islamicdeg1" />
+          <ScalarProperty Name="Islamicdeg2" ColumnName="Islamicdeg2" />
+          <ScalarProperty Name="IslamicForFull" ColumnName="IslamicForFull" />
+          <ScalarProperty Name="IslamicTotalAll" ColumnName="IslamicTotalAll" />
+          <ScalarProperty Name="ardeg1" ColumnName="ardeg1" />
+          <ScalarProperty Name="ardeg2" ColumnName="ardeg2" />
+          <ScalarProperty Name="arForFull" ColumnName="arForFull" />
+          <ScalarProperty Name="arTotalAll" ColumnName="arTotalAll" />
+          <ScalarProperty Name="Endeg1" ColumnName="Endeg1" />
+          <ScalarProperty Name="Endeg2" ColumnName="Endeg2" />
+          <ScalarProperty Name="EnForFull" ColumnName="EnForFull" />
+          <ScalarProperty Name="EnTotalAll" ColumnName="EnTotalAll" />
+          <ScalarProperty Name="mathdeg1" ColumnName="mathdeg1" />
+          <ScalarProperty Name="mathdeg2" ColumnName="mathdeg2" />
+          <ScalarProperty Name="mathForFull" ColumnName="mathForFull" />
+          <ScalarProperty Name="mathTotalAll" ColumnName="mathTotalAll" />
+          <ScalarProperty Name="scodeg1" ColumnName="scodeg1" />
+          <ScalarProperty Name="scodeg2" ColumnName="scodeg2" />
+          <ScalarProperty Name="scoForFull" ColumnName="scoForFull" />
+          <ScalarProperty Name="scoTotalAll" ColumnName="scoTotalAll" />
+          <ScalarProperty Name="scideg1" ColumnName="scideg1" />
+          <ScalarProperty Name="scideg2" ColumnName="scideg2" />
+          <ScalarProperty Name="sciForFull" ColumnName="sciForFull" />
+          <ScalarProperty Name="sciTotalAll" ColumnName="sciTotalAll" />
+          <ScalarProperty Name="compdeg1" ColumnName="compdeg1" />
+          <ScalarProperty Name="compdeg2" ColumnName="compdeg2" />
+          <ScalarProperty Name="compForFull" ColumnName="compForFull" />
+          <ScalarProperty Name="compTotalAll" ColumnName="compTotalAll" />
+          <ScalarProperty Name="artdeg1" ColumnName="artdeg1" />
+          <ScalarProperty Name="artdeg2" ColumnName="artdeg2" />
+          <ScalarProperty Name="artForFull" ColumnName="artForFull" />
+          <ScalarProperty Name="artTotalAll" ColumnName="artTotalAll" />
+          <ScalarProperty Name="sportdeg1" ColumnName="sportdeg1" />
+          <ScalarProperty Name="sportdeg2" ColumnName="sportdeg2" />
+          <ScalarProperty Name="sportForFull" ColumnName="sportForFull" />
+          <ScalarProperty Name="sportTotalAll" ColumnName="sportTotalAll" />
+          <ScalarProperty Name="PhysicDeg1" ColumnName="PhysicDeg1" />
+          <ScalarProperty Name="PhysicDeg2" ColumnName="PhysicDeg2" />
+          <ScalarProperty Name="PhysicForFull" ColumnName="PhysicForFull" />
+          <ScalarProperty Name="PhysicTotal" ColumnName="PhysicTotal" />
+          <ScalarProperty Name="chemistryDeg1" ColumnName="chemistryDeg1" />
+          <ScalarProperty Name="chemistryDeg2" ColumnName="chemistryDeg2" />
+          <ScalarProperty Name="chemistryForFull" ColumnName="chemistryForFull" />
+          <ScalarProperty Name="chemistryTotal" ColumnName="chemistryTotal" />
+          <ScalarProperty Name="BiologyDeg1" ColumnName="BiologyDeg1" />
+          <ScalarProperty Name="BiologyDeg2" ColumnName="BiologyDeg2" />
+          <ScalarProperty Name="BiologyForFull" ColumnName="BiologyForFull" />
+          <ScalarProperty Name="BiologyTotal" ColumnName="BiologyTotal" />
+          <ScalarProperty Name="Geographic1" ColumnName="Geographic1" />
+          <ScalarProperty Name="Geographic2" ColumnName="Geographic2" />
+          <ScalarProperty Name="GeographicForFull" ColumnName="GeographicForFull" />
+          <ScalarProperty Name="GeographicTotal" ColumnName="GeographicTotal" />
+          <ScalarProperty Name="History1" ColumnName="History1" />
+          <ScalarProperty Name="History2" ColumnName="History2" />
+          <ScalarProperty Name="HistoryFull" ColumnName="HistoryFull" />
+          <ScalarProperty Name="History1Total" ColumnName="History1Total" />
+          <ScalarProperty Name="Community1" ColumnName="Community1" />
+          <ScalarProperty Name="Community2" ColumnName="Community2" />
+          <ScalarProperty Name="Community1Full" ColumnName="Community1Full" />
+          <ScalarProperty Name="Community1Total" ColumnName="Community1Total" />
+          <ScalarProperty Name="CountForFullCourse" ColumnName="CountForFullCourse" />
+          <ScalarProperty Name="CountCourseForFull" ColumnName="CountCourseForFull" />
+          <ScalarProperty Name="TotalAllForFull" ColumnName="TotalAllForFull" />
+          <ScalarProperty Name="LevelCrsCounts" ColumnName="LevelCrsCounts" />
+          <ScalarProperty Name="coursFialCount" ColumnName="coursFialCount" />
+          <ScalarProperty Name="amontapsentcourse" ColumnName="amontapsentcourse" />
+          <ScalarProperty Name="ttl" ColumnName="ttl" />
+          <ScalarProperty Name="RamkByGroupInner" ColumnName="RamkByGroupInner" />
+          <ScalarProperty Name="RamkByLevelInner" ColumnName="RamkByLevelInner" />
+          <ScalarProperty Name="yearID" ColumnName="yearID" />
+          <ScalarProperty Name="genderNumber" ColumnName="genderNumber" />
+          <ScalarProperty Name="RamkByGroup" ColumnName="RamkByGroup" />
+          <ScalarProperty Name="RamkByLevel" ColumnName="RamkByLevel" />
+          <ScalarProperty Name="avarage" ColumnName="avarage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_GetFinalResultStudentNew" FunctionName="alhaqldbModel.Store.proc_GetFinalResultStudentNew">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.proc_GetFinalResultStudentNew_Result">
+          <ScalarProperty Name="studentid" ColumnName="studentid" />
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+          <ScalarProperty Name="yearID" ColumnName="yearID" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="bdate" ColumnName="bdate" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="sgroup" ColumnName="sgroup" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="lvlState" ColumnName="lvlState" />
+          <ScalarProperty Name="IsLeave" ColumnName="IsLeave" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+          <ScalarProperty Name="natianalityt" ColumnName="natianalityt" />
+          <ScalarProperty Name="levelname" ColumnName="levelname" />
+          <ScalarProperty Name="qrn1" ColumnName="qrn1" />
+          <ScalarProperty Name="qrn2" ColumnName="qrn2" />
+          <ScalarProperty Name="qrnForFull" ColumnName="qrnForFull" />
+          <ScalarProperty Name="qrnTotal" ColumnName="qrnTotal" />
+          <ScalarProperty Name="Islamic1" ColumnName="Islamic1" />
+          <ScalarProperty Name="Islamic2" ColumnName="Islamic2" />
+          <ScalarProperty Name="IslamicForFull" ColumnName="IslamicForFull" />
+          <ScalarProperty Name="IslamicTotal" ColumnName="IslamicTotal" />
+          <ScalarProperty Name="Arabic1" ColumnName="Arabic1" />
+          <ScalarProperty Name="Arabic2" ColumnName="Arabic2" />
+          <ScalarProperty Name="ArabicForFull" ColumnName="ArabicForFull" />
+          <ScalarProperty Name="ArabicTotal" ColumnName="ArabicTotal" />
+          <ScalarProperty Name="English1" ColumnName="English1" />
+          <ScalarProperty Name="English2" ColumnName="English2" />
+          <ScalarProperty Name="EnglishForFull" ColumnName="EnglishForFull" />
+          <ScalarProperty Name="EnglishTotal" ColumnName="EnglishTotal" />
+          <ScalarProperty Name="Math1" ColumnName="Math1" />
+          <ScalarProperty Name="Math2" ColumnName="Math2" />
+          <ScalarProperty Name="MathForFull" ColumnName="MathForFull" />
+          <ScalarProperty Name="MathTotal" ColumnName="MathTotal" />
+          <ScalarProperty Name="Socil1" ColumnName="Socil1" />
+          <ScalarProperty Name="Socil2" ColumnName="Socil2" />
+          <ScalarProperty Name="ScoForFull" ColumnName="ScoForFull" />
+          <ScalarProperty Name="ScoTotal" ColumnName="ScoTotal" />
+          <ScalarProperty Name="Sciense1" ColumnName="Sciense1" />
+          <ScalarProperty Name="Sciense2" ColumnName="Sciense2" />
+          <ScalarProperty Name="SciForFull" ColumnName="SciForFull" />
+          <ScalarProperty Name="SciTotal" ColumnName="SciTotal" />
+          <ScalarProperty Name="Comp1" ColumnName="Comp1" />
+          <ScalarProperty Name="Comp2" ColumnName="Comp2" />
+          <ScalarProperty Name="ComputerForFull" ColumnName="ComputerForFull" />
+          <ScalarProperty Name="CompTotal" ColumnName="CompTotal" />
+          <ScalarProperty Name="Art1" ColumnName="Art1" />
+          <ScalarProperty Name="Art2" ColumnName="Art2" />
+          <ScalarProperty Name="ArtForFull" ColumnName="ArtForFull" />
+          <ScalarProperty Name="ArtTotal" ColumnName="ArtTotal" />
+          <ScalarProperty Name="Sport1" ColumnName="Sport1" />
+          <ScalarProperty Name="Sport2" ColumnName="Sport2" />
+          <ScalarProperty Name="SportForFull" ColumnName="SportForFull" />
+          <ScalarProperty Name="SportTotal" ColumnName="SportTotal" />
+          <ScalarProperty Name="Physic1" ColumnName="Physic1" />
+          <ScalarProperty Name="Physic2" ColumnName="Physic2" />
+          <ScalarProperty Name="PhysicForFull" ColumnName="PhysicForFull" />
+          <ScalarProperty Name="PhysicTotal" ColumnName="PhysicTotal" />
+          <ScalarProperty Name="chemistry1" ColumnName="chemistry1" />
+          <ScalarProperty Name="chemistry2" ColumnName="chemistry2" />
+          <ScalarProperty Name="chemistryForFull" ColumnName="chemistryForFull" />
+          <ScalarProperty Name="chemistryTotal" ColumnName="chemistryTotal" />
+          <ScalarProperty Name="Biology1" ColumnName="Biology1" />
+          <ScalarProperty Name="Biology2" ColumnName="Biology2" />
+          <ScalarProperty Name="BiologyForFull" ColumnName="BiologyForFull" />
+          <ScalarProperty Name="BiologyTotal" ColumnName="BiologyTotal" />
+          <ScalarProperty Name="Geographic1" ColumnName="Geographic1" />
+          <ScalarProperty Name="Geographic2" ColumnName="Geographic2" />
+          <ScalarProperty Name="GeographicFull" ColumnName="GeographicFull" />
+          <ScalarProperty Name="GeographicTotal" ColumnName="GeographicTotal" />
+          <ScalarProperty Name="History1" ColumnName="History1" />
+          <ScalarProperty Name="History2" ColumnName="History2" />
+          <ScalarProperty Name="HistoryFull" ColumnName="HistoryFull" />
+          <ScalarProperty Name="History1Total" ColumnName="History1Total" />
+          <ScalarProperty Name="Community1" ColumnName="Community1" />
+          <ScalarProperty Name="Community2" ColumnName="Community2" />
+          <ScalarProperty Name="Community1Full" ColumnName="Community1Full" />
+          <ScalarProperty Name="Community1Total" ColumnName="Community1Total" />
+          <ScalarProperty Name="CountCourseForFull" ColumnName="CountCourseForFull" />
+          <ScalarProperty Name="lvlCourseCount" ColumnName="lvlCourseCount" />
+          <ScalarProperty Name="ttl" ColumnName="ttl" />
+          <ScalarProperty Name="TotalAllForFull" ColumnName="TotalAllForFull" />
+          <ScalarProperty Name="StudentRamkNumberByLevel" ColumnName="StudentRamkNumberByLevel" />
+          <ScalarProperty Name="RamkByLevelInner" ColumnName="RamkByLevelInner" />
+          <ScalarProperty Name="StudentRamkNumberByGroup" ColumnName="StudentRamkNumberByGroup" />
+          <ScalarProperty Name="RamkByGroupInner" ColumnName="RamkByGroupInner" />
+          <ScalarProperty Name="genderNumber" ColumnName="genderNumber" />
+          <ScalarProperty Name="cntApsentCourse" ColumnName="cntApsentCourse" />
+          <ScalarProperty Name="coursFialCount" ColumnName="coursFialCount" />
+          <ScalarProperty Name="countFailYear" ColumnName="countFailYear" />
+          <ScalarProperty Name="RamkByGroup" ColumnName="RamkByGroup" />
+          <ScalarProperty Name="RamkByLevel" ColumnName="RamkByLevel" />
+          <ScalarProperty Name="avarage" ColumnName="avarage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetProfileHorizontal" FunctionName="alhaqldbModel.Store.GetProfileHorizontal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.GetProfileHorizontal_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+          <ScalarProperty Name="NumberWeek" ColumnName="NumberWeek" />
+          <ScalarProperty Name="TypeTeacherID" ColumnName="TypeTeacherID" />
+          <ScalarProperty Name="TypeTeacher" ColumnName="TypeTeacher" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="YearProfile" ColumnName="YearProfile" />
+          <ScalarProperty Name="SaturdayDate" ColumnName="SaturdayDate" />
+          <ScalarProperty Name="PringTimeSaturday" ColumnName="PringTimeSaturday" />
+          <ScalarProperty Name="LogoutTimeSaturday" ColumnName="LogoutTimeSaturday" />
+          <ScalarProperty Name="SundayDate" ColumnName="SundayDate" />
+          <ScalarProperty Name="PringTimeSunday" ColumnName="PringTimeSunday" />
+          <ScalarProperty Name="LogoutTimeSunday" ColumnName="LogoutTimeSunday" />
+          <ScalarProperty Name="MondayDate" ColumnName="MondayDate" />
+          <ScalarProperty Name="PringTimeSMonday" ColumnName="PringTimeSMonday" />
+          <ScalarProperty Name="LogoutTimeMonday" ColumnName="LogoutTimeMonday" />
+          <ScalarProperty Name="TuesdayDate" ColumnName="TuesdayDate" />
+          <ScalarProperty Name="PringTimeTuesday" ColumnName="PringTimeTuesday" />
+          <ScalarProperty Name="LogoutTimeTuesday" ColumnName="LogoutTimeTuesday" />
+          <ScalarProperty Name="WednesdayDate" ColumnName="WednesdayDate" />
+          <ScalarProperty Name="PringTimeWednesday" ColumnName="PringTimeWednesday" />
+          <ScalarProperty Name="LogoutTimeWednesday" ColumnName="LogoutTimeWednesday" />
+          <ScalarProperty Name="ThursdayDate" ColumnName="ThursdayDate" />
+          <ScalarProperty Name="PringTimeThursday" ColumnName="PringTimeThursday" />
+          <ScalarProperty Name="LogoutTimeThursday" ColumnName="LogoutTimeThursday" />
+          <ScalarProperty Name="FridayDate" ColumnName="FridayDate" />
+          <ScalarProperty Name="PringTimeFriday" ColumnName="PringTimeFriday" />
+          <ScalarProperty Name="LogoutTimeFriday" ColumnName="LogoutTimeFriday" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetProfileHorizontalNew" FunctionName="alhaqldbModel.Store.GetProfileHorizontalNew">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.GetProfileHorizontalNew_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+          <ScalarProperty Name="NumberWeek" ColumnName="NumberWeek" />
+          <ScalarProperty Name="TypeTeacherID" ColumnName="TypeTeacherID" />
+          <ScalarProperty Name="TypeTeacher" ColumnName="TypeTeacher" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="YearProfile" ColumnName="YearProfile" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="SaturdayDate" ColumnName="SaturdayDate" />
+          <ScalarProperty Name="PringTimeSaturday" ColumnName="PringTimeSaturday" />
+          <ScalarProperty Name="LogoutTimeSaturday" ColumnName="LogoutTimeSaturday" />
+          <ScalarProperty Name="SundayDate" ColumnName="SundayDate" />
+          <ScalarProperty Name="PringTimeSunday" ColumnName="PringTimeSunday" />
+          <ScalarProperty Name="LogoutTimeSunday" ColumnName="LogoutTimeSunday" />
+          <ScalarProperty Name="MondayDate" ColumnName="MondayDate" />
+          <ScalarProperty Name="PringTimeSMonday" ColumnName="PringTimeSMonday" />
+          <ScalarProperty Name="LogoutTimeMonday" ColumnName="LogoutTimeMonday" />
+          <ScalarProperty Name="TuesdayDate" ColumnName="TuesdayDate" />
+          <ScalarProperty Name="PringTimeTuesday" ColumnName="PringTimeTuesday" />
+          <ScalarProperty Name="LogoutTimeTuesday" ColumnName="LogoutTimeTuesday" />
+          <ScalarProperty Name="WednesdayDate" ColumnName="WednesdayDate" />
+          <ScalarProperty Name="PringTimeWednesday" ColumnName="PringTimeWednesday" />
+          <ScalarProperty Name="LogoutTimeWednesday" ColumnName="LogoutTimeWednesday" />
+          <ScalarProperty Name="ThursdayDate" ColumnName="ThursdayDate" />
+          <ScalarProperty Name="PringTimeThursday" ColumnName="PringTimeThursday" />
+          <ScalarProperty Name="LogoutTimeThursday" ColumnName="LogoutTimeThursday" />
+          <ScalarProperty Name="FridayDate" ColumnName="FridayDate" />
+          <ScalarProperty Name="PringTimeFriday" ColumnName="PringTimeFriday" />
+          <ScalarProperty Name="LogoutTimeFriday" ColumnName="LogoutTimeFriday" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_RestStudentToPrevLevel" FunctionName="alhaqldbModel.Store.Proc_RestStudentToPrevLevel" />
+    <FunctionImportMapping FunctionImportName="GetStudentDataForTermNew" FunctionName="alhaqldbModel.Store.GetStudentDataForTermNew">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="alhaqldbModel.GetStudentDataForTermNew_Result">
+          <ScalarProperty Name="stdid" ColumnName="stdid" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+          <ScalarProperty Name="bdate" ColumnName="bdate" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="sgroup" ColumnName="sgroup" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="lvlState" ColumnName="lvlState" />
+          <ScalarProperty Name="IsLeave" ColumnName="IsLeave" />
+          <ScalarProperty Name="SeqID" ColumnName="SeqID" />
+          <ScalarProperty Name="NumberPass" ColumnName="NumberPass" />
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="natianalityt" ColumnName="natianalityt" />
+          <ScalarProperty Name="levelname" ColumnName="levelname" />
+          <ScalarProperty Name="termid" ColumnName="termid" />
+          <ScalarProperty Name="Qrndeg1" ColumnName="Qrndeg1" />
+          <ScalarProperty Name="Qrndeg2" ColumnName="Qrndeg2" />
+          <ScalarProperty Name="QrnForFull" ColumnName="QrnForFull" />
+          <ScalarProperty Name="QrnTotalAll" ColumnName="QrnTotalAll" />
+          <ScalarProperty Name="Islamicdeg1" ColumnName="Islamicdeg1" />
+          <ScalarProperty Name="Islamicdeg2" ColumnName="Islamicdeg2" />
+          <ScalarProperty Name="IslamicForFull" ColumnName="IslamicForFull" />
+          <ScalarProperty Name="IslamicTotalAll" ColumnName="IslamicTotalAll" />
+          <ScalarProperty Name="ardeg1" ColumnName="ardeg1" />
+          <ScalarProperty Name="ardeg2" ColumnName="ardeg2" />
+          <ScalarProperty Name="arForFull" ColumnName="arForFull" />
+          <ScalarProperty Name="arTotalAll" ColumnName="arTotalAll" />
+          <ScalarProperty Name="Endeg1" ColumnName="Endeg1" />
+          <ScalarProperty Name="Endeg2" ColumnName="Endeg2" />
+          <ScalarProperty Name="EnForFull" ColumnName="EnForFull" />
+          <ScalarProperty Name="EnTotalAll" ColumnName="EnTotalAll" />
+          <ScalarProperty Name="mathdeg1" ColumnName="mathdeg1" />
+          <ScalarProperty Name="mathdeg2" ColumnName="mathdeg2" />
+          <ScalarProperty Name="mathForFull" ColumnName="mathForFull" />
+          <ScalarProperty Name="mathTotalAll" ColumnName="mathTotalAll" />
+          <ScalarProperty Name="scodeg1" ColumnName="scodeg1" />
+          <ScalarProperty Name="scodeg2" ColumnName="scodeg2" />
+          <ScalarProperty Name="scoForFull" ColumnName="scoForFull" />
+          <ScalarProperty Name="scoTotalAll" ColumnName="scoTotalAll" />
+          <ScalarProperty Name="scideg1" ColumnName="scideg1" />
+          <ScalarProperty Name="scideg2" ColumnName="scideg2" />
+          <ScalarProperty Name="sciForFull" ColumnName="sciForFull" />
+          <ScalarProperty Name="sciTotalAll" ColumnName="sciTotalAll" />
+          <ScalarProperty Name="compdeg1" ColumnName="compdeg1" />
+          <ScalarProperty Name="compdeg2" ColumnName="compdeg2" />
+          <ScalarProperty Name="compForFull" ColumnName="compForFull" />
+          <ScalarProperty Name="compTotalAll" ColumnName="compTotalAll" />
+          <ScalarProperty Name="artdeg1" ColumnName="artdeg1" />
+          <ScalarProperty Name="artdeg2" ColumnName="artdeg2" />
+          <ScalarProperty Name="artForFull" ColumnName="artForFull" />
+          <ScalarProperty Name="artTotalAll" ColumnName="artTotalAll" />
+          <ScalarProperty Name="sportdeg1" ColumnName="sportdeg1" />
+          <ScalarProperty Name="sportdeg2" ColumnName="sportdeg2" />
+          <ScalarProperty Name="sportForFull" ColumnName="sportForFull" />
+          <ScalarProperty Name="sportTotalAll" ColumnName="sportTotalAll" />
+          <ScalarProperty Name="PhysicDeg1" ColumnName="PhysicDeg1" />
+          <ScalarProperty Name="PhysicDeg2" ColumnName="PhysicDeg2" />
+          <ScalarProperty Name="PhysicForFull" ColumnName="PhysicForFull" />
+          <ScalarProperty Name="PhysicTotal" ColumnName="PhysicTotal" />
+          <ScalarProperty Name="chemistryDeg1" ColumnName="chemistryDeg1" />
+          <ScalarProperty Name="chemistryDeg2" ColumnName="chemistryDeg2" />
+          <ScalarProperty Name="chemistryForFull" ColumnName="chemistryForFull" />
+          <ScalarProperty Name="chemistryTotal" ColumnName="chemistryTotal" />
+          <ScalarProperty Name="BiologyDeg1" ColumnName="BiologyDeg1" />
+          <ScalarProperty Name="BiologyDeg2" ColumnName="BiologyDeg2" />
+          <ScalarProperty Name="BiologyForFull" ColumnName="BiologyForFull" />
+          <ScalarProperty Name="BiologyTotal" ColumnName="BiologyTotal" />
+          <ScalarProperty Name="Geographic1" ColumnName="Geographic1" />
+          <ScalarProperty Name="Geographic2" ColumnName="Geographic2" />
+          <ScalarProperty Name="GeographicForFull" ColumnName="GeographicForFull" />
+          <ScalarProperty Name="GeographicTotal" ColumnName="GeographicTotal" />
+          <ScalarProperty Name="History1" ColumnName="History1" />
+          <ScalarProperty Name="History2" ColumnName="History2" />
+          <ScalarProperty Name="HistoryFull" ColumnName="HistoryFull" />
+          <ScalarProperty Name="History1Total" ColumnName="History1Total" />
+          <ScalarProperty Name="Community1" ColumnName="Community1" />
+          <ScalarProperty Name="Community2" ColumnName="Community2" />
+          <ScalarProperty Name="Community1Full" ColumnName="Community1Full" />
+          <ScalarProperty Name="Community1Total" ColumnName="Community1Total" />
+          <ScalarProperty Name="CountForFullCourse" ColumnName="CountForFullCourse" />
+          <ScalarProperty Name="CountCourseForFull" ColumnName="CountCourseForFull" />
+          <ScalarProperty Name="TotalAllForFull" ColumnName="TotalAllForFull" />
+          <ScalarProperty Name="LevelCrsCounts" ColumnName="LevelCrsCounts" />
+          <ScalarProperty Name="coursFialCount" ColumnName="coursFialCount" />
+          <ScalarProperty Name="amontapsentcourse" ColumnName="amontapsentcourse" />
+          <ScalarProperty Name="ttl" ColumnName="ttl" />
+          <ScalarProperty Name="RamkByGroupInner" ColumnName="RamkByGroupInner" />
+          <ScalarProperty Name="RamkByLevelInner" ColumnName="RamkByLevelInner" />
+          <ScalarProperty Name="yearID" ColumnName="yearID" />
+          <ScalarProperty Name="genderNumber" ColumnName="genderNumber" />
+          <ScalarProperty Name="RamkByGroup" ColumnName="RamkByGroup" />
+          <ScalarProperty Name="RamkByLevel" ColumnName="RamkByLevel" />
+          <ScalarProperty Name="avarage" ColumnName="avarage" />
+          <ScalarProperty Name="ResultTxt" ColumnName="ResultTxt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="TblNotifies">
+      <EntityTypeMapping TypeName="alhaqldbModel.TblNotify">
+        <MappingFragment StoreEntitySet="TblNotify">
+          <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+          <ScalarProperty Name="YearID" ColumnName="YearID" />
+          <ScalarProperty Name="TermID" ColumnName="TermID" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="DayNum" ColumnName="DayNum" />
+          <ScalarProperty Name="LectureName" ColumnName="LectureName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="UpdateStudentDegreeNew" FunctionName="alhaqldbModel.Store.UpdateStudentDegreeNew" />
+  </EntityContainerMapping>
+</Mapping>

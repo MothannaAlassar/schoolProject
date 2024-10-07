@@ -1,0 +1,428 @@
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\SchoolProject.exe.config
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\SchoolProject.exe
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\SchoolProject.pdb
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\ConvertImage.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\EntityFramework.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\EntityFramework.xml
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.BaseBasicDialogeForm.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.BaseForm.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgLevel.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgStudent.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmBaseOpration.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmBasicSimpleDialogue.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmLog.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frmMain.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.AddSem.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.ComeAndLeave.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmClass.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmCourse.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLevelCourse.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmSchoolData.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmShowDatacs.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStdnt.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmDegreeTest.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudentAbsent.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudentDegree.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudyYear.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmTeacher.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmViewTeatcher.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.MyMessageBox.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.NotifiForm.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.ProgramContinue.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Properties.Resources.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.rpt.FrmRptShow.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.csproj.GenerateResource.Cache
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\RdlCompile.cache
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\RdlCompile.compiled
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.exe
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.pdb
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmConnectionSetting.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.ManagedConnections.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.Smo.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.ManagedDTS.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.Dmf.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.DTSRuntimeWrap.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.PipelineHost.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.DTSPipelineWrap.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmBackUpRestore.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLogoLoad.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\ar-YE\SchoolProject.resources.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\bin\Debug\ar\SchoolProject.resources.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.ar-YE.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.ar.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\ar-YE\SchoolProject.resources.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\ar\SchoolProject.resources.dll
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmChanagePassWord.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgCourse.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgCourseWithLevel.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.csprojResolveAssemblyReference.cache
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmPlan.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmRole.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmPageOperationRole.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.lookupRole.resources
+C:\Users\waleed\Documents\Visual Studio 2015\Projects\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmUsers.resources
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\SchoolProject.exe
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\SchoolProject.exe.config
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\ConvertImage.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\EntityFramework.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\EntityFramework.SqlServer.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.ManagedConnections.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.Smo.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.Types.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.ManagedDTS.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.Dmf.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.DTSRuntimeWrap.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.PipelineHost.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.DTSPipelineWrap.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\EntityFramework.xml
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\EntityFramework.SqlServer.xml
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.BaseBasicDialogeForm.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.BaseForm.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgCourse.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgCourseWithLevel.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgLevel.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgStudent.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgStudyYear.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgTeatcher.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.lookupRole.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmBaseOpration.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmBasicSimpleDialogue.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmConnectionSetting.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmLog.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frmMain.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.AddSem.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.ComeAndLeave.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmActiveTerm.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmBackUpRestore.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmChanagePassWord.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmClass.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmCourse.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLevelCourseold.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLogoLoad.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmPageOperationRole.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLevelCourse.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmRoles.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmSchoolData.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmShowDatacs.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStdnt.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmDegreeTest.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudentAbsent.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudentDegree.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudyYear.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmTeacher.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmUsers.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmViewTeatcher.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.MyMessageBox.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.NotifiForm.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.ProgramContinue.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Properties.Resources.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.rpt.FrmRptShow.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.ar-YE.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.ar.resources
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.csproj.GenerateResource.Cache
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\RdlCompile.cache
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\RdlCompile.compiled
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\ar-YE\SchoolProject.resources.dll
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\ar\SchoolProject.resources.dll
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.exe
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.pdb
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\SchoolProject.pdb
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\ar-YE\SchoolProject.resources.dll
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\ar\SchoolProject.resources.dll
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.CustControl.SamControlToolStrip.resources
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\WindowsFormcustom.exe
+F:\SchoolProject\SchoolProject\SchoolProject\bin\Debug\WindowsFormcustom.pdb
+F:\SchoolProject\SchoolProject\SchoolProject\obj\Debug\SchoolProject.csprojResolveAssemblyReference.cache
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\SchoolProject.exe
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\SchoolProject.exe.config
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\ConvertImage.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\EntityFramework.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\EntityFramework.SqlServer.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.ManagedConnections.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.Smo.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.Types.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.ManagedDTS.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.Dmf.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.DTSRuntimeWrap.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.PipelineHost.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.DTSPipelineWrap.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\EntityFramework.xml
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\EntityFramework.SqlServer.xml
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.BaseBasicDialogeForm.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.BaseForm.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.CustControl.SamControlToolStrip.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgCourse.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgCourseWithLevel.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgLevel.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgStudent.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgStudyYear.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgTeatcher.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.lookupRole.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmBaseOpration.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmBasicSimpleDialogue.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmConnectionSetting.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmLog.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frmMain.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.AddSem.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.ComeAndLeave.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmActiveTerm.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmBackUpRestore.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmChanagePassWord.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmClass.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmCourse.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLevelCourseold.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLogoLoad.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmPageOperationRole.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLevelCourse.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmRoles.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmRoom.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmSchoolData.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmShowDatacs.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStdnt.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudentAbsent.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudentDegree.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudyYear.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmTeacher.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmUsers.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmViewTeatcher.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.MyMessageBox.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.NotifiForm.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.ProgramContinue.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Properties.Resources.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.rpt.FrmRptShow.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.ar-YE.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.ar.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.csproj.GenerateResource.Cache
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\RdlCompile.cache
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\RdlCompile.compiled
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\ar-YE\SchoolProject.resources.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\ar\SchoolProject.resources.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.exe
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.pdb
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\SchoolProject.pdb
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\ar-YE\SchoolProject.resources.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\bin\Debug\ar\SchoolProject.resources.dll
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmDistrubuteStudentForRoom.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmShowDatacsForTerm.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmUpdateStudentDegree.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmDegreeTestNew.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmExamTable.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLectureWeek.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmDistrabuteInGroup.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Frm1.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmPeriodExam.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLectureWeekNew.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmAddTypeTeatcher.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Form1.resources
+F:\SchoolProject\SchoolProject2021_02_22_0745pm\SchoolProject\SchoolProject\obj\Debug\SchoolProject.csprojResolveAssemblyReference.cache
+E:\SharedApps\SchoolProject\SchoolProject\bin\Debug\SchoolProject.exe.config
+E:\SharedApps\SchoolProject\SchoolProject\bin\Debug\SchoolProject.exe
+E:\SharedApps\SchoolProject\SchoolProject\bin\Debug\SchoolProject.pdb
+E:\SharedApps\SchoolProject\SchoolProject\bin\Debug\ar-YE\SchoolProject.resources.dll
+E:\SharedApps\SchoolProject\SchoolProject\bin\Debug\ar\SchoolProject.resources.dll
+E:\SharedApps\SchoolProject\SchoolProject\bin\Debug\EntityFramework.dll
+E:\SharedApps\SchoolProject\SchoolProject\bin\Debug\EntityFramework.SqlServer.dll
+E:\SharedApps\SchoolProject\SchoolProject\bin\Debug\EntityFramework.xml
+E:\SharedApps\SchoolProject\SchoolProject\bin\Debug\EntityFramework.SqlServer.xml
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.csproj.AssemblyReference.cache
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.BaseBasicDialogeForm.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.BaseForm.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.CustControl.SamControlToolStrip.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgCourse.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgCourseWithLevel.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgLevel.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgStudent.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgStudyYear.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgTeatcher.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.lookupRole.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Form1.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Frm1.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmBaseOpration.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmBasicSimpleDialogue.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmConnectionSetting.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.FrmLog.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frmMain.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.AddSem.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.ComeAndLeave.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmActiveTerm.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmAddTypeTeatcher.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmBackUpRestore.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmChanagePassWord.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmClass.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmCourse.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmDegreeTestNew.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmDistrabuteInGroup.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmDistrubuteStudentForRoom.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmExamTable.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLectureWeekNew.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLectureWeek.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLevelCourseold.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLogoLoad.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmPageOperationRole.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLevelCourse.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmPeriodExam.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmRoles.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmRoom.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmSchoolData.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmUpdateStudentDegree.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmShowDatacsForTerm.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmShowDatacs.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStdnt.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudentAbsent.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudentDegree.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudyYear.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmTeacher.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmUsers.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmViewTeatcher.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.MyMessageBox.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.NotifiForm.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.ProgramContinue.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.Properties.Resources.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.rpt.FrmRptShow.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.ar-YE.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.ar.resources
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.csproj.GenerateResource.cache
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\RdlCompile.cache
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\RdlCompile.compiled
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.csproj.CoreCompileInputs.cache
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\ar-YE\SchoolProject.resources.dll
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\ar\SchoolProject.resources.dll
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.csproj.CopyComplete
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.exe
+E:\SharedApps\SchoolProject\SchoolProject\obj\Debug\SchoolProject.pdb
+E:\SharedApps\SchoolProject\SchoolProject\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+E:\SharedApps\SchoolProject\SchoolProject\bin\Debug\Microsoft.SqlServer.Types.dll
+E:\SharedApps\GitHub\schoolProject\SchoolProject\bin\Debug\SchoolProject.exe.config
+E:\SharedApps\GitHub\schoolProject\SchoolProject\bin\Debug\SchoolProject.exe
+E:\SharedApps\GitHub\schoolProject\SchoolProject\bin\Debug\SchoolProject.pdb
+E:\SharedApps\GitHub\schoolProject\SchoolProject\bin\Debug\ar-YE\SchoolProject.resources.dll
+E:\SharedApps\GitHub\schoolProject\SchoolProject\bin\Debug\ar\SchoolProject.resources.dll
+E:\SharedApps\GitHub\schoolProject\SchoolProject\bin\Debug\EntityFramework.dll
+E:\SharedApps\GitHub\schoolProject\SchoolProject\bin\Debug\EntityFramework.SqlServer.dll
+E:\SharedApps\GitHub\schoolProject\SchoolProject\bin\Debug\EntityFramework.xml
+E:\SharedApps\GitHub\schoolProject\SchoolProject\bin\Debug\EntityFramework.SqlServer.xml
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.csproj.AssemblyReference.cache
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.BaseBasicDialogeForm.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.BaseForm.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.CustControl.SamControlToolStrip.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgCourse.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgCourseWithLevel.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgLevel.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgStudent.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgStudyYear.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.DlgTeatcher.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.Dialog.lookupRole.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.Form1.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.Frm1.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.FrmBaseOpration.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.FrmBasicSimpleDialogue.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.FrmConnectionSetting.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.FrmLog.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frmMain.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.AddSem.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.ComeAndLeave.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmActiveTerm.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmAddTypeTeatcher.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmBackUpRestore.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmChanagePassWord.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmClass.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmCourse.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmDegreeTestNew.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmDistrabuteInGroup.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmDistrubuteStudentForRoom.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmExamTable.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLectureWeekNew.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLectureWeek.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLevelCourseold.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLogoLoad.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmPageOperationRole.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmLevelCourse.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmPeriodExam.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmRoles.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmRoom.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmSchoolData.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmUpdateStudentDegree.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmShowDatacsForTerm.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmShowDatacs.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStdnt.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudentAbsent.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudentDegree.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudyYear.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmTeacher.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmUsers.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmViewTeatcher.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.MyMessageBox.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.NotifiForm.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.ProgramContinue.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.Properties.Resources.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.rpt.FrmRptShow.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.ar-YE.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.frm.FrmStudent.ar.resources
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.csproj.GenerateResource.cache
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\RdlCompile.cache
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\RdlCompile.compiled
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.csproj.CoreCompileInputs.cache
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\ar-YE\SchoolProject.resources.dll
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\ar\SchoolProject.resources.dll
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.csproj.CopyComplete
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.exe
+E:\SharedApps\GitHub\schoolProject\SchoolProject\obj\Debug\SchoolProject.pdb

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8aa290fdae9248f18c9067ad919f6b40" Name="Diagram1" ZoomLevel="90">
+        <EntityTypeShape EntityType="alhaqldbModel.course" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="alhaqldbModel.studyYear" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="alhaqldbModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="alhaqldbModel.term" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="alhaqldbModel.Coding" Width="1.5" PointX="12.125" PointY="5.25" />
+        <EntityTypeShape EntityType="alhaqldbModel.Group" Width="1.5" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="alhaqldbModel.PageCategory" Width="1.5" PointX="11.875" PointY="14.125" />
+        <EntityTypeShape EntityType="alhaqldbModel.PageOperaion" Width="1.5" PointX="16.375" PointY="14.625" />
+        <EntityTypeShape EntityType="alhaqldbModel.PageOperationRole" Width="1.5" PointX="18.625" PointY="7.125" />
+        <EntityTypeShape EntityType="alhaqldbModel.Page" Width="1.5" PointX="14.125" PointY="14.625" />
+        <EntityTypeShape EntityType="alhaqldbModel.Role" Width="1.5" PointX="13.375" PointY="7.875" />
+        <AssociationConnector Association="alhaqldbModel.FK_Pages_PageCategories" />
+        <AssociationConnector Association="alhaqldbModel.FK_PageOperaions_Pages" />
+        <AssociationConnector Association="alhaqldbModel.FK_PageOperationRoles_PageOperaions" />
+        <AssociationConnector Association="alhaqldbModel.FK_PageOperationRoles_Roles" />
+        <AssociationConnector Association="alhaqldbModel.FK_studyYear_studyYear" />
+        <EntityTypeShape EntityType="alhaqldbModel.studentdegree" Width="1.5" PointX="23.125" PointY="9.75" />
+        <AssociationConnector Association="alhaqldbModel.FK_studentdegree_studyYear" />
+        <AssociationConnector Association="alhaqldbModel.FK_studentdegree_terms" />
+        <EntityTypeShape EntityType="alhaqldbModel.Plan" Width="1.5" PointX="7.375" PointY="17.125" />
+        <AssociationConnector Association="alhaqldbModel.FK_Plans_studyYear" />
+        <EntityTypeShape EntityType="alhaqldbModel.StudentAbsent" Width="1.5" PointX="23.125" PointY="5.625" />
+        <EntityTypeShape EntityType="alhaqldbModel.User" Width="1.5" PointX="15.625" PointY="3.5" />
+        <AssociationConnector Association="alhaqldbModel.FK_Users_Roles" />
+        <EntityTypeShape EntityType="alhaqldbModel.StudentLevel" Width="1.5" PointX="26.125" PointY="7.75" />
+        <AssociationConnector Association="alhaqldbModel.FK_StudentLevels_studyYear" />
+        <EntityTypeShape EntityType="alhaqldbModel.TermPlan" Width="1.5" PointX="9.625" PointY="12" />
+        <AssociationConnector Association="alhaqldbModel.FK_TermPlan_Plans" />
+        <AssociationConnector Association="alhaqldbModel.FK_TermPlan_terms" />
+        <AssociationConnector Association="alhaqldbModel.FK_StudentLevels_Group" />
+        <EntityTypeShape EntityType="alhaqldbModel.student" Width="1.5" PointX="20.875" PointY="1.875" />
+        <AssociationConnector Association="alhaqldbModel.FK_student_Group" />
+        <AssociationConnector Association="alhaqldbModel.FK_student_studyYear" />
+        <AssociationConnector Association="alhaqldbModel.FK_student_Users_add" />
+        <AssociationConnector Association="alhaqldbModel.FK_student_Users_del" />
+        <AssociationConnector Association="alhaqldbModel.FK_student_Users_edit" />
+        <AssociationConnector Association="alhaqldbModel.FK_StudentAbsent_student" />
+        <AssociationConnector Association="alhaqldbModel.FK_studentdegree_student" />
+        <AssociationConnector Association="alhaqldbModel.FK_StudentLevels_student" />
+        <EntityTypeShape EntityType="alhaqldbModel.schoolData" Width="1.5" PointX="5.625" PointY="22" />
+        <AssociationConnector Association="alhaqldbModel.FK_Users_schoolData" />
+        <EntityTypeShape EntityType="alhaqldbModel.Teacher" Width="1.5" PointX="3.375" PointY="26.375" />
+        <EntityTypeShape EntityType="alhaqldbModel.TypeTeatcher" Width="1.5" PointX="1.125" PointY="28" />
+        <AssociationConnector Association="alhaqldbModel.FK_schoolData_Teacher" />
+        <AssociationConnector Association="alhaqldbModel.FK_Teacher_TypeTeatcher" />
+        <EntityTypeShape EntityType="alhaqldbModel.ProfilePermanence" Width="1.5" PointX="5.875" PointY="27.625" />
+        <AssociationConnector Association="alhaqldbModel.FK_ProfilePermanences_Teacher" />
+        <EntityTypeShape EntityType="alhaqldbModel.level" Width="1.5" PointX="7.375" PointY="4" />
+        <EntityTypeShape EntityType="alhaqldbModel.Room" Width="1.5" PointX="24.125" PointY="2.375" />
+        <AssociationConnector Association="alhaqldbModel.FK_levels_levels" />
+        <AssociationConnector Association="alhaqldbModel.FK_StudentAbsent_levels" />
+        <AssociationConnector Association="alhaqldbModel.FK_studentdegree_levels" />
+        <AssociationConnector Association="alhaqldbModel.FK_StudentLevels_Levels" />
+        <AssociationConnector Association="alhaqldbModel.FK_ProfilePermanences_studyYear" />
+        <EntityTypeShape EntityType="alhaqldbModel.LectureWeek" Width="1.5" PointX="10.625" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="alhaqldbModel.FK_LectureWeek_course" />
+        <AssociationConnector Association="alhaqldbModel.FK_LectureWeek_levels" />
+        <AssociationConnector Association="alhaqldbModel.FK_LectureWeek_studyYear" />
+        <AssociationConnector Association="alhaqldbModel.FK_LectureWeek_terms" />
+        <EntityTypeShape EntityType="alhaqldbModel.BasicStudentDataV" Width="1.5" PointX="14.375" PointY="17.75" />
+        <EntityTypeShape EntityType="alhaqldbModel.LevelCourse" Width="1.5" PointX="11.875" PointY="18.75" />
+        <AssociationConnector Association="alhaqldbModel.FK_LevelCourse_course" />
+        <AssociationConnector Association="alhaqldbModel.FK_LevelCourse_levels" />
+        <AssociationConnector Association="alhaqldbModel.FK_LevelCourse_Plans" />
+        <AssociationConnector Association="alhaqldbModel.FK_LevelCourse_Teacher" />
+        <AssociationConnector Association="alhaqldbModel.FK_LevelCourse_TermPlan" />
+        <AssociationConnector Association="alhaqldbModel.FK_LevelCourse_terms" />
+        <AssociationConnector Association="alhaqldbModel.FK_studentdegree_levelCourse" />
+        <EntityTypeShape EntityType="alhaqldbModel.TypeLevel" Width="1.5" PointX="0.625" PointY="5.25" />
+        <AssociationConnector Association="alhaqldbModel.FK_course_TypeLevel" />
+        <AssociationConnector Association="alhaqldbModel.FK_levels_TypeLevel" />
+        <EntityTypeShape EntityType="alhaqldbModel.GradeRank" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="alhaqldbModel.ExamPeriod" Width="1.5" PointX="26.125" PointY="17" />
+        <EntityTypeShape EntityType="alhaqldbModel.Period" Width="1.5" PointX="23.875" PointY="17.625" />
+        <EntityTypeShape EntityType="alhaqldbModel.RoomStudentInExam" Width="1.5" PointX="28.375" PointY="6.375" />
+        <AssociationConnector Association="alhaqldbModel.FK_ExamPeriod_Periods" />
+        <AssociationConnector Association="alhaqldbModel.FK_RoomStudentInExam_ExamPeriod" />
+        <AssociationConnector Association="alhaqldbModel.FK_RoomStudentInExam_levels" />
+        <AssociationConnector Association="alhaqldbModel.FK_RoomStudentInExam_Rooms" />
+        <AssociationConnector Association="alhaqldbModel.FK_RoomStudentInExam_student" />
+        <AssociationConnector Association="alhaqldbModel.FK_RoomStudentInExam_studyYear" />
+        <AssociationConnector Association="alhaqldbModel.FK_RoomStudentInExam_terms" />
+        <EntityTypeShape EntityType="alhaqldbModel.TableExam" Width="1.5" PointX="28.375" PointY="12" />
+        <AssociationConnector Association="alhaqldbModel.FK_TableExam_course" />
+        <AssociationConnector Association="alhaqldbModel.FK_TableExam_ExamPeriod" />
+        <AssociationConnector Association="alhaqldbModel.FK_TableExam_levels" />
+        <AssociationConnector Association="alhaqldbModel.FK_TableExam_studyYear" />
+        <AssociationConnector Association="alhaqldbModel.FK_TableExam_terms" />
+        <EntityTypeShape EntityType="alhaqldbModel.TblNotify" Width="1.5" PointX="9.375" PointY="5.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

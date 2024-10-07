@@ -1,0 +1,1931 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="alhaqldbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Codings">
+    <Key>
+      <PropertyRef Name="CodeID" />
+      <PropertyRef Name="CodeNo" />
+    </Key>
+    <Property Name="CodeID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodeNo" Type="int" Nullable="false" />
+    <Property Name="CodeName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="course">
+    <Key>
+      <PropertyRef Name="courseid" />
+    </Key>
+    <Property Name="courseid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="coursename" Type="nvarchar" MaxLength="20" />
+    <Property Name="sortshowInReport" Type="int" />
+    <Property Name="CourseLevelType" Type="int" />
+  </EntityType>
+  <EntityType Name="ExamPeriod">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PeriodID" Type="int" />
+    <Property Name="FromTime" Type="datetime" />
+    <Property Name="ToTime" Type="datetime" />
+    <Property Name="ExamTime" Type="int" />
+    <Property Name="YearID" Type="int" />
+    <Property Name="TermID" Type="int" />
+  </EntityType>
+  <EntityType Name="GradeRank">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FromGrade" Type="float" />
+    <Property Name="ToGrade" Type="float" />
+    <Property Name="RankName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupName" Type="nchar" MaxLength="10" />
+    <Property Name="NumberPlace" Type="int" />
+    <Property Name="IsShowInList" Type="bit" />
+  </EntityType>
+  <EntityType Name="LectureWeek">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumLecture" Type="int" />
+    <Property Name="LectureName" Type="nvarchar" MaxLength="50" />
+    <Property Name="cDay" Type="date" />
+    <Property Name="CdayNum" Type="int" />
+    <Property Name="fromdate" Type="time" Precision="7" />
+    <Property Name="toDate" Type="time" Precision="7" />
+    <Property Name="courseid" Type="int" />
+    <Property Name="levelid" Type="int" />
+    <Property Name="termid" Type="int" />
+    <Property Name="IDRoom" Type="int" />
+    <Property Name="YearID" Type="int" />
+  </EntityType>
+  <EntityType Name="LevelCourse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LevelID" Type="int" />
+    <Property Name="CourseID" Type="int" />
+    <Property Name="termID" Type="int" />
+    <Property Name="maxDegree" Type="float" />
+    <Property Name="minDegree" Type="float" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="PlanID" Type="int" />
+    <Property Name="DefaultDegree" Type="float" />
+    <Property Name="TermPlanID" Type="int" />
+    <Property Name="TeacherID" Type="int" />
+    <Property Name="BredLevel" Type="int" />
+  </EntityType>
+  <EntityType Name="levels">
+    <Key>
+      <PropertyRef Name="levelid" />
+    </Key>
+    <Property Name="levelid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="levelname" Type="nvarchar" MaxLength="20" />
+    <Property Name="numbercourseterm1" Type="int" />
+    <Property Name="nextLevelID" Type="int" />
+    <Property Name="IsStop" Type="bit" />
+    <Property Name="LevelTypeID" Type="int" />
+  </EntityType>
+  <EntityType Name="PageCategories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActiveStatus" Type="bit" />
+    <Property Name="Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="AddingDate" Type="datetime" />
+    <Property Name="EditUserID" Type="int" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DeletingUserID" Type="int" />
+    <Property Name="DeletingDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PageOperaions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageID" Type="int" />
+    <Property Name="OperationName" Type="nvarchar" MaxLength="50" />
+    <Property Name="OperationSymbol" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="PageOperationRoles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageOperationID" Type="int" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="AddingDate" Type="datetime" />
+    <Property Name="EditUserID" Type="int" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="DeletingUserID" Type="int" />
+    <Property Name="DeletingDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Pages">
+    <Key>
+      <PropertyRef Name="PageID" />
+    </Key>
+    <Property Name="PageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PageName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PageTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="PageCategoryID" Type="int" />
+  </EntityType>
+  <EntityType Name="Periods">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Plans">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="60" />
+    <Property Name="Descript" Type="nvarchar" MaxLength="100" />
+    <Property Name="sadte" Type="date" />
+    <Property Name="edate" Type="date" />
+    <Property Name="active" Type="bit" />
+    <Property Name="IsRemoved" Type="bit" />
+    <Property Name="InstDeptSpecID" Type="int" />
+    <Property Name="YearID" Type="int" />
+  </EntityType>
+  <EntityType Name="ProfilePermanences">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TeatcherID" Type="int" />
+    <Property Name="Cdate" Type="datetime" />
+    <Property Name="NumberDay" Type="int" />
+    <Property Name="NumberWeek" Type="int" />
+    <Property Name="DayName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PringTime" Type="nvarchar" MaxLength="30" />
+    <Property Name="LogoutTime" Type="nvarchar" MaxLength="30" />
+    <Property Name="YearID" Type="int" />
+    <Property Name="YearProfile" Type="int" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsRoleActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="Rooms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoomName" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsShow" Type="bit" />
+    <Property Name="NumberOfPlace" Type="int" />
+  </EntityType>
+  <EntityType Name="RoomStudentInExam">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StdID" Type="int" />
+    <Property Name="RoomID" Type="int" />
+    <Property Name="LevelID" Type="int" />
+    <Property Name="TermID" Type="int" />
+    <Property Name="YearID" Type="int" />
+    <Property Name="NumberPlace" Type="int" />
+    <Property Name="NumperPass" Type="int" />
+    <Property Name="PeriodID" Type="int" />
+  </EntityType>
+  <EntityType Name="schoolData">
+    <Key>
+      <PropertyRef Name="seqid" />
+    </Key>
+    <Property Name="seqid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="schoolName" Type="nvarchar" MaxLength="50" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="gover" Type="nvarchar" MaxLength="50" />
+    <Property Name="LogoImage" Type="image" />
+    <Property Name="AdminSchool" Type="int" />
+    <Property Name="Village" Type="nvarchar" MaxLength="50" />
+    <Property Name="HeaderExam" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdminCity" Type="nvarchar" MaxLength="50" />
+    <Property Name="Appropriate" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeptStatistical" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdminGeneralGover" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdminHeadExamGover" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SeqID" Type="int" Nullable="false" />
+    <Property Name="sname" Type="nvarchar" MaxLength="50" />
+    <Property Name="levelid" Type="int" />
+    <Property Name="BirthPlace" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="20" />
+    <Property Name="gender" Type="nvarchar" MaxLength="10" />
+    <Property Name="natianalityt" Type="nvarchar" MaxLength="20" />
+    <Property Name="yearid" Type="int" />
+    <Property Name="lvlState" Type="nvarchar" MaxLength="10" />
+    <Property Name="sgroup" Type="nchar" MaxLength="5" />
+    <Property Name="bdate" Type="date" />
+    <Property Name="stdImage" Type="image" />
+    <Property Name="Village" Type="nvarchar" MaxLength="30" />
+    <Property Name="IsLeave" Type="bit" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="EditDate" Type="date" />
+    <Property Name="DeletDate" Type="date" />
+    <Property Name="UserAdd" Type="int" />
+    <Property Name="UserEdit" Type="int" />
+    <Property Name="UserDelete" Type="int" />
+    <Property Name="GroupID" Type="int" />
+  </EntityType>
+  <EntityType Name="StudentAbsent">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SID" Type="int" />
+    <Property Name="CDate" Type="date" />
+    <Property Name="Status" Type="nvarchar" MaxLength="10" />
+    <Property Name="CDay" Type="nvarchar" MaxLength="20" />
+    <Property Name="NumAbsent" Type="int" />
+    <Property Name="LevelID" Type="int" />
+    <Property Name="IsFind" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="studentAN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="atdSeq" Type="int" Nullable="false" />
+    <Property Name="sname" Type="nvarchar" MaxLength="30" />
+    <Property Name="levelid" Type="int" />
+    <Property Name="city" Type="nvarchar" MaxLength="20" />
+    <Property Name="address" Type="nvarchar" MaxLength="20" />
+    <Property Name="gender" Type="nvarchar" MaxLength="10" />
+    <Property Name="natianalityt" Type="nvarchar" MaxLength="20" />
+    <Property Name="yearid" Type="int" />
+    <Property Name="status" Type="nvarchar" MaxLength="10" />
+    <Property Name="sgroup" Type="nchar" MaxLength="5" />
+    <Property Name="bdate" Type="date" />
+  </EntityType>
+  <EntityType Name="studentdegree">
+    <Key>
+      <PropertyRef Name="seqid" />
+    </Key>
+    <Property Name="seqid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="studentid" Type="int" />
+    <Property Name="levelid" Type="int" />
+    <Property Name="courseLevelID" Type="int" />
+    <Property Name="courseID" Type="int" />
+    <Property Name="termid" Type="int" />
+    <Property Name="deg1" Type="float" />
+    <Property Name="deg2" Type="float" />
+    <Property Name="total" Type="float" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="deg3" Type="float" />
+    <Property Name="deg4" Type="float" />
+    <Property Name="forFull" Type="float" />
+    <Property Name="total2" Type="float" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="TotalAll" Type="float" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="yearID" Type="int" />
+    <Property Name="amontapsentcourse" Type="int" />
+  </EntityType>
+  <EntityType Name="StudentLevels">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StdID" Type="int" />
+    <Property Name="LevelID" Type="int" />
+    <Property Name="YearID" Type="int" />
+    <Property Name="active" Type="bit" />
+    <Property Name="lvlState" Type="nvarchar" MaxLength="20" />
+    <Property Name="sgroup" Type="nvarchar" MaxLength="20" />
+    <Property Name="GroupID" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="studyYear">
+    <Key>
+      <PropertyRef Name="seqid" />
+    </Key>
+    <Property Name="seqid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FormYear" Type="smallint" />
+    <Property Name="ToYear" Type="smallint" />
+    <Property Name="studyYearEngl" Type="nvarchar" MaxLength="15" />
+    <Property Name="studyYearArab" Type="nvarchar" MaxLength="15" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="NextYear" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TableExam">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CDate" Type="date" />
+    <Property Name="DayName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DayNumber" Type="int" />
+    <Property Name="LevelID" Type="int" />
+    <Property Name="TermID" Type="int" />
+    <Property Name="YearID" Type="int" />
+    <Property Name="CourseID" Type="int" />
+    <Property Name="Time" Type="time" Precision="7" />
+    <Property Name="CDateString" Type="nvarchar" MaxLength="50" />
+    <Property Name="PeriodID" Type="int" />
+    <Property Name="ExamPeriodTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TblNotify">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LectureName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DayNum" Type="int" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="TermID" Type="int" />
+    <Property Name="YearID" Type="int" />
+    <Property Name="FromTime" Type="time" Precision="7" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TeacherName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="14" />
+    <Property Name="Quali" Type="nvarchar" MaxLength="50" />
+    <Property Name="Experties" Type="nvarchar" MaxLength="50" />
+    <Property Name="QualiDate" Type="date" />
+    <Property Name="QualiPlace" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="TypeTeacher" Type="nvarchar" MaxLength="20" />
+    <Property Name="TypeTeacherID" Type="int" />
+    <Property Name="Rateb" Type="float" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="UserAdd" Type="int" />
+    <Property Name="EditDate" Type="date" />
+    <Property Name="UserEdit" Type="int" />
+    <Property Name="DeleteDate" Type="date" />
+    <Property Name="UserDelete" Type="int" />
+    <Property Name="IsDelete" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="TermPlan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TermID" Type="int" />
+    <Property Name="PlanID" Type="int" />
+    <Property Name="Sdate" Type="date" />
+    <Property Name="Edate" Type="date" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="terms">
+    <Key>
+      <PropertyRef Name="termid" />
+    </Key>
+    <Property Name="termid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="termname" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="TypeLevel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LevelTypeName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TypeTeatcher">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsShowInCombo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoginName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pwd" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="int" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="SchoolID" Type="int" />
+    <Property Name="branchID" Type="int" />
+    <Property Name="TempStop" Type="bit" />
+    <Property Name="BoxAccountID" Type="bigint" />
+    <Property Name="Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="AddingDate" Type="datetime" />
+    <Property Name="EditUserID" Type="int" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DeletingUserID" Type="int" />
+    <Property Name="DeletingDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SchoolPublic.dbo.BasicStudentDataV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BasicStudentDataV">
+    <Key>
+      <PropertyRef Name="stdid" />
+      <PropertyRef Name="SeqID" />
+      <PropertyRef Name="courseid" />
+      <PropertyRef Name="TotalAll" />
+      <PropertyRef Name="levelid" />
+      <PropertyRef Name="yearID" />
+      <PropertyRef Name="coursFialCount" />
+      <PropertyRef Name="amontapsentcourse" />
+      <PropertyRef Name="StudentRamk" />
+      <PropertyRef Name="StudentRamkByLevel" />
+      <PropertyRef Name="genderNumber" />
+      <PropertyRef Name="IsLeave" />
+    </Key>
+    <Property Name="stdid" Type="int" Nullable="false" />
+    <Property Name="sname" Type="nvarchar" MaxLength="50" />
+    <Property Name="SeqID" Type="int" Nullable="false" />
+    <Property Name="BirthPlace" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="20" />
+    <Property Name="gender" Type="nvarchar" MaxLength="10" />
+    <Property Name="natianalityt" Type="nvarchar" MaxLength="20" />
+    <Property Name="lvlState" Type="nvarchar" MaxLength="20" />
+    <Property Name="sgroup" Type="nchar" MaxLength="10" />
+    <Property Name="GroupID" Type="int" />
+    <Property Name="bdate" Type="date" />
+    <Property Name="Village" Type="nvarchar" MaxLength="30" />
+    <Property Name="stdImage" Type="image" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="EditDate" Type="date" />
+    <Property Name="DeletDate" Type="date" />
+    <Property Name="UserAdd" Type="int" />
+    <Property Name="UserEdit" Type="int" />
+    <Property Name="UserDelete" Type="int" />
+    <Property Name="courseLevelID" Type="int" />
+    <Property Name="courseid" Type="int" Nullable="false" />
+    <Property Name="coursename" Type="nvarchar" MaxLength="20" />
+    <Property Name="deg1" Type="float" />
+    <Property Name="deg2" Type="float" />
+    <Property Name="deg3" Type="float" />
+    <Property Name="deg4" Type="float" />
+    <Property Name="forFull" Type="float" />
+    <Property Name="TotalAll" Type="float" Nullable="false" />
+    <Property Name="termid" Type="int" />
+    <Property Name="termname" Type="nvarchar" MaxLength="15" />
+    <Property Name="levelid" Type="int" Nullable="false" />
+    <Property Name="levelname" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="yearID" Type="int" Nullable="false" />
+    <Property Name="studyYearEngl" Type="nvarchar" MaxLength="15" />
+    <Property Name="rnkTotal" Type="float" />
+    <Property Name="coursFialCount" Type="int" Nullable="false" />
+    <Property Name="amontapsentcourse" Type="int" Nullable="false" />
+    <Property Name="StudentRamk" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="StudentRamkByLevel" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="avgst" Type="float" />
+    <Property Name="curseCount" Type="int" />
+    <Property Name="ResultTxt" Type="varchar" MaxLength="1" />
+    <Property Name="genderNumber" Type="int" Nullable="false" />
+    <Property Name="IsLeave" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_course_TypeLevel">
+    <End Role="TypeLevel" Type="Self.TypeLevel" Multiplicity="0..1" />
+    <End Role="course" Type="Self.course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeLevel">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="course">
+        <PropertyRef Name="CourseLevelType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExamPeriod_Periods">
+    <End Role="Periods" Type="Self.Periods" Multiplicity="0..1" />
+    <End Role="ExamPeriod" Type="Self.ExamPeriod" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Periods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ExamPeriod">
+        <PropertyRef Name="PeriodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LectureWeek_course">
+    <End Role="course" Type="Self.course" Multiplicity="0..1" />
+    <End Role="LectureWeek" Type="Self.LectureWeek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="course">
+        <PropertyRef Name="courseid" />
+      </Principal>
+      <Dependent Role="LectureWeek">
+        <PropertyRef Name="courseid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LectureWeek_levels">
+    <End Role="levels" Type="Self.levels" Multiplicity="0..1" />
+    <End Role="LectureWeek" Type="Self.LectureWeek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="levels">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="LectureWeek">
+        <PropertyRef Name="levelid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LectureWeek_studyYear">
+    <End Role="studyYear" Type="Self.studyYear" Multiplicity="0..1" />
+    <End Role="LectureWeek" Type="Self.LectureWeek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="LectureWeek">
+        <PropertyRef Name="YearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LectureWeek_terms">
+    <End Role="terms" Type="Self.terms" Multiplicity="0..1" />
+    <End Role="LectureWeek" Type="Self.LectureWeek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="terms">
+        <PropertyRef Name="termid" />
+      </Principal>
+      <Dependent Role="LectureWeek">
+        <PropertyRef Name="termid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LevelCourse_course">
+    <End Role="course" Type="Self.course" Multiplicity="0..1" />
+    <End Role="LevelCourse" Type="Self.LevelCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="course">
+        <PropertyRef Name="courseid" />
+      </Principal>
+      <Dependent Role="LevelCourse">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LevelCourse_levels">
+    <End Role="levels" Type="Self.levels" Multiplicity="0..1" />
+    <End Role="LevelCourse" Type="Self.LevelCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="levels">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="LevelCourse">
+        <PropertyRef Name="LevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LevelCourse_Plans">
+    <End Role="Plans" Type="Self.Plans" Multiplicity="0..1" />
+    <End Role="LevelCourse" Type="Self.LevelCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plans">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LevelCourse">
+        <PropertyRef Name="PlanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LevelCourse_Teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+    <End Role="LevelCourse" Type="Self.LevelCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LevelCourse">
+        <PropertyRef Name="TeacherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LevelCourse_TermPlan">
+    <End Role="TermPlan" Type="Self.TermPlan" Multiplicity="0..1" />
+    <End Role="LevelCourse" Type="Self.LevelCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TermPlan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LevelCourse">
+        <PropertyRef Name="TermPlanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LevelCourse_terms">
+    <End Role="terms" Type="Self.terms" Multiplicity="0..1" />
+    <End Role="LevelCourse" Type="Self.LevelCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="terms">
+        <PropertyRef Name="termid" />
+      </Principal>
+      <Dependent Role="LevelCourse">
+        <PropertyRef Name="termID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_levels_levels">
+    <End Role="levels" Type="Self.levels" Multiplicity="0..1" />
+    <End Role="levels1" Type="Self.levels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="levels">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="levels1">
+        <PropertyRef Name="nextLevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_levels_TypeLevel">
+    <End Role="TypeLevel" Type="Self.TypeLevel" Multiplicity="0..1" />
+    <End Role="levels" Type="Self.levels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeLevel">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="levels">
+        <PropertyRef Name="LevelTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageOperaions_Pages">
+    <End Role="Pages" Type="Self.Pages" Multiplicity="0..1" />
+    <End Role="PageOperaions" Type="Self.PageOperaions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pages">
+        <PropertyRef Name="PageID" />
+      </Principal>
+      <Dependent Role="PageOperaions">
+        <PropertyRef Name="PageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageOperationRoles_PageOperaions">
+    <End Role="PageOperaions" Type="Self.PageOperaions" Multiplicity="0..1" />
+    <End Role="PageOperationRoles" Type="Self.PageOperationRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PageOperaions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PageOperationRoles">
+        <PropertyRef Name="PageOperationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageOperationRoles_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="PageOperationRoles" Type="Self.PageOperationRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PageOperationRoles">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pages_PageCategories">
+    <End Role="PageCategories" Type="Self.PageCategories" Multiplicity="0..1" />
+    <End Role="Pages" Type="Self.Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PageCategories">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Pages">
+        <PropertyRef Name="PageCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Plans_studyYear">
+    <End Role="studyYear" Type="Self.studyYear" Multiplicity="0..1" />
+    <End Role="Plans" Type="Self.Plans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="Plans">
+        <PropertyRef Name="YearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfilePermanences_studyYear">
+    <End Role="studyYear" Type="Self.studyYear" Multiplicity="0..1" />
+    <End Role="ProfilePermanences" Type="Self.ProfilePermanences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="ProfilePermanences">
+        <PropertyRef Name="YearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfilePermanences_Teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+    <End Role="ProfilePermanences" Type="Self.ProfilePermanences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProfilePermanences">
+        <PropertyRef Name="TeatcherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomStudentInExam_ExamPeriod">
+    <End Role="ExamPeriod" Type="Self.ExamPeriod" Multiplicity="0..1" />
+    <End Role="RoomStudentInExam" Type="Self.RoomStudentInExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExamPeriod">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoomStudentInExam">
+        <PropertyRef Name="PeriodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomStudentInExam_levels">
+    <End Role="levels" Type="Self.levels" Multiplicity="0..1" />
+    <End Role="RoomStudentInExam" Type="Self.RoomStudentInExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="levels">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="RoomStudentInExam">
+        <PropertyRef Name="LevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomStudentInExam_Rooms">
+    <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+    <End Role="RoomStudentInExam" Type="Self.RoomStudentInExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rooms">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoomStudentInExam">
+        <PropertyRef Name="RoomID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomStudentInExam_student">
+    <End Role="student" Type="Self.student" Multiplicity="0..1" />
+    <End Role="RoomStudentInExam" Type="Self.RoomStudentInExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoomStudentInExam">
+        <PropertyRef Name="StdID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomStudentInExam_studyYear">
+    <End Role="studyYear" Type="Self.studyYear" Multiplicity="0..1" />
+    <End Role="RoomStudentInExam" Type="Self.RoomStudentInExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="RoomStudentInExam">
+        <PropertyRef Name="YearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomStudentInExam_terms">
+    <End Role="terms" Type="Self.terms" Multiplicity="0..1" />
+    <End Role="RoomStudentInExam" Type="Self.RoomStudentInExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="terms">
+        <PropertyRef Name="termid" />
+      </Principal>
+      <Dependent Role="RoomStudentInExam">
+        <PropertyRef Name="TermID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_schoolData_Teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+    <End Role="schoolData" Type="Self.schoolData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="schoolData">
+        <PropertyRef Name="AdminSchool" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_student_Group">
+    <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
+    <End Role="student" Type="Self.student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_student_studyYear">
+    <End Role="studyYear" Type="Self.studyYear" Multiplicity="0..1" />
+    <End Role="student" Type="Self.student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="yearid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_student_Users_add">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="student" Type="Self.student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="UserAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_student_Users_del">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="student" Type="Self.student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="UserDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_student_Users_edit">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="student" Type="Self.student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="UserEdit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentAbsent_levels">
+    <End Role="levels" Type="Self.levels" Multiplicity="0..1" />
+    <End Role="StudentAbsent" Type="Self.StudentAbsent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="levels">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="StudentAbsent">
+        <PropertyRef Name="LevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentAbsent_student">
+    <End Role="student" Type="Self.student" Multiplicity="0..1" />
+    <End Role="StudentAbsent" Type="Self.StudentAbsent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StudentAbsent">
+        <PropertyRef Name="SID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_studentdegree_levelCourse">
+    <End Role="LevelCourse" Type="Self.LevelCourse" Multiplicity="0..1" />
+    <End Role="studentdegree" Type="Self.studentdegree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LevelCourse">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="studentdegree">
+        <PropertyRef Name="courseLevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_studentdegree_levels">
+    <End Role="levels" Type="Self.levels" Multiplicity="0..1" />
+    <End Role="studentdegree" Type="Self.studentdegree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="levels">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="studentdegree">
+        <PropertyRef Name="levelid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_studentdegree_student">
+    <End Role="student" Type="Self.student" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="studentdegree" Type="Self.studentdegree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="studentdegree">
+        <PropertyRef Name="studentid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_studentdegree_studyYear">
+    <End Role="studyYear" Type="Self.studyYear" Multiplicity="0..1" />
+    <End Role="studentdegree" Type="Self.studentdegree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="studentdegree">
+        <PropertyRef Name="yearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_studentdegree_terms">
+    <End Role="terms" Type="Self.terms" Multiplicity="0..1" />
+    <End Role="studentdegree" Type="Self.studentdegree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="terms">
+        <PropertyRef Name="termid" />
+      </Principal>
+      <Dependent Role="studentdegree">
+        <PropertyRef Name="termid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentLevels_Group">
+    <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
+    <End Role="StudentLevels" Type="Self.StudentLevels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StudentLevels">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentLevels_Levels">
+    <End Role="levels" Type="Self.levels" Multiplicity="0..1" />
+    <End Role="StudentLevels" Type="Self.StudentLevels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="levels">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="StudentLevels">
+        <PropertyRef Name="LevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentLevels_student">
+    <End Role="student" Type="Self.student" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="StudentLevels" Type="Self.StudentLevels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StudentLevels">
+        <PropertyRef Name="StdID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentLevels_studyYear">
+    <End Role="studyYear" Type="Self.studyYear" Multiplicity="0..1" />
+    <End Role="StudentLevels" Type="Self.StudentLevels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="StudentLevels">
+        <PropertyRef Name="YearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_studyYear_studyYear">
+    <End Role="studyYear" Type="Self.studyYear" Multiplicity="0..1" />
+    <End Role="studyYear1" Type="Self.studyYear" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="studyYear1">
+        <PropertyRef Name="NextYear" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableExam_course">
+    <End Role="course" Type="Self.course" Multiplicity="0..1" />
+    <End Role="TableExam" Type="Self.TableExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="course">
+        <PropertyRef Name="courseid" />
+      </Principal>
+      <Dependent Role="TableExam">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableExam_ExamPeriod">
+    <End Role="ExamPeriod" Type="Self.ExamPeriod" Multiplicity="0..1" />
+    <End Role="TableExam" Type="Self.TableExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExamPeriod">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TableExam">
+        <PropertyRef Name="PeriodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableExam_levels">
+    <End Role="levels" Type="Self.levels" Multiplicity="0..1" />
+    <End Role="TableExam" Type="Self.TableExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="levels">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="TableExam">
+        <PropertyRef Name="LevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableExam_studyYear">
+    <End Role="studyYear" Type="Self.studyYear" Multiplicity="0..1" />
+    <End Role="TableExam" Type="Self.TableExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="TableExam">
+        <PropertyRef Name="YearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableExam_terms">
+    <End Role="terms" Type="Self.terms" Multiplicity="0..1" />
+    <End Role="TableExam" Type="Self.TableExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="terms">
+        <PropertyRef Name="termid" />
+      </Principal>
+      <Dependent Role="TableExam">
+        <PropertyRef Name="TermID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teacher_TypeTeatcher">
+    <End Role="TypeTeatcher" Type="Self.TypeTeatcher" Multiplicity="0..1" />
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeTeatcher">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Teacher">
+        <PropertyRef Name="TypeTeacherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TermPlan_Plans">
+    <End Role="Plans" Type="Self.Plans" Multiplicity="0..1" />
+    <End Role="TermPlan" Type="Self.TermPlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plans">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TermPlan">
+        <PropertyRef Name="PlanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TermPlan_terms">
+    <End Role="terms" Type="Self.terms" Multiplicity="0..1" />
+    <End Role="TermPlan" Type="Self.TermPlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="terms">
+        <PropertyRef Name="termid" />
+      </Principal>
+      <Dependent Role="TermPlan">
+        <PropertyRef Name="TermID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_schoolData">
+    <End Role="schoolData" Type="Self.schoolData" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="schoolData">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="SchoolID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AddCourseForStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="termid" Type="int" Mode="In" />
+    <Parameter Name="yearid" Type="int" Mode="In" />
+    <Parameter Name="planid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AddCourseLevel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="newplan" Type="int" Mode="In" />
+    <Parameter Name="currentyear" Type="int" Mode="In" />
+    <Parameter Name="nextyear" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AddEdit_student" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="SeqID" Type="int" Mode="In" />
+    <Parameter Name="sname" Type="nvarchar" Mode="In" />
+    <Parameter Name="levelid" Type="int" Mode="In" />
+    <Parameter Name="BirthPlace" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="gender" Type="nvarchar" Mode="In" />
+    <Parameter Name="natianalityt" Type="nvarchar" Mode="In" />
+    <Parameter Name="yearid" Type="int" Mode="In" />
+    <Parameter Name="lvlState" Type="nvarchar" Mode="In" />
+    <Parameter Name="sgroup" Type="nchar" Mode="In" />
+    <Parameter Name="bdate" Type="date" Mode="In" />
+    <Parameter Name="stdImage" Type="image" Mode="In" />
+    <Parameter Name="Village" Type="nvarchar" Mode="In" />
+    <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsDelete" Type="bit" Mode="In" />
+    <Parameter Name="AddDate" Type="date" Mode="In" />
+    <Parameter Name="EditDate" Type="date" Mode="In" />
+    <Parameter Name="DeletDate" Type="date" Mode="In" />
+    <Parameter Name="UserAdd" Type="int" Mode="In" />
+    <Parameter Name="UserEdit" Type="int" Mode="In" />
+    <Parameter Name="UserDelete" Type="int" Mode="In" />
+    <Parameter Name="GroupID" Type="int" Mode="In" />
+    <Parameter Name="IsLeave" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="AddStudentToLevels" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sid" Type="int" Mode="In" />
+    <Parameter Name="yearid" Type="int" Mode="In" />
+    <Parameter Name="levelid" Type="int" Mode="In" />
+    <Parameter Name="lvlStatus" Type="nvarchar" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="sgroup" Type="nvarchar" Mode="In" />
+    <Parameter Name="GroupID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DelCourseDifferLevel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Edit_studentlevels" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sid" Type="int" Mode="In" />
+    <Parameter Name="yearid" Type="int" Mode="In" />
+    <Parameter Name="levelid" Type="int" Mode="In" />
+    <Parameter Name="lvlStatus" Type="nvarchar" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="sgroup" Type="nvarchar" Mode="In" />
+    <Parameter Name="GroupID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="GetAllDistrubuteStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="yearid" Type="int" Mode="In" />
+    <Parameter Name="TermID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetAnalyticResultForStident" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="yearID" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="yearID" Type="int" Nullable="false" />
+          <Property Name="levelid" Type="int" Nullable="false" />
+          <Property Name="LevelTypeID" Type="int" />
+          <Property Name="levelname" Type="nvarchar" MaxLength="20" />
+          <Property Name="countSuccessMail" Type="int" />
+          <Property Name="countSuccessFmail" Type="int" />
+          <Property Name="countFailMail" Type="int" />
+          <Property Name="countFailFmail" Type="int" />
+          <Property Name="countApsentMail" Type="int" />
+          <Property Name="countApsentFmail" Type="int" />
+          <Property Name="countFail" Type="int" />
+          <Property Name="countApsent" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="GetAnalyticResultForStidentForTerm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="yearID" Type="int" Mode="In" />
+    <Parameter Name="TermId" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="yearID" Type="int" Nullable="false" />
+          <Property Name="levelid" Type="int" Nullable="false" />
+          <Property Name="levelname" Type="nvarchar" MaxLength="20" />
+          <Property Name="countSuccessMail" Type="int" />
+          <Property Name="countSuccessFmail" Type="int" />
+          <Property Name="countFailMail" Type="int" />
+          <Property Name="countFailFmail" Type="int" />
+          <Property Name="countApsentMail" Type="int" />
+          <Property Name="countApsentFmail" Type="int" />
+          <Property Name="countFail" Type="int" />
+          <Property Name="countApsent" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="GetCourseNewsLine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getCourseWithLevel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="YearID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="datetime" />
+  <Function Name="GetDataTHatNoAddDegreePerTerm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TermID" Type="int" Mode="In" />
+    <Parameter Name="yearID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetDistributeStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="YearID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getMaxNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="levelid" Type="int" Mode="In" />
+    <Parameter Name="sgroup" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="getMaxStudentNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="levelid" Type="int" Mode="In" />
+    <Parameter Name="sgroup" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetProfileHorizontal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="YearID" Type="int" Mode="In" />
+    <Parameter Name="startWeek" Type="int" Mode="In" />
+    <Parameter Name="EndWeek" Type="int" Mode="In" />
+    <Parameter Name="YearProfile" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetProfileHorizontalNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="YearID" Type="int" Mode="In" />
+    <Parameter Name="starDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="YearProfile" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetProfilePermanence" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="stDate" Type="date" Mode="In" />
+    <Parameter Name="enDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="getSchoolData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetStatisticalStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="yearID" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="LevelID" Type="int" />
+          <Property Name="levelname" Type="nvarchar" MaxLength="20" />
+          <Property Name="contStudentNoLeaveMail" Type="int" />
+          <Property Name="contStudentNoLeaveFmail" Type="int" />
+          <Property Name="contStudentLeaveMail" Type="int" />
+          <Property Name="contStudentLeaveFmail" Type="int" />
+          <Property Name="contGroup" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="GetStudentData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="YearID" Type="int" Mode="In" />
+    <Parameter Name="LevelID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetStudentDataForTermNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TermID" Type="int" Mode="In" />
+    <Parameter Name="YearID" Type="int" Mode="In" />
+    <Parameter Name="LevelID" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="stdid" Type="int" />
+          <Property Name="sname" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="20" />
+          <Property Name="levelid" Type="int" />
+          <Property Name="bdate" Type="date" />
+          <Property Name="BirthPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="sgroup" Type="nvarchar" MaxLength="20" />
+          <Property Name="GroupID" Type="int" />
+          <Property Name="lvlState" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsLeave" Type="bit" Nullable="false" />
+          <Property Name="SeqID" Type="int" Nullable="false" />
+          <Property Name="NumberPass" Type="int" />
+          <Property Name="Village" Type="nvarchar" MaxLength="30" />
+          <Property Name="natianalityt" Type="nvarchar" MaxLength="20" />
+          <Property Name="levelname" Type="nvarchar" MaxLength="20" />
+          <Property Name="termid" Type="int" />
+          <Property Name="Qrndeg1" Type="float" />
+          <Property Name="Qrndeg2" Type="float" />
+          <Property Name="QrnForFull" Type="float" />
+          <Property Name="QrnTotalAll" Type="float" />
+          <Property Name="Islamicdeg1" Type="float" />
+          <Property Name="Islamicdeg2" Type="float" />
+          <Property Name="IslamicForFull" Type="float" />
+          <Property Name="IslamicTotalAll" Type="float" />
+          <Property Name="ardeg1" Type="float" />
+          <Property Name="ardeg2" Type="float" />
+          <Property Name="arForFull" Type="float" />
+          <Property Name="arTotalAll" Type="float" />
+          <Property Name="Endeg1" Type="float" />
+          <Property Name="Endeg2" Type="float" />
+          <Property Name="EnForFull" Type="float" />
+          <Property Name="EnTotalAll" Type="float" />
+          <Property Name="mathdeg1" Type="float" />
+          <Property Name="mathdeg2" Type="float" />
+          <Property Name="mathForFull" Type="float" />
+          <Property Name="mathTotalAll" Type="float" />
+          <Property Name="scodeg1" Type="float" />
+          <Property Name="scodeg2" Type="float" />
+          <Property Name="scoForFull" Type="float" />
+          <Property Name="scoTotalAll" Type="float" />
+          <Property Name="scideg1" Type="float" />
+          <Property Name="scideg2" Type="float" />
+          <Property Name="sciForFull" Type="float" />
+          <Property Name="sciTotalAll" Type="float" />
+          <Property Name="compdeg1" Type="float" />
+          <Property Name="compdeg2" Type="float" />
+          <Property Name="compForFull" Type="float" />
+          <Property Name="compTotalAll" Type="float" />
+          <Property Name="artdeg1" Type="float" />
+          <Property Name="artdeg2" Type="float" />
+          <Property Name="artForFull" Type="float" />
+          <Property Name="artTotalAll" Type="float" />
+          <Property Name="sportdeg1" Type="float" />
+          <Property Name="sportdeg2" Type="float" />
+          <Property Name="sportForFull" Type="float" />
+          <Property Name="sportTotalAll" Type="float" />
+          <Property Name="PhysicDeg1" Type="float" />
+          <Property Name="PhysicDeg2" Type="float" />
+          <Property Name="PhysicForFull" Type="float" />
+          <Property Name="PhysicTotal" Type="float" />
+          <Property Name="chemistryDeg1" Type="float" />
+          <Property Name="chemistryDeg2" Type="float" />
+          <Property Name="chemistryForFull" Type="float" />
+          <Property Name="chemistryTotal" Type="float" />
+          <Property Name="BiologyDeg1" Type="float" />
+          <Property Name="BiologyDeg2" Type="float" />
+          <Property Name="BiologyForFull" Type="float" />
+          <Property Name="BiologyTotal" Type="float" />
+          <Property Name="Geographic1" Type="float" />
+          <Property Name="Geographic2" Type="float" />
+          <Property Name="GeographicForFull" Type="float" />
+          <Property Name="GeographicTotal" Type="float" />
+          <Property Name="History1" Type="float" />
+          <Property Name="History2" Type="float" />
+          <Property Name="HistoryFull" Type="float" />
+          <Property Name="History1Total" Type="float" />
+          <Property Name="Community1" Type="float" />
+          <Property Name="Community2" Type="float" />
+          <Property Name="Community1Full" Type="float" />
+          <Property Name="Community1Total" Type="float" />
+          <Property Name="CountForFullCourse" Type="int" />
+          <Property Name="CountCourseForFull" Type="int" Nullable="false" />
+          <Property Name="TotalAllForFull" Type="float" />
+          <Property Name="LevelCrsCounts" Type="int" />
+          <Property Name="coursFialCount" Type="int" Nullable="false" />
+          <Property Name="amontapsentcourse" Type="int" />
+          <Property Name="ttl" Type="float" />
+          <Property Name="RamkByGroupInner" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="RamkByLevelInner" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="yearID" Type="int" />
+          <Property Name="genderNumber" Type="int" Nullable="false" />
+          <Property Name="RamkByGroup" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="RamkByLevel" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="avarage" Type="float" />
+          <Property Name="ResultTxt" Type="varchar" MaxLength="1" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="GetStudentThatNoAddToDegree" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="YearID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTypSchool" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetTypSchoolByYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="YearID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="MergeStudenToGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="GroupID" Type="int" Mode="In" />
+    <Parameter Name="YearID" Type="int" Mode="In" />
+    <Parameter Name="LevelID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Proc_AddProfilPermanences" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="yearID" Type="int" Mode="In" />
+    <Parameter Name="startdate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_GetDegreeFromTermToAnother" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="target" Type="int" Mode="In" />
+    <Parameter Name="termID" Type="int" Mode="In" />
+    <Parameter Name="levelID" Type="int" Mode="In" />
+    <Parameter Name="YearID" Type="int" Mode="In" />
+    <Parameter Name="stdid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Proc_GetFinalResultDataForTermNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TermID" Type="int" Mode="In" />
+    <Parameter Name="YearID" Type="int" Mode="In" />
+    <Parameter Name="LevelID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_GetFinalResultStudentNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="yearid" Type="int" Mode="In" />
+    <Parameter Name="levelid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_GetResultFinalStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="yearid" Type="int" Mode="In" />
+    <Parameter Name="levelid" Type="int" Mode="In" />
+    <Parameter Name="studentid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Proc_RestStudentToPrevLevel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="stdid" Type="int" Mode="In" />
+    <Parameter Name="lvlID" Type="int" Mode="In" />
+    <Parameter Name="YearID" Type="int" Mode="In" />
+    <Parameter Name="note" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_UpdateGroupForStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="YearID" Type="int" Mode="In" />
+    <Parameter Name="lvlid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_UpdateLevelStateForStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="YearID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RoleAuthorizedOperations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoleID" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="OperationSymbol" Type="nvarchar" MaxLength="50" />
+          <Property Name="PageName" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="RollBackForFull" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="stdid" Type="int" Mode="In" />
+    <Parameter Name="levelid" Type="int" Mode="In" />
+    <Parameter Name="yearid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UpdateBreeders" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="planID" Type="int" Mode="In" />
+    <Parameter Name="brdID" Type="int" Mode="In" />
+    <Parameter Name="termID" Type="int" Mode="In" />
+    <Parameter Name="lvlid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UpdateDegreeForStudentApsent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="std" Type="int" Mode="In" />
+    <Parameter Name="courseid" Type="int" Mode="In" />
+    <Parameter Name="levelid" Type="int" Mode="In" />
+    <Parameter Name="termid" Type="int" Mode="In" />
+    <Parameter Name="total" Type="float" Mode="In" />
+    <Parameter Name="yearid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UpdateStudentDegree" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="deg1" Type="float" Mode="In" />
+    <Parameter Name="deg2" Type="float" Mode="In" />
+    <Parameter Name="levelid" Type="int" Mode="In" />
+    <Parameter Name="courseid" Type="int" Mode="In" />
+    <Parameter Name="studentid" Type="int" Mode="In" />
+    <Parameter Name="termid" Type="int" Mode="In" />
+    <Parameter Name="yearid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UpdateStudentDegreeNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="QranDeg1" Type="float" Mode="In" />
+    <Parameter Name="QranDeg2" Type="float" Mode="In" />
+    <Parameter Name="IslamicDeg1" Type="float" Mode="In" />
+    <Parameter Name="IslamicDeg2" Type="float" Mode="In" />
+    <Parameter Name="ArabicDeg1" Type="float" Mode="In" />
+    <Parameter Name="ArabicDeg2" Type="float" Mode="In" />
+    <Parameter Name="EngDeg1" Type="float" Mode="In" />
+    <Parameter Name="EngDeg2" Type="float" Mode="In" />
+    <Parameter Name="MathDeg1" Type="float" Mode="In" />
+    <Parameter Name="MathDeg2" Type="float" Mode="In" />
+    <Parameter Name="ScoDeg1" Type="float" Mode="In" />
+    <Parameter Name="ScoDeg2" Type="float" Mode="In" />
+    <Parameter Name="SciDeg1" Type="float" Mode="In" />
+    <Parameter Name="SciDeg2" Type="float" Mode="In" />
+    <Parameter Name="CompDeg1" Type="float" Mode="In" />
+    <Parameter Name="CompDeg2" Type="float" Mode="In" />
+    <Parameter Name="ArtDeg1" Type="float" Mode="In" />
+    <Parameter Name="ArtDeg2" Type="float" Mode="In" />
+    <Parameter Name="SportDeg1" Type="float" Mode="In" />
+    <Parameter Name="SportDeg2" Type="float" Mode="In" />
+    <Parameter Name="PhysicDeg1" Type="float" Mode="In" />
+    <Parameter Name="PhysicDeg2" Type="float" Mode="In" />
+    <Parameter Name="ChemstryDeg1" Type="float" Mode="In" />
+    <Parameter Name="ChemstryDeg2" Type="float" Mode="In" />
+    <Parameter Name="BiologyDeg1" Type="float" Mode="In" />
+    <Parameter Name="BiologyDeg2" Type="float" Mode="In" />
+    <Parameter Name="GeographicDeg1" Type="float" Mode="In" />
+    <Parameter Name="GeographicDeg2" Type="float" Mode="In" />
+    <Parameter Name="HistoryDeg1" Type="float" Mode="In" />
+    <Parameter Name="HistoryDeg2" Type="float" Mode="In" />
+    <Parameter Name="CommunityDeg1" Type="float" Mode="In" />
+    <Parameter Name="CommunityDeg2" Type="float" Mode="In" />
+    <Parameter Name="levelid" Type="int" Mode="In" />
+    <Parameter Name="studentid" Type="int" Mode="In" />
+    <Parameter Name="termid" Type="int" Mode="In" />
+    <Parameter Name="yearid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="upgradeDegreeForSuccessStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="degterm1" Type="float" Mode="In" />
+    <Parameter Name="degterm2" Type="float" Mode="In" />
+    <Parameter Name="conditionup" Type="float" Mode="In" />
+  </Function>
+  <Function Name="UpgradeStudentForNextLevel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="yearid" Type="int" Mode="In" />
+    <Parameter Name="levelid" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="alhaqldbModelStoreContainer">
+    <EntitySet Name="Codings" EntityType="Self.Codings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="course" EntityType="Self.course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExamPeriod" EntityType="Self.ExamPeriod" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GradeRank" EntityType="Self.GradeRank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LectureWeek" EntityType="Self.LectureWeek" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LevelCourse" EntityType="Self.LevelCourse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="levels" EntityType="Self.levels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageCategories" EntityType="Self.PageCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageOperaions" EntityType="Self.PageOperaions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageOperationRoles" EntityType="Self.PageOperationRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pages" EntityType="Self.Pages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Periods" EntityType="Self.Periods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plans" EntityType="Self.Plans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProfilePermanences" EntityType="Self.ProfilePermanences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomStudentInExam" EntityType="Self.RoomStudentInExam" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="schoolData" EntityType="Self.schoolData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentAbsent" EntityType="Self.StudentAbsent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="studentAN" EntityType="Self.studentAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="studentdegree" EntityType="Self.studentdegree" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentLevels" EntityType="Self.StudentLevels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="studyYear" EntityType="Self.studyYear" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TableExam" EntityType="Self.TableExam" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblNotify" EntityType="Self.TblNotify" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TermPlan" EntityType="Self.TermPlan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="terms" EntityType="Self.terms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeLevel" EntityType="Self.TypeLevel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeTeatcher" EntityType="Self.TypeTeatcher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BasicStudentDataV" EntityType="Self.BasicStudentDataV" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BasicStudentDataV].[stdid] AS [stdid], 
+    [BasicStudentDataV].[sname] AS [sname], 
+    [BasicStudentDataV].[SeqID] AS [SeqID], 
+    [BasicStudentDataV].[BirthPlace] AS [BirthPlace], 
+    [BasicStudentDataV].[LastName] AS [LastName], 
+    [BasicStudentDataV].[gender] AS [gender], 
+    [BasicStudentDataV].[natianalityt] AS [natianalityt], 
+    [BasicStudentDataV].[lvlState] AS [lvlState], 
+    [BasicStudentDataV].[sgroup] AS [sgroup], 
+    [BasicStudentDataV].[GroupID] AS [GroupID], 
+    [BasicStudentDataV].[bdate] AS [bdate], 
+    [BasicStudentDataV].[Village] AS [Village], 
+    [BasicStudentDataV].[stdImage] AS [stdImage], 
+    [BasicStudentDataV].[Notes] AS [Notes], 
+    [BasicStudentDataV].[IsDelete] AS [IsDelete], 
+    [BasicStudentDataV].[AddDate] AS [AddDate], 
+    [BasicStudentDataV].[EditDate] AS [EditDate], 
+    [BasicStudentDataV].[DeletDate] AS [DeletDate], 
+    [BasicStudentDataV].[UserAdd] AS [UserAdd], 
+    [BasicStudentDataV].[UserEdit] AS [UserEdit], 
+    [BasicStudentDataV].[UserDelete] AS [UserDelete], 
+    [BasicStudentDataV].[courseLevelID] AS [courseLevelID], 
+    [BasicStudentDataV].[courseid] AS [courseid], 
+    [BasicStudentDataV].[coursename] AS [coursename], 
+    [BasicStudentDataV].[deg1] AS [deg1], 
+    [BasicStudentDataV].[deg2] AS [deg2], 
+    [BasicStudentDataV].[deg3] AS [deg3], 
+    [BasicStudentDataV].[deg4] AS [deg4], 
+    [BasicStudentDataV].[forFull] AS [forFull], 
+    [BasicStudentDataV].[TotalAll] AS [TotalAll], 
+    [BasicStudentDataV].[termid] AS [termid], 
+    [BasicStudentDataV].[termname] AS [termname], 
+    [BasicStudentDataV].[levelid] AS [levelid], 
+    [BasicStudentDataV].[levelname] AS [levelname], 
+    [BasicStudentDataV].[IsActive] AS [IsActive], 
+    [BasicStudentDataV].[yearID] AS [yearID], 
+    [BasicStudentDataV].[studyYearEngl] AS [studyYearEngl], 
+    [BasicStudentDataV].[rnkTotal] AS [rnkTotal], 
+    [BasicStudentDataV].[coursFialCount] AS [coursFialCount], 
+    [BasicStudentDataV].[amontapsentcourse] AS [amontapsentcourse], 
+    [BasicStudentDataV].[StudentRamk] AS [StudentRamk], 
+    [BasicStudentDataV].[StudentRamkByLevel] AS [StudentRamkByLevel], 
+    [BasicStudentDataV].[avgst] AS [avgst], 
+    [BasicStudentDataV].[curseCount] AS [curseCount], 
+    [BasicStudentDataV].[ResultTxt] AS [ResultTxt], 
+    [BasicStudentDataV].[genderNumber] AS [genderNumber], 
+    [BasicStudentDataV].[IsLeave] AS [IsLeave]
+    FROM [dbo].[BasicStudentDataV] AS [BasicStudentDataV]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_course_TypeLevel" Association="Self.FK_course_TypeLevel">
+      <End Role="TypeLevel" EntitySet="TypeLevel" />
+      <End Role="course" EntitySet="course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExamPeriod_Periods" Association="Self.FK_ExamPeriod_Periods">
+      <End Role="Periods" EntitySet="Periods" />
+      <End Role="ExamPeriod" EntitySet="ExamPeriod" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LectureWeek_course" Association="Self.FK_LectureWeek_course">
+      <End Role="course" EntitySet="course" />
+      <End Role="LectureWeek" EntitySet="LectureWeek" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LectureWeek_levels" Association="Self.FK_LectureWeek_levels">
+      <End Role="levels" EntitySet="levels" />
+      <End Role="LectureWeek" EntitySet="LectureWeek" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LectureWeek_studyYear" Association="Self.FK_LectureWeek_studyYear">
+      <End Role="studyYear" EntitySet="studyYear" />
+      <End Role="LectureWeek" EntitySet="LectureWeek" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LectureWeek_terms" Association="Self.FK_LectureWeek_terms">
+      <End Role="terms" EntitySet="terms" />
+      <End Role="LectureWeek" EntitySet="LectureWeek" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LevelCourse_course" Association="Self.FK_LevelCourse_course">
+      <End Role="course" EntitySet="course" />
+      <End Role="LevelCourse" EntitySet="LevelCourse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LevelCourse_levels" Association="Self.FK_LevelCourse_levels">
+      <End Role="levels" EntitySet="levels" />
+      <End Role="LevelCourse" EntitySet="LevelCourse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LevelCourse_Plans" Association="Self.FK_LevelCourse_Plans">
+      <End Role="Plans" EntitySet="Plans" />
+      <End Role="LevelCourse" EntitySet="LevelCourse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LevelCourse_Teacher" Association="Self.FK_LevelCourse_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="LevelCourse" EntitySet="LevelCourse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LevelCourse_TermPlan" Association="Self.FK_LevelCourse_TermPlan">
+      <End Role="TermPlan" EntitySet="TermPlan" />
+      <End Role="LevelCourse" EntitySet="LevelCourse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LevelCourse_terms" Association="Self.FK_LevelCourse_terms">
+      <End Role="terms" EntitySet="terms" />
+      <End Role="LevelCourse" EntitySet="LevelCourse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_levels_levels" Association="Self.FK_levels_levels">
+      <End Role="levels" EntitySet="levels" />
+      <End Role="levels1" EntitySet="levels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_levels_TypeLevel" Association="Self.FK_levels_TypeLevel">
+      <End Role="TypeLevel" EntitySet="TypeLevel" />
+      <End Role="levels" EntitySet="levels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageOperaions_Pages" Association="Self.FK_PageOperaions_Pages">
+      <End Role="Pages" EntitySet="Pages" />
+      <End Role="PageOperaions" EntitySet="PageOperaions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageOperationRoles_PageOperaions" Association="Self.FK_PageOperationRoles_PageOperaions">
+      <End Role="PageOperaions" EntitySet="PageOperaions" />
+      <End Role="PageOperationRoles" EntitySet="PageOperationRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageOperationRoles_Roles" Association="Self.FK_PageOperationRoles_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="PageOperationRoles" EntitySet="PageOperationRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pages_PageCategories" Association="Self.FK_Pages_PageCategories">
+      <End Role="PageCategories" EntitySet="PageCategories" />
+      <End Role="Pages" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Plans_studyYear" Association="Self.FK_Plans_studyYear">
+      <End Role="studyYear" EntitySet="studyYear" />
+      <End Role="Plans" EntitySet="Plans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfilePermanences_studyYear" Association="Self.FK_ProfilePermanences_studyYear">
+      <End Role="studyYear" EntitySet="studyYear" />
+      <End Role="ProfilePermanences" EntitySet="ProfilePermanences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfilePermanences_Teacher" Association="Self.FK_ProfilePermanences_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="ProfilePermanences" EntitySet="ProfilePermanences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomStudentInExam_ExamPeriod" Association="Self.FK_RoomStudentInExam_ExamPeriod">
+      <End Role="ExamPeriod" EntitySet="ExamPeriod" />
+      <End Role="RoomStudentInExam" EntitySet="RoomStudentInExam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomStudentInExam_levels" Association="Self.FK_RoomStudentInExam_levels">
+      <End Role="levels" EntitySet="levels" />
+      <End Role="RoomStudentInExam" EntitySet="RoomStudentInExam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomStudentInExam_Rooms" Association="Self.FK_RoomStudentInExam_Rooms">
+      <End Role="Rooms" EntitySet="Rooms" />
+      <End Role="RoomStudentInExam" EntitySet="RoomStudentInExam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomStudentInExam_student" Association="Self.FK_RoomStudentInExam_student">
+      <End Role="student" EntitySet="student" />
+      <End Role="RoomStudentInExam" EntitySet="RoomStudentInExam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomStudentInExam_studyYear" Association="Self.FK_RoomStudentInExam_studyYear">
+      <End Role="studyYear" EntitySet="studyYear" />
+      <End Role="RoomStudentInExam" EntitySet="RoomStudentInExam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomStudentInExam_terms" Association="Self.FK_RoomStudentInExam_terms">
+      <End Role="terms" EntitySet="terms" />
+      <End Role="RoomStudentInExam" EntitySet="RoomStudentInExam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_schoolData_Teacher" Association="Self.FK_schoolData_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="schoolData" EntitySet="schoolData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_student_Group" Association="Self.FK_student_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="student" EntitySet="student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_student_studyYear" Association="Self.FK_student_studyYear">
+      <End Role="studyYear" EntitySet="studyYear" />
+      <End Role="student" EntitySet="student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_student_Users_add" Association="Self.FK_student_Users_add">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="student" EntitySet="student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_student_Users_del" Association="Self.FK_student_Users_del">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="student" EntitySet="student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_student_Users_edit" Association="Self.FK_student_Users_edit">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="student" EntitySet="student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentAbsent_levels" Association="Self.FK_StudentAbsent_levels">
+      <End Role="levels" EntitySet="levels" />
+      <End Role="StudentAbsent" EntitySet="StudentAbsent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentAbsent_student" Association="Self.FK_StudentAbsent_student">
+      <End Role="student" EntitySet="student" />
+      <End Role="StudentAbsent" EntitySet="StudentAbsent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_studentdegree_levelCourse" Association="Self.FK_studentdegree_levelCourse">
+      <End Role="LevelCourse" EntitySet="LevelCourse" />
+      <End Role="studentdegree" EntitySet="studentdegree" />
+    </AssociationSet>
+    <AssociationSet Name="FK_studentdegree_levels" Association="Self.FK_studentdegree_levels">
+      <End Role="levels" EntitySet="levels" />
+      <End Role="studentdegree" EntitySet="studentdegree" />
+    </AssociationSet>
+    <AssociationSet Name="FK_studentdegree_student" Association="Self.FK_studentdegree_student">
+      <End Role="student" EntitySet="student" />
+      <End Role="studentdegree" EntitySet="studentdegree" />
+    </AssociationSet>
+    <AssociationSet Name="FK_studentdegree_studyYear" Association="Self.FK_studentdegree_studyYear">
+      <End Role="studyYear" EntitySet="studyYear" />
+      <End Role="studentdegree" EntitySet="studentdegree" />
+    </AssociationSet>
+    <AssociationSet Name="FK_studentdegree_terms" Association="Self.FK_studentdegree_terms">
+      <End Role="terms" EntitySet="terms" />
+      <End Role="studentdegree" EntitySet="studentdegree" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentLevels_Group" Association="Self.FK_StudentLevels_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="StudentLevels" EntitySet="StudentLevels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentLevels_Levels" Association="Self.FK_StudentLevels_Levels">
+      <End Role="levels" EntitySet="levels" />
+      <End Role="StudentLevels" EntitySet="StudentLevels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentLevels_student" Association="Self.FK_StudentLevels_student">
+      <End Role="student" EntitySet="student" />
+      <End Role="StudentLevels" EntitySet="StudentLevels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentLevels_studyYear" Association="Self.FK_StudentLevels_studyYear">
+      <End Role="studyYear" EntitySet="studyYear" />
+      <End Role="StudentLevels" EntitySet="StudentLevels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_studyYear_studyYear" Association="Self.FK_studyYear_studyYear">
+      <End Role="studyYear" EntitySet="studyYear" />
+      <End Role="studyYear1" EntitySet="studyYear" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableExam_course" Association="Self.FK_TableExam_course">
+      <End Role="course" EntitySet="course" />
+      <End Role="TableExam" EntitySet="TableExam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableExam_ExamPeriod" Association="Self.FK_TableExam_ExamPeriod">
+      <End Role="ExamPeriod" EntitySet="ExamPeriod" />
+      <End Role="TableExam" EntitySet="TableExam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableExam_levels" Association="Self.FK_TableExam_levels">
+      <End Role="levels" EntitySet="levels" />
+      <End Role="TableExam" EntitySet="TableExam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableExam_studyYear" Association="Self.FK_TableExam_studyYear">
+      <End Role="studyYear" EntitySet="studyYear" />
+      <End Role="TableExam" EntitySet="TableExam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableExam_terms" Association="Self.FK_TableExam_terms">
+      <End Role="terms" EntitySet="terms" />
+      <End Role="TableExam" EntitySet="TableExam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teacher_TypeTeatcher" Association="Self.FK_Teacher_TypeTeatcher">
+      <End Role="TypeTeatcher" EntitySet="TypeTeatcher" />
+      <End Role="Teacher" EntitySet="Teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TermPlan_Plans" Association="Self.FK_TermPlan_Plans">
+      <End Role="Plans" EntitySet="Plans" />
+      <End Role="TermPlan" EntitySet="TermPlan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TermPlan_terms" Association="Self.FK_TermPlan_terms">
+      <End Role="terms" EntitySet="terms" />
+      <End Role="TermPlan" EntitySet="TermPlan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_schoolData" Association="Self.FK_Users_schoolData">
+      <End Role="schoolData" EntitySet="schoolData" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

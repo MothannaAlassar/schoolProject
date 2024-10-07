@@ -1,0 +1,2506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="alhaqldbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="course">
+    <Key>
+      <PropertyRef Name="courseid" />
+    </Key>
+    <Property Name="courseid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="coursename" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sortshowInReport" Type="Int32" />
+    <NavigationProperty Name="LectureWeeks" Relationship="alhaqldbModel.FK_LectureWeek_course" FromRole="course" ToRole="LectureWeek" />
+    <NavigationProperty Name="LevelCourses" Relationship="alhaqldbModel.FK_LevelCourse_course" FromRole="course" ToRole="LevelCourse" />
+    <Property Name="CourseLevelType" Type="Int32" />
+    <NavigationProperty Name="TypeLevel" Relationship="alhaqldbModel.FK_course_TypeLevel" FromRole="course" ToRole="TypeLevel" />
+    <NavigationProperty Name="TableExams" Relationship="alhaqldbModel.FK_TableExam_course" FromRole="course" ToRole="TableExam" />
+  </EntityType>
+  <EntityType Name="studyYear">
+    <Key>
+      <PropertyRef Name="seqid" />
+    </Key>
+    <Property Name="seqid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="studyYearEngl" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="studyYearArab" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="NextYear" Type="Int32" />
+    <NavigationProperty Name="studyYear1" Relationship="alhaqldbModel.FK_studyYear_studyYear" FromRole="studyYear" ToRole="studyYear1" />
+    <NavigationProperty Name="studyYear2" Relationship="alhaqldbModel.FK_studyYear_studyYear" FromRole="studyYear1" ToRole="studyYear" />
+    <Property Name="FormYear" Type="Int16" />
+    <Property Name="ToYear" Type="Int16" />
+    <NavigationProperty Name="studentdegrees" Relationship="alhaqldbModel.FK_studentdegree_studyYear" FromRole="studyYear" ToRole="studentdegree" />
+    <NavigationProperty Name="Plans" Relationship="alhaqldbModel.FK_Plans_studyYear" FromRole="studyYear" ToRole="Plan" />
+    <NavigationProperty Name="StudentLevels" Relationship="alhaqldbModel.FK_StudentLevels_studyYear" FromRole="studyYear" ToRole="StudentLevel" />
+    <NavigationProperty Name="students" Relationship="alhaqldbModel.FK_student_studyYear" FromRole="studyYear" ToRole="student" />
+    <NavigationProperty Name="ProfilePermanences" Relationship="alhaqldbModel.FK_ProfilePermanences_studyYear" FromRole="studyYear" ToRole="ProfilePermanence" />
+    <NavigationProperty Name="LectureWeeks" Relationship="alhaqldbModel.FK_LectureWeek_studyYear" FromRole="studyYear" ToRole="LectureWeek" />
+    <NavigationProperty Name="RoomStudentInExams" Relationship="alhaqldbModel.FK_RoomStudentInExam_studyYear" FromRole="studyYear" ToRole="RoomStudentInExam" />
+    <NavigationProperty Name="TableExams" Relationship="alhaqldbModel.FK_TableExam_studyYear" FromRole="studyYear" ToRole="TableExam" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="term">
+    <Key>
+      <PropertyRef Name="termid" />
+    </Key>
+    <Property Name="termid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="termname" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="studentdegrees" Relationship="alhaqldbModel.FK_studentdegree_terms" FromRole="term" ToRole="studentdegree" />
+    <NavigationProperty Name="TermPlans" Relationship="alhaqldbModel.FK_TermPlan_terms" FromRole="term" ToRole="TermPlan" />
+    <NavigationProperty Name="LectureWeeks" Relationship="alhaqldbModel.FK_LectureWeek_terms" FromRole="term" ToRole="LectureWeek" />
+    <NavigationProperty Name="LevelCourses" Relationship="alhaqldbModel.FK_LevelCourse_terms" FromRole="term" ToRole="LevelCourse" />
+    <NavigationProperty Name="RoomStudentInExams" Relationship="alhaqldbModel.FK_RoomStudentInExam_terms" FromRole="term" ToRole="RoomStudentInExam" />
+    <NavigationProperty Name="TableExams" Relationship="alhaqldbModel.FK_TableExam_terms" FromRole="term" ToRole="TableExam" />
+  </EntityType>
+  <EntityContainer Name="alhaqldbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="courses" EntityType="Self.course" />
+    <EntitySet Name="studyYears" EntityType="Self.studyYear" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="terms" EntityType="Self.term" />
+    <FunctionImport Name="getMaxNumber" ReturnType="Collection(Int32)">
+      <Parameter Name="levelid" Mode="In" Type="Int32" />
+      <Parameter Name="sgroup" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(alhaqldbModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(alhaqldbModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="upgradeApsentCourse" />
+    <FunctionImport Name="upgradeDegreeForSuccessStudent">
+      <Parameter Name="degterm1" Mode="In" Type="Double" />
+      <Parameter Name="degterm2" Mode="In" Type="Double" />
+      <Parameter Name="conditionup" Mode="In" Type="Double" />
+    </FunctionImport>
+    <EntitySet Name="Codings" EntityType="alhaqldbModel.Coding" />
+    <EntitySet Name="Groups" EntityType="alhaqldbModel.Group" />
+    <EntitySet Name="PageCategories" EntityType="alhaqldbModel.PageCategory" />
+    <EntitySet Name="PageOperaions" EntityType="alhaqldbModel.PageOperaion" />
+    <EntitySet Name="PageOperationRoles" EntityType="alhaqldbModel.PageOperationRole" />
+    <EntitySet Name="Pages" EntityType="alhaqldbModel.Page" />
+    <EntitySet Name="Roles" EntityType="alhaqldbModel.Role" />
+    <AssociationSet Name="FK_Pages_PageCategories" Association="alhaqldbModel.FK_Pages_PageCategories">
+      <End Role="PageCategory" EntitySet="PageCategories" />
+      <End Role="Page" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageOperaions_Pages" Association="alhaqldbModel.FK_PageOperaions_Pages">
+      <End Role="Page" EntitySet="Pages" />
+      <End Role="PageOperaion" EntitySet="PageOperaions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageOperationRoles_PageOperaions" Association="alhaqldbModel.FK_PageOperationRoles_PageOperaions">
+      <End Role="PageOperaion" EntitySet="PageOperaions" />
+      <End Role="PageOperationRole" EntitySet="PageOperationRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageOperationRoles_Roles" Association="alhaqldbModel.FK_PageOperationRoles_Roles">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="PageOperationRole" EntitySet="PageOperationRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_studyYear_studyYear" Association="alhaqldbModel.FK_studyYear_studyYear">
+      <End Role="studyYear" EntitySet="studyYears" />
+      <End Role="studyYear1" EntitySet="studyYears" />
+    </AssociationSet>
+    <FunctionImport Name="RoleAuthorizedOperations" IsComposable="true" ReturnType="Collection(alhaqldbModel.RoleAuthorizedOperations_Result)">
+      <Parameter Name="RoleID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getStudentDataFinal" ReturnType="Collection(alhaqldbModel.getStudentDataFinal_Result)" />
+    <FunctionImport Name="UpdateDegreeForStudentApsent">
+      <Parameter Name="std" Mode="In" Type="Int32" />
+      <Parameter Name="courseid" Mode="In" Type="Int32" />
+      <Parameter Name="levelid" Mode="In" Type="Int32" />
+      <Parameter Name="termid" Mode="In" Type="Int32" />
+      <Parameter Name="total" Mode="In" Type="Double" />
+      <Parameter Name="yearid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="studentdegrees" EntityType="alhaqldbModel.studentdegree" />
+    <AssociationSet Name="FK_studentdegree_studyYear" Association="alhaqldbModel.FK_studentdegree_studyYear">
+      <End Role="studyYear" EntitySet="studyYears" />
+      <End Role="studentdegree" EntitySet="studentdegrees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_studentdegree_terms" Association="alhaqldbModel.FK_studentdegree_terms">
+      <End Role="term" EntitySet="terms" />
+      <End Role="studentdegree" EntitySet="studentdegrees" />
+    </AssociationSet>
+    <EntitySet Name="Plans" EntityType="alhaqldbModel.Plan" />
+    <AssociationSet Name="FK_Plans_studyYear" Association="alhaqldbModel.FK_Plans_studyYear">
+      <End Role="studyYear" EntitySet="studyYears" />
+      <End Role="Plan" EntitySet="Plans" />
+    </AssociationSet>
+    <FunctionImport Name="DelCourseDifferLevel">
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="StudentAbsents" EntityType="alhaqldbModel.StudentAbsent" />
+    <FunctionImport Name="UpgradeStudentForNextLevel">
+      <Parameter Name="yearid" Mode="In" Type="Int32" />
+      <Parameter Name="levelid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetCourseNewsLine" ReturnType="Collection(alhaqldbModel.GetCourseNewsLine_Result)" />
+    <EntitySet Name="Users" EntityType="alhaqldbModel.User" />
+    <AssociationSet Name="FK_Users_Roles" Association="alhaqldbModel.FK_Users_Roles">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <EntitySet Name="StudentLevels" EntityType="alhaqldbModel.StudentLevel" />
+    <AssociationSet Name="FK_StudentLevels_studyYear" Association="alhaqldbModel.FK_StudentLevels_studyYear">
+      <End Role="studyYear" EntitySet="studyYears" />
+      <End Role="StudentLevel" EntitySet="StudentLevels" />
+    </AssociationSet>
+    <EntitySet Name="TermPlans" EntityType="alhaqldbModel.TermPlan" />
+    <AssociationSet Name="FK_TermPlan_Plans" Association="alhaqldbModel.FK_TermPlan_Plans">
+      <End Role="Plan" EntitySet="Plans" />
+      <End Role="TermPlan" EntitySet="TermPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TermPlan_terms" Association="alhaqldbModel.FK_TermPlan_terms">
+      <End Role="term" EntitySet="terms" />
+      <End Role="TermPlan" EntitySet="TermPlans" />
+    </AssociationSet>
+    <FunctionImport Name="AddCourseLevel">
+      <Parameter Name="newplan" Mode="In" Type="Int32" />
+      <Parameter Name="currentyear" Mode="In" Type="Int32" />
+      <Parameter Name="nextyear" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddCourseForStudent">
+      <Parameter Name="termid" Mode="In" Type="Int32" />
+      <Parameter Name="yearid" Mode="In" Type="Int32" />
+      <Parameter Name="planid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getCourseWithLevel" ReturnType="Collection(alhaqldbModel.getCourseWithLevel_Result)">
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getSchoolData" ReturnType="Collection(alhaqldbModel.getSchoolData_Result)" />
+    <AssociationSet Name="FK_StudentLevels_Group" Association="alhaqldbModel.FK_StudentLevels_Group">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="StudentLevel" EntitySet="StudentLevels" />
+    </AssociationSet>
+    <FunctionImport Name="GetStudentData" ReturnType="Collection(alhaqldbModel.GetStudentData_Result)">
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+      <Parameter Name="LevelID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MergeStudenToGroup">
+      <Parameter Name="GroupID" Mode="In" Type="Int32" />
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+      <Parameter Name="LevelID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetAnalyticResultForStident" IsComposable="true" ReturnType="Collection(alhaqldbModel.GetAnalyticResultForStident_Result)">
+      <Parameter Name="yearID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetStatisticalStudent" IsComposable="true" ReturnType="Collection(alhaqldbModel.GetStatisticalStudent_Result)">
+      <Parameter Name="yearID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="students" EntityType="alhaqldbModel.student" />
+    <AssociationSet Name="FK_student_Group" Association="alhaqldbModel.FK_student_Group">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="student" EntitySet="students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_student_studyYear" Association="alhaqldbModel.FK_student_studyYear">
+      <End Role="studyYear" EntitySet="studyYears" />
+      <End Role="student" EntitySet="students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_student_Users_add" Association="alhaqldbModel.FK_student_Users_add">
+      <End Role="User" EntitySet="Users" />
+      <End Role="student" EntitySet="students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_student_Users_del" Association="alhaqldbModel.FK_student_Users_del">
+      <End Role="User" EntitySet="Users" />
+      <End Role="student" EntitySet="students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_student_Users_edit" Association="alhaqldbModel.FK_student_Users_edit">
+      <End Role="User" EntitySet="Users" />
+      <End Role="student" EntitySet="students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentAbsent_student" Association="alhaqldbModel.FK_StudentAbsent_student">
+      <End Role="student" EntitySet="students" />
+      <End Role="StudentAbsent" EntitySet="StudentAbsents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_studentdegree_student" Association="alhaqldbModel.FK_studentdegree_student">
+      <End Role="student" EntitySet="students" />
+      <End Role="studentdegree" EntitySet="studentdegrees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentLevels_student" Association="alhaqldbModel.FK_StudentLevels_student">
+      <End Role="student" EntitySet="students" />
+      <End Role="StudentLevel" EntitySet="StudentLevels" />
+    </AssociationSet>
+    <FunctionImport Name="AddEdit_student">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="SeqID" Mode="In" Type="Int32" />
+      <Parameter Name="sname" Mode="In" Type="String" />
+      <Parameter Name="levelid" Mode="In" Type="Int32" />
+      <Parameter Name="BirthPlace" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="gender" Mode="In" Type="String" />
+      <Parameter Name="natianalityt" Mode="In" Type="String" />
+      <Parameter Name="yearid" Mode="In" Type="Int32" />
+      <Parameter Name="lvlState" Mode="In" Type="String" />
+      <Parameter Name="sgroup" Mode="In" Type="String" />
+      <Parameter Name="bdate" Mode="In" Type="DateTime" />
+      <Parameter Name="stdImage" Mode="In" Type="Binary" />
+      <Parameter Name="Village" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="IsDelete" Mode="In" Type="Boolean" />
+      <Parameter Name="AddDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EditDate" Mode="In" Type="DateTime" />
+      <Parameter Name="DeletDate" Mode="In" Type="DateTime" />
+      <Parameter Name="UserAdd" Mode="In" Type="Int32" />
+      <Parameter Name="UserEdit" Mode="In" Type="Int32" />
+      <Parameter Name="UserDelete" Mode="In" Type="Int32" />
+      <Parameter Name="GroupID" Mode="In" Type="Int32" />
+      <Parameter Name="IsLeave" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="schoolDatas" EntityType="alhaqldbModel.schoolData" />
+    <AssociationSet Name="FK_Users_schoolData" Association="alhaqldbModel.FK_Users_schoolData">
+      <End Role="schoolData" EntitySet="schoolDatas" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <FunctionImport Name="GetStudentThatNoAddToDegree" ReturnType="Collection(alhaqldbModel.GetStudentThatNoAddToDegree_Result)">
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Teachers" EntityType="alhaqldbModel.Teacher" />
+    <EntitySet Name="TypeTeatchers" EntityType="alhaqldbModel.TypeTeatcher" />
+    <AssociationSet Name="FK_schoolData_Teacher" Association="alhaqldbModel.FK_schoolData_Teacher">
+      <End Role="Teacher" EntitySet="Teachers" />
+      <End Role="schoolData" EntitySet="schoolDatas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teacher_TypeTeatcher" Association="alhaqldbModel.FK_Teacher_TypeTeatcher">
+      <End Role="TypeTeatcher" EntitySet="TypeTeatchers" />
+      <End Role="Teacher" EntitySet="Teachers" />
+    </AssociationSet>
+    <FunctionImport Name="AddStudentToLevels">
+      <Parameter Name="sid" Mode="In" Type="Int32" />
+      <Parameter Name="yearid" Mode="In" Type="Int32" />
+      <Parameter Name="levelid" Mode="In" Type="Int32" />
+      <Parameter Name="lvlStatus" Mode="In" Type="String" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="sgroup" Mode="In" Type="String" />
+      <Parameter Name="GroupID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Edit_studentlevels">
+      <Parameter Name="sid" Mode="In" Type="Int32" />
+      <Parameter Name="yearid" Mode="In" Type="Int32" />
+      <Parameter Name="levelid" Mode="In" Type="Int32" />
+      <Parameter Name="lvlStatus" Mode="In" Type="String" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="sgroup" Mode="In" Type="String" />
+      <Parameter Name="GroupID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetDataTHatNoAddDegreePerTerm" ReturnType="Collection(alhaqldbModel.GetDataTHatNoAddDegreePerTerm_Result)">
+      <Parameter Name="TermID" Mode="In" Type="Int32" />
+      <Parameter Name="yearID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="ProfilePermanences" EntityType="alhaqldbModel.ProfilePermanence" />
+    <AssociationSet Name="FK_ProfilePermanences_Teacher" Association="alhaqldbModel.FK_ProfilePermanences_Teacher">
+      <End Role="Teacher" EntitySet="Teachers" />
+      <End Role="ProfilePermanence" EntitySet="ProfilePermanences" />
+    </AssociationSet>
+    <EntitySet Name="levels" EntityType="alhaqldbModel.level" />
+    <EntitySet Name="Rooms" EntityType="alhaqldbModel.Room" />
+    <AssociationSet Name="FK_levels_levels" Association="alhaqldbModel.FK_levels_levels">
+      <End Role="level" EntitySet="levels" />
+      <End Role="level1" EntitySet="levels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentAbsent_levels" Association="alhaqldbModel.FK_StudentAbsent_levels">
+      <End Role="level" EntitySet="levels" />
+      <End Role="StudentAbsent" EntitySet="StudentAbsents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_studentdegree_levels" Association="alhaqldbModel.FK_studentdegree_levels">
+      <End Role="level" EntitySet="levels" />
+      <End Role="studentdegree" EntitySet="studentdegrees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentLevels_Levels" Association="alhaqldbModel.FK_StudentLevels_Levels">
+      <End Role="level" EntitySet="levels" />
+      <End Role="StudentLevel" EntitySet="StudentLevels" />
+    </AssociationSet>
+    <FunctionImport Name="GetAnalyticResultForStidentForTerm" IsComposable="true" ReturnType="Collection(alhaqldbModel.GetAnalyticResultForStidentForTerm_Result)">
+      <Parameter Name="yearID" Mode="In" Type="Int32" />
+      <Parameter Name="TermId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateStudentDegree">
+      <Parameter Name="deg1" Mode="In" Type="Double" />
+      <Parameter Name="deg2" Mode="In" Type="Double" />
+      <Parameter Name="levelid" Mode="In" Type="Int32" />
+      <Parameter Name="courseid" Mode="In" Type="Int32" />
+      <Parameter Name="studentid" Mode="In" Type="Int32" />
+      <Parameter Name="termid" Mode="In" Type="Int32" />
+      <Parameter Name="yearid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="RollBackForFull">
+      <Parameter Name="stdid" Mode="In" Type="Int32" />
+      <Parameter Name="levelid" Mode="In" Type="Int32" />
+      <Parameter Name="yearid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <AssociationSet Name="FK_ProfilePermanences_studyYear" Association="alhaqldbModel.FK_ProfilePermanences_studyYear">
+      <End Role="studyYear" EntitySet="studyYears" />
+      <End Role="ProfilePermanence" EntitySet="ProfilePermanences" />
+    </AssociationSet>
+    <FunctionImport Name="GetProfilePermanence" ReturnType="Collection(alhaqldbModel.GetProfilePermanence_Result)">
+      <Parameter Name="stDate" Mode="In" Type="DateTime" />
+      <Parameter Name="enDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllDistrubuteStudent" ReturnType="Collection(alhaqldbModel.GetAllDistrubuteStudent_Result)">
+      <Parameter Name="yearid" Mode="In" Type="Int32" />
+      <Parameter Name="TermID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="LectureWeeks" EntityType="alhaqldbModel.LectureWeek" />
+    <AssociationSet Name="FK_LectureWeek_course" Association="alhaqldbModel.FK_LectureWeek_course">
+      <End Role="course" EntitySet="courses" />
+      <End Role="LectureWeek" EntitySet="LectureWeeks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LectureWeek_levels" Association="alhaqldbModel.FK_LectureWeek_levels">
+      <End Role="level" EntitySet="levels" />
+      <End Role="LectureWeek" EntitySet="LectureWeeks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LectureWeek_studyYear" Association="alhaqldbModel.FK_LectureWeek_studyYear">
+      <End Role="studyYear" EntitySet="studyYears" />
+      <End Role="LectureWeek" EntitySet="LectureWeeks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LectureWeek_terms" Association="alhaqldbModel.FK_LectureWeek_terms">
+      <End Role="term" EntitySet="terms" />
+      <End Role="LectureWeek" EntitySet="LectureWeeks" />
+    </AssociationSet>
+    <EntitySet Name="BasicStudentDataVs" EntityType="alhaqldbModel.BasicStudentDataV" />
+    <FunctionImport Name="Proc_GetStudentDataForTerm" ReturnType="Collection(alhaqldbModel.Proc_GetStudentDataForTerm_Result)">
+      <Parameter Name="TermID" Mode="In" Type="Int32" />
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+      <Parameter Name="LevelID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_UpdateLevelStateForStudent">
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetDegreeFromTermToAnother">
+      <Parameter Name="target" Mode="In" Type="Int32" />
+      <Parameter Name="termID" Mode="In" Type="Int32" />
+      <Parameter Name="levelID" Mode="In" Type="Int32" />
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+      <Parameter Name="stdid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="LevelCourses" EntityType="alhaqldbModel.LevelCourse" />
+    <AssociationSet Name="FK_LevelCourse_course" Association="alhaqldbModel.FK_LevelCourse_course">
+      <End Role="course" EntitySet="courses" />
+      <End Role="LevelCourse" EntitySet="LevelCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LevelCourse_levels" Association="alhaqldbModel.FK_LevelCourse_levels">
+      <End Role="level" EntitySet="levels" />
+      <End Role="LevelCourse" EntitySet="LevelCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LevelCourse_Plans" Association="alhaqldbModel.FK_LevelCourse_Plans">
+      <End Role="Plan" EntitySet="Plans" />
+      <End Role="LevelCourse" EntitySet="LevelCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LevelCourse_Teacher" Association="alhaqldbModel.FK_LevelCourse_Teacher">
+      <End Role="Teacher" EntitySet="Teachers" />
+      <End Role="LevelCourse" EntitySet="LevelCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LevelCourse_TermPlan" Association="alhaqldbModel.FK_LevelCourse_TermPlan">
+      <End Role="TermPlan" EntitySet="TermPlans" />
+      <End Role="LevelCourse" EntitySet="LevelCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LevelCourse_terms" Association="alhaqldbModel.FK_LevelCourse_terms">
+      <End Role="term" EntitySet="terms" />
+      <End Role="LevelCourse" EntitySet="LevelCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_studentdegree_levelCourse" Association="alhaqldbModel.FK_studentdegree_levelCourse">
+      <End Role="LevelCourse" EntitySet="LevelCourses" />
+      <End Role="studentdegree" EntitySet="studentdegrees" />
+    </AssociationSet>
+    <FunctionImport Name="proc_UpdateGroupForStudent">
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+      <Parameter Name="lvlid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetResultFinalStudent" ReturnType="Collection(alhaqldbModel.proc_GetResultFinalStudent_Result)">
+      <Parameter Name="yearid" Mode="In" Type="Int32" />
+      <Parameter Name="levelid" Mode="In" Type="Int32" />
+      <Parameter Name="studentid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="TypeLevels" EntityType="alhaqldbModel.TypeLevel" />
+    <AssociationSet Name="FK_course_TypeLevel" Association="alhaqldbModel.FK_course_TypeLevel">
+      <End Role="TypeLevel" EntitySet="TypeLevels" />
+      <End Role="course" EntitySet="courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_levels_TypeLevel" Association="alhaqldbModel.FK_levels_TypeLevel">
+      <End Role="TypeLevel" EntitySet="TypeLevels" />
+      <End Role="level" EntitySet="levels" />
+    </AssociationSet>
+    <EntitySet Name="GradeRanks" EntityType="alhaqldbModel.GradeRank" />
+    <FunctionImport Name="GetTypSchool" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="UpdateBreeders">
+      <Parameter Name="planID" Mode="In" Type="Int32" />
+      <Parameter Name="brdID" Mode="In" Type="Int32" />
+      <Parameter Name="termID" Mode="In" Type="Int32" />
+      <Parameter Name="lvlid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="ExamPeriods" EntityType="alhaqldbModel.ExamPeriod" />
+    <EntitySet Name="Periods" EntityType="alhaqldbModel.Period" />
+    <EntitySet Name="RoomStudentInExams" EntityType="alhaqldbModel.RoomStudentInExam" />
+    <AssociationSet Name="FK_ExamPeriod_Periods" Association="alhaqldbModel.FK_ExamPeriod_Periods">
+      <End Role="Period" EntitySet="Periods" />
+      <End Role="ExamPeriod" EntitySet="ExamPeriods" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomStudentInExam_ExamPeriod" Association="alhaqldbModel.FK_RoomStudentInExam_ExamPeriod">
+      <End Role="ExamPeriod" EntitySet="ExamPeriods" />
+      <End Role="RoomStudentInExam" EntitySet="RoomStudentInExams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomStudentInExam_levels" Association="alhaqldbModel.FK_RoomStudentInExam_levels">
+      <End Role="level" EntitySet="levels" />
+      <End Role="RoomStudentInExam" EntitySet="RoomStudentInExams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomStudentInExam_Rooms" Association="alhaqldbModel.FK_RoomStudentInExam_Rooms">
+      <End Role="Room" EntitySet="Rooms" />
+      <End Role="RoomStudentInExam" EntitySet="RoomStudentInExams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomStudentInExam_student" Association="alhaqldbModel.FK_RoomStudentInExam_student">
+      <End Role="student" EntitySet="students" />
+      <End Role="RoomStudentInExam" EntitySet="RoomStudentInExams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomStudentInExam_studyYear" Association="alhaqldbModel.FK_RoomStudentInExam_studyYear">
+      <End Role="studyYear" EntitySet="studyYears" />
+      <End Role="RoomStudentInExam" EntitySet="RoomStudentInExams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomStudentInExam_terms" Association="alhaqldbModel.FK_RoomStudentInExam_terms">
+      <End Role="term" EntitySet="terms" />
+      <End Role="RoomStudentInExam" EntitySet="RoomStudentInExams" />
+    </AssociationSet>
+    <EntitySet Name="TableExams" EntityType="alhaqldbModel.TableExam" />
+    <AssociationSet Name="FK_TableExam_course" Association="alhaqldbModel.FK_TableExam_course">
+      <End Role="course" EntitySet="courses" />
+      <End Role="TableExam" EntitySet="TableExams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableExam_ExamPeriod" Association="alhaqldbModel.FK_TableExam_ExamPeriod">
+      <End Role="ExamPeriod" EntitySet="ExamPeriods" />
+      <End Role="TableExam" EntitySet="TableExams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableExam_levels" Association="alhaqldbModel.FK_TableExam_levels">
+      <End Role="level" EntitySet="levels" />
+      <End Role="TableExam" EntitySet="TableExams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableExam_studyYear" Association="alhaqldbModel.FK_TableExam_studyYear">
+      <End Role="studyYear" EntitySet="studyYears" />
+      <End Role="TableExam" EntitySet="TableExams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableExam_terms" Association="alhaqldbModel.FK_TableExam_terms">
+      <End Role="term" EntitySet="terms" />
+      <End Role="TableExam" EntitySet="TableExams" />
+    </AssociationSet>
+    <FunctionImport Name="GetDistributeStudent" ReturnType="Collection(alhaqldbModel.GetDistributeStudent_Result)">
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetTypSchoolByYear" ReturnType="Collection(Int32)">
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Proc_AddProfilPermanences">
+      <Parameter Name="yearID" Mode="In" Type="Int32" />
+      <Parameter Name="startdate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Proc_GetFinalResultDataForTermNew" ReturnType="Collection(alhaqldbModel.Proc_GetFinalResultDataForTermNew_Result)">
+      <Parameter Name="TermID" Mode="In" Type="Int32" />
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+      <Parameter Name="LevelID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetFinalResultStudentNew" ReturnType="Collection(alhaqldbModel.proc_GetFinalResultStudentNew_Result)">
+      <Parameter Name="yearid" Mode="In" Type="Int32" />
+      <Parameter Name="levelid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetProfileHorizontal" ReturnType="Collection(alhaqldbModel.GetProfileHorizontal_Result)">
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+      <Parameter Name="startWeek" Mode="In" Type="Int32" />
+      <Parameter Name="EndWeek" Mode="In" Type="Int32" />
+      <Parameter Name="YearProfile" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetProfileHorizontalNew" ReturnType="Collection(alhaqldbModel.GetProfileHorizontalNew_Result)">
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+      <Parameter Name="starDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="YearProfile" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Proc_RestStudentToPrevLevel">
+      <Parameter Name="stdid" Mode="In" Type="Int32" />
+      <Parameter Name="lvlID" Mode="In" Type="Int32" />
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+      <Parameter Name="note" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetStudentDataForTermNew" IsComposable="true" ReturnType="Collection(alhaqldbModel.GetStudentDataForTermNew_Result)">
+      <Parameter Name="TermID" Mode="In" Type="Int32" />
+      <Parameter Name="YearID" Mode="In" Type="Int32" />
+      <Parameter Name="LevelID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="TblNotifies" EntityType="alhaqldbModel.TblNotify" />
+    <FunctionImport Name="UpdateStudentDegreeNew">
+      <Parameter Name="QranDeg1" Mode="In" Type="Double" />
+      <Parameter Name="QranDeg2" Mode="In" Type="Double" />
+      <Parameter Name="IslamicDeg1" Mode="In" Type="Double" />
+      <Parameter Name="IslamicDeg2" Mode="In" Type="Double" />
+      <Parameter Name="ArabicDeg1" Mode="In" Type="Double" />
+      <Parameter Name="ArabicDeg2" Mode="In" Type="Double" />
+      <Parameter Name="EngDeg1" Mode="In" Type="Double" />
+      <Parameter Name="EngDeg2" Mode="In" Type="Double" />
+      <Parameter Name="MathDeg1" Mode="In" Type="Double" />
+      <Parameter Name="MathDeg2" Mode="In" Type="Double" />
+      <Parameter Name="ScoDeg1" Mode="In" Type="Double" />
+      <Parameter Name="ScoDeg2" Mode="In" Type="Double" />
+      <Parameter Name="SciDeg1" Mode="In" Type="Double" />
+      <Parameter Name="SciDeg2" Mode="In" Type="Double" />
+      <Parameter Name="CompDeg1" Mode="In" Type="Double" />
+      <Parameter Name="CompDeg2" Mode="In" Type="Double" />
+      <Parameter Name="ArtDeg1" Mode="In" Type="Double" />
+      <Parameter Name="ArtDeg2" Mode="In" Type="Double" />
+      <Parameter Name="SportDeg1" Mode="In" Type="Double" />
+      <Parameter Name="SportDeg2" Mode="In" Type="Double" />
+      <Parameter Name="PhysicDeg1" Mode="In" Type="Double" />
+      <Parameter Name="PhysicDeg2" Mode="In" Type="Double" />
+      <Parameter Name="ChemstryDeg1" Mode="In" Type="Double" />
+      <Parameter Name="ChemstryDeg2" Mode="In" Type="Double" />
+      <Parameter Name="BiologyDeg1" Mode="In" Type="Double" />
+      <Parameter Name="BiologyDeg2" Mode="In" Type="Double" />
+      <Parameter Name="GeographicDeg1" Mode="In" Type="Double" />
+      <Parameter Name="GeographicDeg2" Mode="In" Type="Double" />
+      <Parameter Name="HistoryDeg1" Mode="In" Type="Double" />
+      <Parameter Name="HistoryDeg2" Mode="In" Type="Double" />
+      <Parameter Name="CommunityDeg1" Mode="In" Type="Double" />
+      <Parameter Name="CommunityDeg2" Mode="In" Type="Double" />
+      <Parameter Name="levelid" Mode="In" Type="Int32" />
+      <Parameter Name="studentid" Mode="In" Type="Int32" />
+      <Parameter Name="termid" Mode="In" Type="Int32" />
+      <Parameter Name="yearid" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Coding">
+    <Key>
+      <PropertyRef Name="CodeID" />
+      <PropertyRef Name="CodeNo" />
+    </Key>
+    <Property Name="CodeID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CodeNo" Type="Int32" Nullable="false" />
+    <Property Name="CodeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="StudentLevels" Relationship="alhaqldbModel.FK_StudentLevels_Group" FromRole="Group" ToRole="StudentLevel" />
+    <NavigationProperty Name="students" Relationship="alhaqldbModel.FK_student_Group" FromRole="Group" ToRole="student" />
+    <Property Name="NumberPlace" Type="Int32" />
+    <Property Name="IsShowInList" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PageCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ActiveStatus" Type="Boolean" />
+    <Property Name="Note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AddingDate" Type="DateTime" Precision="3" />
+    <Property Name="EditUserID" Type="Int32" />
+    <Property Name="EditDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DeletingUserID" Type="Int32" />
+    <Property Name="DeletingDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Pages" Relationship="alhaqldbModel.FK_Pages_PageCategories" FromRole="PageCategory" ToRole="Page" />
+  </EntityType>
+  <EntityType Name="PageOperaion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageID" Type="Int32" />
+    <Property Name="OperationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OperationSymbol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="Page" Relationship="alhaqldbModel.FK_PageOperaions_Pages" FromRole="PageOperaion" ToRole="Page" />
+    <NavigationProperty Name="PageOperationRoles" Relationship="alhaqldbModel.FK_PageOperationRoles_PageOperaions" FromRole="PageOperaion" ToRole="PageOperationRole" />
+  </EntityType>
+  <EntityType Name="PageOperationRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageOperationID" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AddingDate" Type="DateTime" Precision="3" />
+    <Property Name="EditUserID" Type="Int32" />
+    <Property Name="EditDate" Type="DateTime" Precision="3" />
+    <Property Name="DeletingUserID" Type="Int32" />
+    <Property Name="DeletingDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PageOperaion" Relationship="alhaqldbModel.FK_PageOperationRoles_PageOperaions" FromRole="PageOperationRole" ToRole="PageOperaion" />
+    <NavigationProperty Name="Role" Relationship="alhaqldbModel.FK_PageOperationRoles_Roles" FromRole="PageOperationRole" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Page">
+    <Key>
+      <PropertyRef Name="PageID" />
+    </Key>
+    <Property Name="PageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PageTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="PageCategoryID" Type="Int32" />
+    <NavigationProperty Name="PageCategory" Relationship="alhaqldbModel.FK_Pages_PageCategories" FromRole="Page" ToRole="PageCategory" />
+    <NavigationProperty Name="PageOperaions" Relationship="alhaqldbModel.FK_PageOperaions_Pages" FromRole="Page" ToRole="PageOperaion" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsRoleActive" Type="Boolean" />
+    <NavigationProperty Name="PageOperationRoles" Relationship="alhaqldbModel.FK_PageOperationRoles_Roles" FromRole="Role" ToRole="PageOperationRole" />
+    <NavigationProperty Name="Users" Relationship="alhaqldbModel.FK_Users_Roles" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Pages_PageCategories">
+    <End Type="alhaqldbModel.PageCategory" Role="PageCategory" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.Page" Role="Page" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PageCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Page">
+        <PropertyRef Name="PageCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageOperaions_Pages">
+    <End Type="alhaqldbModel.Page" Role="Page" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.PageOperaion" Role="PageOperaion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page">
+        <PropertyRef Name="PageID" />
+      </Principal>
+      <Dependent Role="PageOperaion">
+        <PropertyRef Name="PageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageOperationRoles_PageOperaions">
+    <End Type="alhaqldbModel.PageOperaion" Role="PageOperaion" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.PageOperationRole" Role="PageOperationRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PageOperaion">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PageOperationRole">
+        <PropertyRef Name="PageOperationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageOperationRoles_Roles">
+    <End Type="alhaqldbModel.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.PageOperationRole" Role="PageOperationRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PageOperationRole">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_studyYear_studyYear">
+    <End Type="alhaqldbModel.studyYear" Role="studyYear" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.studyYear" Role="studyYear1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="studyYear1">
+        <PropertyRef Name="NextYear" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="RoleAuthorizedOperations_Result">
+    <Property Type="String" Name="OperationSymbol" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PageName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="getStudentDataFinal_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="sname" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="courseid" Nullable="false" />
+    <Property Type="String" Name="coursename" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="yearid" Nullable="true" />
+    <Property Type="String" Name="studyYearArab" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="levelid" Nullable="true" />
+    <Property Type="String" Name="levelname" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="BirthPlace" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="natianalityt" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="sgroup" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="Village" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Notes" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="bdate" Nullable="true" />
+    <Property Type="Double" Name="term1" Nullable="true" />
+    <Property Type="Double" Name="term2" Nullable="true" />
+    <Property Type="Double" Name="TotalAll" Nullable="true" />
+    <Property Type="Int32" Name="aps" Nullable="false" />
+    <Property Type="Int32" Name="coursecount" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="studentdegree">
+    <Key>
+      <PropertyRef Name="seqid" />
+    </Key>
+    <Property Name="seqid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="studentid" Type="Int32" />
+    <Property Name="levelid" Type="Int32" />
+    <Property Name="courseLevelID" Type="Int32" />
+    <Property Name="courseID" Type="Int32" />
+    <Property Name="termid" Type="Int32" />
+    <Property Name="deg1" Type="Double" />
+    <Property Name="deg2" Type="Double" />
+    <Property Name="total" Type="Double" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="deg3" Type="Double" />
+    <Property Name="deg4" Type="Double" />
+    <Property Name="forFull" Type="Double" />
+    <Property Name="total2" Type="Double" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="TotalAll" Type="Double" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="yearID" Type="Int32" />
+    <Property Name="amontapsentcourse" Type="Int32" />
+    <NavigationProperty Name="studyYear" Relationship="alhaqldbModel.FK_studentdegree_studyYear" FromRole="studentdegree" ToRole="studyYear" />
+    <NavigationProperty Name="term" Relationship="alhaqldbModel.FK_studentdegree_terms" FromRole="studentdegree" ToRole="term" />
+    <NavigationProperty Name="student" Relationship="alhaqldbModel.FK_studentdegree_student" FromRole="studentdegree" ToRole="student" />
+    <NavigationProperty Name="level" Relationship="alhaqldbModel.FK_studentdegree_levels" FromRole="studentdegree" ToRole="level" />
+    <NavigationProperty Name="LevelCourse" Relationship="alhaqldbModel.FK_studentdegree_levelCourse" FromRole="studentdegree" ToRole="LevelCourse" />
+  </EntityType>
+  <Association Name="FK_studentdegree_studyYear">
+    <End Type="alhaqldbModel.studyYear" Role="studyYear" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.studentdegree" Role="studentdegree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="studentdegree">
+        <PropertyRef Name="yearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_studentdegree_terms">
+    <End Type="alhaqldbModel.term" Role="term" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.studentdegree" Role="studentdegree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="term">
+        <PropertyRef Name="termid" />
+      </Principal>
+      <Dependent Role="studentdegree">
+        <PropertyRef Name="termid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Descript" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="sadte" Type="DateTime" Precision="0" />
+    <Property Name="edate" Type="DateTime" Precision="0" />
+    <Property Name="active" Type="Boolean" />
+    <Property Name="IsRemoved" Type="Boolean" />
+    <Property Name="InstDeptSpecID" Type="Int32" />
+    <Property Name="YearID" Type="Int32" />
+    <NavigationProperty Name="studyYear" Relationship="alhaqldbModel.FK_Plans_studyYear" FromRole="Plan" ToRole="studyYear" />
+    <NavigationProperty Name="TermPlans" Relationship="alhaqldbModel.FK_TermPlan_Plans" FromRole="Plan" ToRole="TermPlan" />
+    <NavigationProperty Name="LevelCourses" Relationship="alhaqldbModel.FK_LevelCourse_Plans" FromRole="Plan" ToRole="LevelCourse" />
+  </EntityType>
+  <Association Name="FK_Plans_studyYear">
+    <End Type="alhaqldbModel.studyYear" Role="studyYear" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.Plan" Role="Plan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="Plan">
+        <PropertyRef Name="YearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="StudentAbsent">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SID" Type="Int32" />
+    <Property Name="CDate" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CDay" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NumAbsent" Type="Int32" />
+    <Property Name="LevelID" Type="Int32" />
+    <Property Name="IsFind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="student" Relationship="alhaqldbModel.FK_StudentAbsent_student" FromRole="StudentAbsent" ToRole="student" />
+    <NavigationProperty Name="level" Relationship="alhaqldbModel.FK_StudentAbsent_levels" FromRole="StudentAbsent" ToRole="level" />
+  </EntityType>
+  <ComplexType Name="GetCourseNewsLine_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="CourseName" Nullable="true" MaxLength="60" />
+    <Property Type="Int32" Name="registeredCnt" Nullable="true" />
+    <Property Type="Int32" Name="Sdayno" Nullable="true" />
+    <Property Type="Int32" Name="Shourno" Nullable="true" />
+    <Property Type="Int32" Name="Sminutno" Nullable="true" />
+    <Property Type="Int32" Name="Edayno" Nullable="true" />
+    <Property Type="Int32" Name="Ehourno" Nullable="true" />
+    <Property Type="Int32" Name="Eminutno" Nullable="true" />
+    <Property Type="String" Name="STMNT" Nullable="false" MaxLength="236" />
+  </ComplexType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Int32" />
+    <Property Name="CreationDate" Type="DateTime" Precision="3" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="SchoolID" Type="Int32" />
+    <Property Name="branchID" Type="Int32" />
+    <Property Name="TempStop" Type="Boolean" />
+    <Property Name="BoxAccountID" Type="Int64" />
+    <Property Name="Note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AddingDate" Type="DateTime" Precision="3" />
+    <Property Name="EditUserID" Type="Int32" />
+    <Property Name="EditDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DeletingUserID" Type="Int32" />
+    <Property Name="DeletingDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Role" Relationship="alhaqldbModel.FK_Users_Roles" FromRole="User" ToRole="Role" />
+    <NavigationProperty Name="students" Relationship="alhaqldbModel.FK_student_Users_add" FromRole="User" ToRole="student" />
+    <NavigationProperty Name="students1" Relationship="alhaqldbModel.FK_student_Users_del" FromRole="User" ToRole="student" />
+    <NavigationProperty Name="students2" Relationship="alhaqldbModel.FK_student_Users_edit" FromRole="User" ToRole="student" />
+    <NavigationProperty Name="schoolData" Relationship="alhaqldbModel.FK_Users_schoolData" FromRole="User" ToRole="schoolData" />
+  </EntityType>
+  <Association Name="FK_Users_Roles">
+    <End Type="alhaqldbModel.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="StudentLevel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StdID" Type="Int32" />
+    <Property Name="LevelID" Type="Int32" />
+    <Property Name="YearID" Type="Int32" />
+    <Property Name="active" Type="Boolean" />
+    <Property Name="lvlState" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="studyYear" Relationship="alhaqldbModel.FK_StudentLevels_studyYear" FromRole="StudentLevel" ToRole="studyYear" />
+    <Property Name="sgroup" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="GroupID" Type="Int32" />
+    <NavigationProperty Name="Group" Relationship="alhaqldbModel.FK_StudentLevels_Group" FromRole="StudentLevel" ToRole="Group" />
+    <NavigationProperty Name="student" Relationship="alhaqldbModel.FK_StudentLevels_student" FromRole="StudentLevel" ToRole="student" />
+    <NavigationProperty Name="level" Relationship="alhaqldbModel.FK_StudentLevels_Levels" FromRole="StudentLevel" ToRole="level" />
+    <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_StudentLevels_studyYear">
+    <End Type="alhaqldbModel.studyYear" Role="studyYear" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.StudentLevel" Role="StudentLevel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="StudentLevel">
+        <PropertyRef Name="YearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TermPlan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TermID" Type="Int32" />
+    <Property Name="PlanID" Type="Int32" />
+    <Property Name="Sdate" Type="DateTime" Precision="0" />
+    <Property Name="Edate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDelete" Type="Boolean" />
+    <NavigationProperty Name="Plan" Relationship="alhaqldbModel.FK_TermPlan_Plans" FromRole="TermPlan" ToRole="Plan" />
+    <NavigationProperty Name="term" Relationship="alhaqldbModel.FK_TermPlan_terms" FromRole="TermPlan" ToRole="term" />
+    <NavigationProperty Name="LevelCourses" Relationship="alhaqldbModel.FK_LevelCourse_TermPlan" FromRole="TermPlan" ToRole="LevelCourse" />
+  </EntityType>
+  <Association Name="FK_TermPlan_Plans">
+    <End Type="alhaqldbModel.Plan" Role="Plan" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.TermPlan" Role="TermPlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TermPlan">
+        <PropertyRef Name="PlanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TermPlan_terms">
+    <End Type="alhaqldbModel.term" Role="term" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.TermPlan" Role="TermPlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="term">
+        <PropertyRef Name="termid" />
+      </Principal>
+      <Dependent Role="TermPlan">
+        <PropertyRef Name="TermID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="getCourseWithLevel_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="LevelID" Nullable="true" />
+    <Property Type="Int32" Name="courseid" Nullable="false" />
+    <Property Type="String" Name="coursename" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="termID" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getSchoolData_Result">
+    <Property Type="Int32" Name="seqid" Nullable="false" />
+    <Property Type="String" Name="schoolName" Nullable="true" MaxLength="20" />
+    <Property Type="Binary" Name="LogoImage" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="gover" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="city" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="AdminSchool" Nullable="true" />
+    <Property Type="String" Name="TeacherName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <Association Name="FK_StudentLevels_Group">
+    <End Type="alhaqldbModel.Group" Role="Group" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.StudentLevel" Role="StudentLevel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StudentLevel">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetStudentData_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="sname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="bdate" Nullable="true" />
+    <Property Type="String" Name="BirthPlace" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="EnteryLevelID" Nullable="true" />
+    <Property Type="String" Name="natianalityt" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="SeqID" Nullable="false" />
+    <Property Type="Binary" Name="stdImage" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Notes" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Village" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="YearEntery" Nullable="true" />
+    <Property Type="Int32" Name="LevelID" Nullable="true" />
+    <Property Type="String" Name="lvlState" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="sgroup" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="YearID" Nullable="true" />
+    <Property Type="Int32" Name="GroupID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetAnalyticResultForStident_Result">
+    <Property Type="Int32" Name="yearID" Nullable="false" />
+    <Property Type="Int32" Name="levelid" Nullable="false" />
+    <Property Type="String" Name="levelname" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="countSuccessMail" Nullable="true" />
+    <Property Type="Int32" Name="countSuccessFmail" Nullable="true" />
+    <Property Type="Int32" Name="countFailMail" Nullable="true" />
+    <Property Type="Int32" Name="countFailFmail" Nullable="true" />
+    <Property Type="Int32" Name="countApsentMail" Nullable="true" />
+    <Property Type="Int32" Name="countApsentFmail" Nullable="true" />
+    <Property Type="Int32" Name="countFail" Nullable="true" />
+    <Property Type="Int32" Name="countApsent" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetStatisticalStudent_Result">
+    <Property Type="Int32" Name="LevelID" Nullable="true" />
+    <Property Type="String" Name="levelname" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="contStudentNoLeaveMail" Nullable="true" />
+    <Property Type="Int32" Name="contStudentNoLeaveFmail" Nullable="true" />
+    <Property Type="Int32" Name="contStudentLeaveMail" Nullable="true" />
+    <Property Type="Int32" Name="contStudentLeaveFmail" Nullable="true" />
+    <Property Type="Int32" Name="contGroup" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SeqID" Type="Int32" Nullable="false" />
+    <Property Name="sname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="levelid" Type="Int32" />
+    <Property Name="BirthPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="natianalityt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="yearid" Type="Int32" />
+    <Property Name="lvlState" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="sgroup" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+    <Property Name="bdate" Type="DateTime" Precision="0" />
+    <Property Name="stdImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Village" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="IsLeave" Type="Boolean" />
+    <Property Name="Notes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsDelete" Type="Boolean" />
+    <Property Name="AddDate" Type="DateTime" Precision="0" />
+    <Property Name="EditDate" Type="DateTime" Precision="0" />
+    <Property Name="DeletDate" Type="DateTime" Precision="0" />
+    <Property Name="UserAdd" Type="Int32" />
+    <Property Name="UserEdit" Type="Int32" />
+    <Property Name="UserDelete" Type="Int32" />
+    <Property Name="GroupID" Type="Int32" />
+    <NavigationProperty Name="Group" Relationship="alhaqldbModel.FK_student_Group" FromRole="student" ToRole="Group" />
+    <NavigationProperty Name="studyYear" Relationship="alhaqldbModel.FK_student_studyYear" FromRole="student" ToRole="studyYear" />
+    <NavigationProperty Name="User" Relationship="alhaqldbModel.FK_student_Users_add" FromRole="student" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="alhaqldbModel.FK_student_Users_del" FromRole="student" ToRole="User" />
+    <NavigationProperty Name="User2" Relationship="alhaqldbModel.FK_student_Users_edit" FromRole="student" ToRole="User" />
+    <NavigationProperty Name="StudentAbsents" Relationship="alhaqldbModel.FK_StudentAbsent_student" FromRole="student" ToRole="StudentAbsent" />
+    <NavigationProperty Name="studentdegrees" Relationship="alhaqldbModel.FK_studentdegree_student" FromRole="student" ToRole="studentdegree" />
+    <NavigationProperty Name="StudentLevels" Relationship="alhaqldbModel.FK_StudentLevels_student" FromRole="student" ToRole="StudentLevel" />
+    <NavigationProperty Name="RoomStudentInExams" Relationship="alhaqldbModel.FK_RoomStudentInExam_student" FromRole="student" ToRole="RoomStudentInExam" />
+  </EntityType>
+  <Association Name="FK_student_Group">
+    <End Type="alhaqldbModel.Group" Role="Group" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.student" Role="student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_student_studyYear">
+    <End Type="alhaqldbModel.studyYear" Role="studyYear" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.student" Role="student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="yearid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_student_Users_add">
+    <End Type="alhaqldbModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.student" Role="student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="UserAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_student_Users_del">
+    <End Type="alhaqldbModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.student" Role="student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="UserDelete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_student_Users_edit">
+    <End Type="alhaqldbModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.student" Role="student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="UserEdit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentAbsent_student">
+    <End Type="alhaqldbModel.student" Role="student" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.StudentAbsent" Role="StudentAbsent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StudentAbsent">
+        <PropertyRef Name="SID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_studentdegree_student">
+    <End Type="alhaqldbModel.student" Role="student" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="alhaqldbModel.studentdegree" Role="studentdegree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="studentdegree">
+        <PropertyRef Name="studentid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentLevels_student">
+    <End Type="alhaqldbModel.student" Role="student" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="alhaqldbModel.StudentLevel" Role="StudentLevel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StudentLevel">
+        <PropertyRef Name="StdID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="schoolData">
+    <Key>
+      <PropertyRef Name="seqid" />
+    </Key>
+    <Property Name="seqid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="schoolName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gover" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LogoImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="AdminSchool" Type="Int32" />
+    <Property Name="Village" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HeaderExam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AdminCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Appropriate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeptStatistical" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AdminGeneralGover" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AdminHeadExamGover" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="alhaqldbModel.FK_Users_schoolData" FromRole="schoolData" ToRole="User" />
+    <NavigationProperty Name="Teacher" Relationship="alhaqldbModel.FK_schoolData_Teacher" FromRole="schoolData" ToRole="Teacher" />
+  </EntityType>
+  <Association Name="FK_Users_schoolData">
+    <End Type="alhaqldbModel.schoolData" Role="schoolData" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="schoolData">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="SchoolID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetStudentThatNoAddToDegree_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="SeqID" Nullable="false" />
+    <Property Type="String" Name="sname" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="levelid" Nullable="true" />
+    <Property Type="String" Name="BirthPlace" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="natianalityt" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="yearid" Nullable="true" />
+    <Property Type="String" Name="lvlState" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="sgroup" Nullable="true" MaxLength="5" />
+    <Property Type="DateTime" Name="bdate" Nullable="true" />
+    <Property Type="Binary" Name="stdImage" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Village" Nullable="true" MaxLength="30" />
+    <Property Type="Boolean" Name="IsLeave" Nullable="true" />
+    <Property Type="String" Name="Notes" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="true" />
+    <Property Type="DateTime" Name="AddDate" Nullable="true" />
+    <Property Type="DateTime" Name="EditDate" Nullable="true" />
+    <Property Type="DateTime" Name="DeletDate" Nullable="true" />
+    <Property Type="Int32" Name="UserAdd" Nullable="true" />
+    <Property Type="Int32" Name="UserEdit" Nullable="true" />
+    <Property Type="Int32" Name="UserDelete" Nullable="true" />
+    <Property Type="Int32" Name="GroupID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeacherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="Quali" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Experties" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QualiDate" Type="DateTime" Precision="0" />
+    <Property Name="QualiPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TypeTeacher" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TypeTeacherID" Type="Int32" />
+    <Property Name="Rateb" Type="Double" />
+    <Property Name="AddDate" Type="DateTime" Precision="0" />
+    <Property Name="UserAdd" Type="Int32" />
+    <Property Name="EditDate" Type="DateTime" Precision="0" />
+    <Property Name="UserEdit" Type="Int32" />
+    <Property Name="DeleteDate" Type="DateTime" Precision="0" />
+    <Property Name="UserDelete" Type="Int32" />
+    <Property Name="IsDelete" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="schoolDatas" Relationship="alhaqldbModel.FK_schoolData_Teacher" FromRole="Teacher" ToRole="schoolData" />
+    <NavigationProperty Name="TypeTeatcher" Relationship="alhaqldbModel.FK_Teacher_TypeTeatcher" FromRole="Teacher" ToRole="TypeTeatcher" />
+    <NavigationProperty Name="ProfilePermanences" Relationship="alhaqldbModel.FK_ProfilePermanences_Teacher" FromRole="Teacher" ToRole="ProfilePermanence" />
+    <NavigationProperty Name="LevelCourses" Relationship="alhaqldbModel.FK_LevelCourse_Teacher" FromRole="Teacher" ToRole="LevelCourse" />
+  </EntityType>
+  <EntityType Name="TypeTeatcher">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsShowInCombo" Type="Boolean" />
+    <NavigationProperty Name="Teachers" Relationship="alhaqldbModel.FK_Teacher_TypeTeatcher" FromRole="TypeTeatcher" ToRole="Teacher" />
+  </EntityType>
+  <Association Name="FK_schoolData_Teacher">
+    <End Type="alhaqldbModel.Teacher" Role="Teacher" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.schoolData" Role="schoolData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="schoolData">
+        <PropertyRef Name="AdminSchool" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teacher_TypeTeatcher">
+    <End Type="alhaqldbModel.TypeTeatcher" Role="TypeTeatcher" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.Teacher" Role="Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeTeatcher">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Teacher">
+        <PropertyRef Name="TypeTeacherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetDataTHatNoAddDegreePerTerm_Result">
+    <Property Type="Int32" Name="YearID" Nullable="true" />
+    <Property Type="Int32" Name="stdid" Nullable="false" />
+    <Property Type="String" Name="sname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="natianalityt" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="SeqID" Nullable="false" />
+    <Property Type="String" Name="sgroup" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Village" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="lvlState" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="GroupID" Nullable="true" />
+    <Property Type="Int32" Name="LevelID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="ProfilePermanence">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeatcherID" Type="Int32" />
+    <Property Name="Cdate" Type="DateTime" Precision="3" />
+    <Property Name="NumberDay" Type="Int32" />
+    <Property Name="NumberWeek" Type="Int32" />
+    <Property Name="DayName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PringTime" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="LogoutTime" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Teacher" Relationship="alhaqldbModel.FK_ProfilePermanences_Teacher" FromRole="ProfilePermanence" ToRole="Teacher" />
+    <Property Name="YearID" Type="Int32" />
+    <NavigationProperty Name="studyYear" Relationship="alhaqldbModel.FK_ProfilePermanences_studyYear" FromRole="ProfilePermanence" ToRole="studyYear" />
+    <Property Name="YearProfile" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_ProfilePermanences_Teacher">
+    <End Type="alhaqldbModel.Teacher" Role="Teacher" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.ProfilePermanence" Role="ProfilePermanence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProfilePermanence">
+        <PropertyRef Name="TeatcherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="level">
+    <Key>
+      <PropertyRef Name="levelid" />
+    </Key>
+    <Property Name="levelid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="levelname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="numbercourseterm1" Type="Int32" />
+    <Property Name="nextLevelID" Type="Int32" />
+    <Property Name="IsStop" Type="Boolean" />
+    <NavigationProperty Name="levels1" Relationship="alhaqldbModel.FK_levels_levels" FromRole="level" ToRole="level1" />
+    <NavigationProperty Name="level1" Relationship="alhaqldbModel.FK_levels_levels" FromRole="level1" ToRole="level" />
+    <NavigationProperty Name="StudentAbsents" Relationship="alhaqldbModel.FK_StudentAbsent_levels" FromRole="level" ToRole="StudentAbsent" />
+    <NavigationProperty Name="studentdegrees" Relationship="alhaqldbModel.FK_studentdegree_levels" FromRole="level" ToRole="studentdegree" />
+    <NavigationProperty Name="StudentLevels" Relationship="alhaqldbModel.FK_StudentLevels_Levels" FromRole="level" ToRole="StudentLevel" />
+    <NavigationProperty Name="LectureWeeks" Relationship="alhaqldbModel.FK_LectureWeek_levels" FromRole="level" ToRole="LectureWeek" />
+    <NavigationProperty Name="LevelCourses" Relationship="alhaqldbModel.FK_LevelCourse_levels" FromRole="level" ToRole="LevelCourse" />
+    <Property Name="LevelTypeID" Type="Int32" />
+    <NavigationProperty Name="TypeLevel" Relationship="alhaqldbModel.FK_levels_TypeLevel" FromRole="level" ToRole="TypeLevel" />
+    <NavigationProperty Name="RoomStudentInExams" Relationship="alhaqldbModel.FK_RoomStudentInExam_levels" FromRole="level" ToRole="RoomStudentInExam" />
+    <NavigationProperty Name="TableExams" Relationship="alhaqldbModel.FK_TableExam_levels" FromRole="level" ToRole="TableExam" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoomName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsShow" Type="Boolean" />
+    <Property Name="NumberOfPlace" Type="Int32" />
+    <NavigationProperty Name="RoomStudentInExams" Relationship="alhaqldbModel.FK_RoomStudentInExam_Rooms" FromRole="Room" ToRole="RoomStudentInExam" />
+  </EntityType>
+  <Association Name="FK_levels_levels">
+    <End Type="alhaqldbModel.level" Role="level" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.level" Role="level1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="level">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="level1">
+        <PropertyRef Name="nextLevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentAbsent_levels">
+    <End Type="alhaqldbModel.level" Role="level" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.StudentAbsent" Role="StudentAbsent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="level">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="StudentAbsent">
+        <PropertyRef Name="LevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_studentdegree_levels">
+    <End Type="alhaqldbModel.level" Role="level" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.studentdegree" Role="studentdegree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="level">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="studentdegree">
+        <PropertyRef Name="levelid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentLevels_Levels">
+    <End Type="alhaqldbModel.level" Role="level" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.StudentLevel" Role="StudentLevel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="level">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="StudentLevel">
+        <PropertyRef Name="LevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetAnalyticResultForStidentForTerm_Result">
+    <Property Type="Int32" Name="yearID" Nullable="false" />
+    <Property Type="Int32" Name="levelid" Nullable="false" />
+    <Property Type="String" Name="levelname" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="countSuccessMail" Nullable="true" />
+    <Property Type="Int32" Name="countSuccessFmail" Nullable="true" />
+    <Property Type="Int32" Name="countFailMail" Nullable="true" />
+    <Property Type="Int32" Name="countFailFmail" Nullable="true" />
+    <Property Type="Int32" Name="countApsentMail" Nullable="true" />
+    <Property Type="Int32" Name="countApsentFmail" Nullable="true" />
+    <Property Type="Int32" Name="countFail" Nullable="true" />
+    <Property Type="Int32" Name="countApsent" Nullable="true" />
+  </ComplexType>
+  <Association Name="FK_ProfilePermanences_studyYear">
+    <End Type="alhaqldbModel.studyYear" Role="studyYear" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.ProfilePermanence" Role="ProfilePermanence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="ProfilePermanence">
+        <PropertyRef Name="YearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetProfilePermanence_Result">
+    <Property Type="Int32" Name="TeatcherID" Nullable="false" />
+    <Property Type="String" Name="TeacherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="TypeTeacherID" Nullable="true" />
+    <Property Type="String" Name="TypeName" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="Cdate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="DayName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberDay" Nullable="true" />
+    <Property Type="Int32" Name="NumberWeek" Nullable="true" />
+    <Property Type="String" Name="LogoutTime" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PringTime" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="GetAllDistrubuteStudent_Result">
+    <Property Type="Int32" Name="StdID" Nullable="true" />
+    <Property Type="Int32" Name="LevelID" Nullable="true" />
+    <Property Type="Int32" Name="termid" Nullable="true" />
+    <Property Type="Int32" Name="YearID" Nullable="true" />
+    <Property Type="String" Name="sname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="levelname" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="studyYearEngl" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <EntityType Name="LectureWeek">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumLecture" Type="Int32" />
+    <Property Name="LectureName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cDay" Type="DateTime" Precision="0" />
+    <Property Name="CdayNum" Type="Int32" />
+    <Property Name="fromdate" Type="Time" Precision="7" />
+    <Property Name="toDate" Type="Time" Precision="7" />
+    <Property Name="courseid" Type="Int32" />
+    <Property Name="levelid" Type="Int32" />
+    <Property Name="termid" Type="Int32" />
+    <Property Name="IDRoom" Type="Int32" />
+    <Property Name="YearID" Type="Int32" />
+    <NavigationProperty Name="course" Relationship="alhaqldbModel.FK_LectureWeek_course" FromRole="LectureWeek" ToRole="course" />
+    <NavigationProperty Name="level" Relationship="alhaqldbModel.FK_LectureWeek_levels" FromRole="LectureWeek" ToRole="level" />
+    <NavigationProperty Name="studyYear" Relationship="alhaqldbModel.FK_LectureWeek_studyYear" FromRole="LectureWeek" ToRole="studyYear" />
+    <NavigationProperty Name="term" Relationship="alhaqldbModel.FK_LectureWeek_terms" FromRole="LectureWeek" ToRole="term" />
+  </EntityType>
+  <Association Name="FK_LectureWeek_course">
+    <End Type="alhaqldbModel.course" Role="course" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.LectureWeek" Role="LectureWeek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="course">
+        <PropertyRef Name="courseid" />
+      </Principal>
+      <Dependent Role="LectureWeek">
+        <PropertyRef Name="courseid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LectureWeek_levels">
+    <End Type="alhaqldbModel.level" Role="level" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.LectureWeek" Role="LectureWeek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="level">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="LectureWeek">
+        <PropertyRef Name="levelid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LectureWeek_studyYear">
+    <End Type="alhaqldbModel.studyYear" Role="studyYear" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.LectureWeek" Role="LectureWeek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="LectureWeek">
+        <PropertyRef Name="YearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LectureWeek_terms">
+    <End Type="alhaqldbModel.term" Role="term" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.LectureWeek" Role="LectureWeek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="term">
+        <PropertyRef Name="termid" />
+      </Principal>
+      <Dependent Role="LectureWeek">
+        <PropertyRef Name="termid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BasicStudentDataV">
+    <Key>
+      <PropertyRef Name="stdid" />
+      <PropertyRef Name="SeqID" />
+      <PropertyRef Name="courseid" />
+      <PropertyRef Name="TotalAll" />
+      <PropertyRef Name="levelid" />
+      <PropertyRef Name="yearID" />
+      <PropertyRef Name="coursFialCount" />
+      <PropertyRef Name="amontapsentcourse" />
+      <PropertyRef Name="StudentRamk" />
+      <PropertyRef Name="StudentRamkByLevel" />
+      <PropertyRef Name="genderNumber" />
+      <PropertyRef Name="IsLeave" />
+    </Key>
+    <Property Name="stdid" Type="Int32" Nullable="false" />
+    <Property Name="sname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SeqID" Type="Int32" Nullable="false" />
+    <Property Name="BirthPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="natianalityt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="lvlState" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sgroup" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="GroupID" Type="Int32" />
+    <Property Name="bdate" Type="DateTime" Precision="0" />
+    <Property Name="Village" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="stdImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsDelete" Type="Boolean" />
+    <Property Name="AddDate" Type="DateTime" Precision="0" />
+    <Property Name="EditDate" Type="DateTime" Precision="0" />
+    <Property Name="DeletDate" Type="DateTime" Precision="0" />
+    <Property Name="UserAdd" Type="Int32" />
+    <Property Name="UserEdit" Type="Int32" />
+    <Property Name="UserDelete" Type="Int32" />
+    <Property Name="courseLevelID" Type="Int32" />
+    <Property Name="courseid" Type="Int32" Nullable="false" />
+    <Property Name="coursename" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="deg1" Type="Double" />
+    <Property Name="deg2" Type="Double" />
+    <Property Name="deg3" Type="Double" />
+    <Property Name="deg4" Type="Double" />
+    <Property Name="forFull" Type="Double" />
+    <Property Name="TotalAll" Type="Double" Nullable="false" />
+    <Property Name="termid" Type="Int32" />
+    <Property Name="termname" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="levelid" Type="Int32" Nullable="false" />
+    <Property Name="levelname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="yearID" Type="Int32" Nullable="false" />
+    <Property Name="studyYearEngl" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="rnkTotal" Type="Double" />
+    <Property Name="coursFialCount" Type="Int32" Nullable="false" />
+    <Property Name="amontapsentcourse" Type="Int32" Nullable="false" />
+    <Property Name="StudentRamk" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="StudentRamkByLevel" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="avgst" Type="Double" />
+    <Property Name="curseCount" Type="Int32" />
+    <Property Name="ResultTxt" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="genderNumber" Type="Int32" Nullable="false" />
+    <Property Name="IsLeave" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="Proc_GetStudentDataForTerm_Result">
+    <Property Type="Int32" Name="stdid" Nullable="false" />
+    <Property Type="String" Name="sname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="levelid" Nullable="false" />
+    <Property Type="DateTime" Name="bdate" Nullable="true" />
+    <Property Type="String" Name="BirthPlace" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="sgroup" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="GroupID" Nullable="true" />
+    <Property Type="String" Name="lvlState" Nullable="true" MaxLength="20" />
+    <Property Type="Boolean" Name="IsLeave" Nullable="false" />
+    <Property Type="Int32" Name="SeqID" Nullable="false" />
+    <Property Type="Int32" Name="NumberPass" Nullable="true" />
+    <Property Type="String" Name="Village" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="natianalityt" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="levelname" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="termid" Nullable="true" />
+    <Property Type="Double" Name="Qrndeg1" Nullable="true" />
+    <Property Type="Double" Name="Qrndeg2" Nullable="true" />
+    <Property Type="Double" Name="QrnForFull" Nullable="true" />
+    <Property Type="Double" Name="QrnTotalAll" Nullable="true" />
+    <Property Type="Double" Name="Islamicdeg1" Nullable="true" />
+    <Property Type="Double" Name="Islamicdeg2" Nullable="true" />
+    <Property Type="Double" Name="IslamicForFull" Nullable="true" />
+    <Property Type="Double" Name="IslamicTotalAll" Nullable="true" />
+    <Property Type="Double" Name="ardeg1" Nullable="true" />
+    <Property Type="Double" Name="ardeg2" Nullable="true" />
+    <Property Type="Double" Name="arForFull" Nullable="true" />
+    <Property Type="Double" Name="arTotalAll" Nullable="true" />
+    <Property Type="Double" Name="Endeg1" Nullable="true" />
+    <Property Type="Double" Name="Endeg2" Nullable="true" />
+    <Property Type="Double" Name="EnForFull" Nullable="true" />
+    <Property Type="Double" Name="EnTotalAll" Nullable="true" />
+    <Property Type="Double" Name="mathdeg1" Nullable="true" />
+    <Property Type="Double" Name="mathdeg2" Nullable="true" />
+    <Property Type="Double" Name="mathForFull" Nullable="true" />
+    <Property Type="Double" Name="mathTotalAll" Nullable="true" />
+    <Property Type="Double" Name="scodeg1" Nullable="true" />
+    <Property Type="Double" Name="scodeg2" Nullable="true" />
+    <Property Type="Double" Name="scoForFull" Nullable="true" />
+    <Property Type="Double" Name="scoTotalAll" Nullable="true" />
+    <Property Type="Double" Name="scideg1" Nullable="true" />
+    <Property Type="Double" Name="scideg2" Nullable="true" />
+    <Property Type="Double" Name="sciForFull" Nullable="true" />
+    <Property Type="Double" Name="sciTotalAll" Nullable="true" />
+    <Property Type="Double" Name="compdeg1" Nullable="true" />
+    <Property Type="Double" Name="compdeg2" Nullable="true" />
+    <Property Type="Double" Name="compForFull" Nullable="true" />
+    <Property Type="Double" Name="compTotalAll" Nullable="true" />
+    <Property Type="Double" Name="artdeg1" Nullable="true" />
+    <Property Type="Double" Name="artdeg2" Nullable="true" />
+    <Property Type="Double" Name="artForFull" Nullable="true" />
+    <Property Type="Double" Name="artTotalAll" Nullable="true" />
+    <Property Type="Double" Name="sportdeg1" Nullable="true" />
+    <Property Type="Double" Name="sportdeg2" Nullable="true" />
+    <Property Type="Double" Name="sportForFull" Nullable="true" />
+    <Property Type="Double" Name="sportTotalAll" Nullable="true" />
+    <Property Type="Int32" Name="CountForFullCourse" Nullable="true" />
+    <Property Type="Int32" Name="CountCourseForFull" Nullable="false" />
+    <Property Type="Double" Name="TotalAllForFull" Nullable="true" />
+    <Property Type="Int32" Name="LevelCrsCounts" Nullable="true" />
+    <Property Type="Int32" Name="coursFialCount" Nullable="false" />
+    <Property Type="Int32" Name="amontapsentcourse" Nullable="false" />
+    <Property Type="Double" Name="ttl" Nullable="true" />
+    <Property Type="Double" Name="prcnt" Nullable="true" />
+    <Property Type="String" Name="StudentRamk" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="StudentRamkByLevel" Nullable="false" MaxLength="6" />
+    <Property Type="Int32" Name="yearID" Nullable="false" />
+    <Property Type="String" Name="ResultTxt" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="genderNumber" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="LevelCourse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LevelID" Type="Int32" />
+    <Property Name="CourseID" Type="Int32" />
+    <Property Name="termID" Type="Int32" />
+    <Property Name="maxDegree" Type="Double" />
+    <Property Name="minDegree" Type="Double" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="PlanID" Type="Int32" />
+    <Property Name="DefaultDegree" Type="Double" />
+    <Property Name="TermPlanID" Type="Int32" />
+    <Property Name="TeacherID" Type="Int32" />
+    <Property Name="BredLevel" Type="Int32" />
+    <NavigationProperty Name="course" Relationship="alhaqldbModel.FK_LevelCourse_course" FromRole="LevelCourse" ToRole="course" />
+    <NavigationProperty Name="level" Relationship="alhaqldbModel.FK_LevelCourse_levels" FromRole="LevelCourse" ToRole="level" />
+    <NavigationProperty Name="Plan" Relationship="alhaqldbModel.FK_LevelCourse_Plans" FromRole="LevelCourse" ToRole="Plan" />
+    <NavigationProperty Name="Teacher" Relationship="alhaqldbModel.FK_LevelCourse_Teacher" FromRole="LevelCourse" ToRole="Teacher" />
+    <NavigationProperty Name="TermPlan" Relationship="alhaqldbModel.FK_LevelCourse_TermPlan" FromRole="LevelCourse" ToRole="TermPlan" />
+    <NavigationProperty Name="term" Relationship="alhaqldbModel.FK_LevelCourse_terms" FromRole="LevelCourse" ToRole="term" />
+    <NavigationProperty Name="studentdegrees" Relationship="alhaqldbModel.FK_studentdegree_levelCourse" FromRole="LevelCourse" ToRole="studentdegree" />
+  </EntityType>
+  <Association Name="FK_LevelCourse_course">
+    <End Type="alhaqldbModel.course" Role="course" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.LevelCourse" Role="LevelCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="course">
+        <PropertyRef Name="courseid" />
+      </Principal>
+      <Dependent Role="LevelCourse">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LevelCourse_levels">
+    <End Type="alhaqldbModel.level" Role="level" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.LevelCourse" Role="LevelCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="level">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="LevelCourse">
+        <PropertyRef Name="LevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LevelCourse_Plans">
+    <End Type="alhaqldbModel.Plan" Role="Plan" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.LevelCourse" Role="LevelCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LevelCourse">
+        <PropertyRef Name="PlanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LevelCourse_Teacher">
+    <End Type="alhaqldbModel.Teacher" Role="Teacher" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.LevelCourse" Role="LevelCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LevelCourse">
+        <PropertyRef Name="TeacherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LevelCourse_TermPlan">
+    <End Type="alhaqldbModel.TermPlan" Role="TermPlan" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.LevelCourse" Role="LevelCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TermPlan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LevelCourse">
+        <PropertyRef Name="TermPlanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LevelCourse_terms">
+    <End Type="alhaqldbModel.term" Role="term" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.LevelCourse" Role="LevelCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="term">
+        <PropertyRef Name="termid" />
+      </Principal>
+      <Dependent Role="LevelCourse">
+        <PropertyRef Name="termID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_studentdegree_levelCourse">
+    <End Type="alhaqldbModel.LevelCourse" Role="LevelCourse" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.studentdegree" Role="studentdegree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LevelCourse">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="studentdegree">
+        <PropertyRef Name="courseLevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="proc_GetResultFinalStudent_Result">
+    <Property Type="Int32" Name="stdid" Nullable="false" />
+    <Property Type="String" Name="sname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="levelid" Nullable="false" />
+    <Property Type="DateTime" Name="bdate" Nullable="true" />
+    <Property Type="String" Name="BirthPlace" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="sgroup" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="GroupID" Nullable="true" />
+    <Property Type="String" Name="lvlState" Nullable="true" MaxLength="20" />
+    <Property Type="Boolean" Name="IsLeave" Nullable="false" />
+    <Property Type="Int32" Name="SeqID" Nullable="false" />
+    <Property Type="String" Name="natianalityt" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="levelname" Nullable="true" MaxLength="20" />
+    <Property Type="Double" Name="QrnDegTotal1" Nullable="true" />
+    <Property Type="Double" Name="QrnDegTotal2" Nullable="true" />
+    <Property Type="Double" Name="QrnForFull" Nullable="true" />
+    <Property Type="Double" Name="IslamicDegTotal1" Nullable="true" />
+    <Property Type="Double" Name="IslamicDegTotal2" Nullable="true" />
+    <Property Type="Double" Name="IslamicForFull" Nullable="true" />
+    <Property Type="Double" Name="arDegTotal1" Nullable="true" />
+    <Property Type="Double" Name="arDegTotal2" Nullable="true" />
+    <Property Type="Double" Name="ArForFull" Nullable="true" />
+    <Property Type="Double" Name="EnDegTotal1" Nullable="true" />
+    <Property Type="Double" Name="EnDegTotal2" Nullable="true" />
+    <Property Type="Double" Name="EnForFull" Nullable="true" />
+    <Property Type="Double" Name="mathDegTotal1" Nullable="true" />
+    <Property Type="Double" Name="mathDegTotal2" Nullable="true" />
+    <Property Type="Double" Name="MathForFull" Nullable="true" />
+    <Property Type="Double" Name="scoDegTotal1" Nullable="true" />
+    <Property Type="Double" Name="scoDegTotal2" Nullable="true" />
+    <Property Type="Double" Name="ScoForFull" Nullable="true" />
+    <Property Type="Double" Name="sciDegTotal1" Nullable="true" />
+    <Property Type="Double" Name="sciDegTotal2" Nullable="true" />
+    <Property Type="Double" Name="SciForFull" Nullable="true" />
+    <Property Type="Double" Name="compDegTotal1" Nullable="true" />
+    <Property Type="Double" Name="compDegTotal2" Nullable="true" />
+    <Property Type="Double" Name="CompForFull" Nullable="true" />
+    <Property Type="Double" Name="artDegTotal1" Nullable="true" />
+    <Property Type="Double" Name="artDegTotal2" Nullable="true" />
+    <Property Type="Double" Name="ArtForFull" Nullable="true" />
+    <Property Type="Double" Name="sportDegTotal1" Nullable="true" />
+    <Property Type="Double" Name="sportDegTotal2" Nullable="true" />
+    <Property Type="Double" Name="SportForFull" Nullable="true" />
+    <Property Type="Int32" Name="CountCourseForFull" Nullable="false" />
+    <Property Type="Double" Name="TotalAllForFull" Nullable="true" />
+    <Property Type="Int32" Name="LevelCrsCounts" Nullable="true" />
+    <Property Type="Int32" Name="coursFialCount" Nullable="false" />
+    <Property Type="Int32" Name="amontapsentcourse" Nullable="false" />
+    <Property Type="Double" Name="ttl" Nullable="true" />
+    <Property Type="Double" Name="prcnt" Nullable="true" />
+    <Property Type="String" Name="StudentRamk" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="GroupIDStudentRamk" Nullable="false" MaxLength="6" />
+    <Property Type="Int32" Name="yearID" Nullable="false" />
+    <Property Type="String" Name="ResultTxt" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="genderNumber" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="TypeLevel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LevelTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="courses" Relationship="alhaqldbModel.FK_course_TypeLevel" FromRole="TypeLevel" ToRole="course" />
+    <NavigationProperty Name="levels" Relationship="alhaqldbModel.FK_levels_TypeLevel" FromRole="TypeLevel" ToRole="level" />
+  </EntityType>
+  <Association Name="FK_course_TypeLevel">
+    <End Type="alhaqldbModel.TypeLevel" Role="TypeLevel" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.course" Role="course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeLevel">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="course">
+        <PropertyRef Name="CourseLevelType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_levels_TypeLevel">
+    <End Type="alhaqldbModel.TypeLevel" Role="TypeLevel" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.level" Role="level" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeLevel">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="level">
+        <PropertyRef Name="LevelTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="GradeRank">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FromGrade" Type="Double" />
+    <Property Name="ToGrade" Type="Double" />
+    <Property Name="RankName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ExamPeriod">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PeriodID" Type="Int32" />
+    <Property Name="FromTime" Type="DateTime" Precision="3" />
+    <Property Name="ToTime" Type="DateTime" Precision="3" />
+    <Property Name="ExamTime" Type="Int32" />
+    <Property Name="YearID" Type="Int32" />
+    <Property Name="TermID" Type="Int32" />
+    <NavigationProperty Name="Period" Relationship="alhaqldbModel.FK_ExamPeriod_Periods" FromRole="ExamPeriod" ToRole="Period" />
+    <NavigationProperty Name="RoomStudentInExams" Relationship="alhaqldbModel.FK_RoomStudentInExam_ExamPeriod" FromRole="ExamPeriod" ToRole="RoomStudentInExam" />
+    <NavigationProperty Name="TableExams" Relationship="alhaqldbModel.FK_TableExam_ExamPeriod" FromRole="ExamPeriod" ToRole="TableExam" />
+  </EntityType>
+  <EntityType Name="Period">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ExamPeriods" Relationship="alhaqldbModel.FK_ExamPeriod_Periods" FromRole="Period" ToRole="ExamPeriod" />
+  </EntityType>
+  <EntityType Name="RoomStudentInExam">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StdID" Type="Int32" />
+    <Property Name="RoomID" Type="Int32" />
+    <Property Name="LevelID" Type="Int32" />
+    <Property Name="TermID" Type="Int32" />
+    <Property Name="YearID" Type="Int32" />
+    <Property Name="NumberPlace" Type="Int32" />
+    <Property Name="NumperPass" Type="Int32" />
+    <Property Name="PeriodID" Type="Int32" />
+    <NavigationProperty Name="ExamPeriod" Relationship="alhaqldbModel.FK_RoomStudentInExam_ExamPeriod" FromRole="RoomStudentInExam" ToRole="ExamPeriod" />
+    <NavigationProperty Name="level" Relationship="alhaqldbModel.FK_RoomStudentInExam_levels" FromRole="RoomStudentInExam" ToRole="level" />
+    <NavigationProperty Name="Room" Relationship="alhaqldbModel.FK_RoomStudentInExam_Rooms" FromRole="RoomStudentInExam" ToRole="Room" />
+    <NavigationProperty Name="student" Relationship="alhaqldbModel.FK_RoomStudentInExam_student" FromRole="RoomStudentInExam" ToRole="student" />
+    <NavigationProperty Name="studyYear" Relationship="alhaqldbModel.FK_RoomStudentInExam_studyYear" FromRole="RoomStudentInExam" ToRole="studyYear" />
+    <NavigationProperty Name="term" Relationship="alhaqldbModel.FK_RoomStudentInExam_terms" FromRole="RoomStudentInExam" ToRole="term" />
+  </EntityType>
+  <Association Name="FK_ExamPeriod_Periods">
+    <End Type="alhaqldbModel.Period" Role="Period" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.ExamPeriod" Role="ExamPeriod" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Period">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ExamPeriod">
+        <PropertyRef Name="PeriodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomStudentInExam_ExamPeriod">
+    <End Type="alhaqldbModel.ExamPeriod" Role="ExamPeriod" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.RoomStudentInExam" Role="RoomStudentInExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExamPeriod">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoomStudentInExam">
+        <PropertyRef Name="PeriodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomStudentInExam_levels">
+    <End Type="alhaqldbModel.level" Role="level" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.RoomStudentInExam" Role="RoomStudentInExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="level">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="RoomStudentInExam">
+        <PropertyRef Name="LevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomStudentInExam_Rooms">
+    <End Type="alhaqldbModel.Room" Role="Room" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.RoomStudentInExam" Role="RoomStudentInExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoomStudentInExam">
+        <PropertyRef Name="RoomID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomStudentInExam_student">
+    <End Type="alhaqldbModel.student" Role="student" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.RoomStudentInExam" Role="RoomStudentInExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoomStudentInExam">
+        <PropertyRef Name="StdID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomStudentInExam_studyYear">
+    <End Type="alhaqldbModel.studyYear" Role="studyYear" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.RoomStudentInExam" Role="RoomStudentInExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="RoomStudentInExam">
+        <PropertyRef Name="YearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomStudentInExam_terms">
+    <End Type="alhaqldbModel.term" Role="term" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.RoomStudentInExam" Role="RoomStudentInExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="term">
+        <PropertyRef Name="termid" />
+      </Principal>
+      <Dependent Role="RoomStudentInExam">
+        <PropertyRef Name="TermID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TableExam">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CDate" Type="DateTime" Precision="0" />
+    <Property Name="DayName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DayNumber" Type="Int32" />
+    <Property Name="LevelID" Type="Int32" />
+    <Property Name="TermID" Type="Int32" />
+    <Property Name="YearID" Type="Int32" />
+    <Property Name="CourseID" Type="Int32" />
+    <Property Name="Time" Type="Time" Precision="7" />
+    <Property Name="CDateString" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PeriodID" Type="Int32" />
+    <Property Name="ExamPeriodTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="course" Relationship="alhaqldbModel.FK_TableExam_course" FromRole="TableExam" ToRole="course" />
+    <NavigationProperty Name="ExamPeriod" Relationship="alhaqldbModel.FK_TableExam_ExamPeriod" FromRole="TableExam" ToRole="ExamPeriod" />
+    <NavigationProperty Name="level" Relationship="alhaqldbModel.FK_TableExam_levels" FromRole="TableExam" ToRole="level" />
+    <NavigationProperty Name="studyYear" Relationship="alhaqldbModel.FK_TableExam_studyYear" FromRole="TableExam" ToRole="studyYear" />
+    <NavigationProperty Name="term" Relationship="alhaqldbModel.FK_TableExam_terms" FromRole="TableExam" ToRole="term" />
+  </EntityType>
+  <Association Name="FK_TableExam_course">
+    <End Type="alhaqldbModel.course" Role="course" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.TableExam" Role="TableExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="course">
+        <PropertyRef Name="courseid" />
+      </Principal>
+      <Dependent Role="TableExam">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableExam_ExamPeriod">
+    <End Type="alhaqldbModel.ExamPeriod" Role="ExamPeriod" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.TableExam" Role="TableExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExamPeriod">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TableExam">
+        <PropertyRef Name="PeriodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableExam_levels">
+    <End Type="alhaqldbModel.level" Role="level" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.TableExam" Role="TableExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="level">
+        <PropertyRef Name="levelid" />
+      </Principal>
+      <Dependent Role="TableExam">
+        <PropertyRef Name="LevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableExam_studyYear">
+    <End Type="alhaqldbModel.studyYear" Role="studyYear" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.TableExam" Role="TableExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="studyYear">
+        <PropertyRef Name="seqid" />
+      </Principal>
+      <Dependent Role="TableExam">
+        <PropertyRef Name="YearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableExam_terms">
+    <End Type="alhaqldbModel.term" Role="term" Multiplicity="0..1" />
+    <End Type="alhaqldbModel.TableExam" Role="TableExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="term">
+        <PropertyRef Name="termid" />
+      </Principal>
+      <Dependent Role="TableExam">
+        <PropertyRef Name="TermID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetDistributeStudent_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="StdID" Nullable="true" />
+    <Property Type="Int32" Name="RoomID" Nullable="true" />
+    <Property Type="Int32" Name="LevelID" Nullable="true" />
+    <Property Type="Int32" Name="TermID" Nullable="true" />
+    <Property Type="Int32" Name="YearID" Nullable="true" />
+    <Property Type="Int32" Name="NumberPlace" Nullable="true" />
+    <Property Type="Int32" Name="NumperPass" Nullable="true" />
+    <Property Type="Int32" Name="PeriodID" Nullable="true" />
+    <Property Type="String" Name="sname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="levelname" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="RoomName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberOfPlace" Nullable="true" />
+    <Property Type="String" Name="termname" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="studyYearEngl" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="PeriodName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="FromTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ToTime" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Proc_GetFinalResultDataForTermNew_Result">
+    <Property Type="Int32" Name="stdid" Nullable="true" />
+    <Property Type="String" Name="sname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="levelid" Nullable="true" />
+    <Property Type="DateTime" Name="bdate" Nullable="true" />
+    <Property Type="String" Name="BirthPlace" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="sgroup" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="GroupID" Nullable="true" />
+    <Property Type="String" Name="lvlState" Nullable="true" MaxLength="20" />
+    <Property Type="Boolean" Name="IsLeave" Nullable="false" />
+    <Property Type="Int32" Name="SeqID" Nullable="false" />
+    <Property Type="Int32" Name="NumberPass" Nullable="true" />
+    <Property Type="String" Name="Village" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="natianalityt" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="levelname" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="termid" Nullable="true" />
+    <Property Type="Double" Name="Qrndeg1" Nullable="true" />
+    <Property Type="Double" Name="Qrndeg2" Nullable="true" />
+    <Property Type="Double" Name="QrnForFull" Nullable="true" />
+    <Property Type="Double" Name="QrnTotalAll" Nullable="true" />
+    <Property Type="Double" Name="Islamicdeg1" Nullable="true" />
+    <Property Type="Double" Name="Islamicdeg2" Nullable="true" />
+    <Property Type="Double" Name="IslamicForFull" Nullable="true" />
+    <Property Type="Double" Name="IslamicTotalAll" Nullable="true" />
+    <Property Type="Double" Name="ardeg1" Nullable="true" />
+    <Property Type="Double" Name="ardeg2" Nullable="true" />
+    <Property Type="Double" Name="arForFull" Nullable="true" />
+    <Property Type="Double" Name="arTotalAll" Nullable="true" />
+    <Property Type="Double" Name="Endeg1" Nullable="true" />
+    <Property Type="Double" Name="Endeg2" Nullable="true" />
+    <Property Type="Double" Name="EnForFull" Nullable="true" />
+    <Property Type="Double" Name="EnTotalAll" Nullable="true" />
+    <Property Type="Double" Name="mathdeg1" Nullable="true" />
+    <Property Type="Double" Name="mathdeg2" Nullable="true" />
+    <Property Type="Double" Name="mathForFull" Nullable="true" />
+    <Property Type="Double" Name="mathTotalAll" Nullable="true" />
+    <Property Type="Double" Name="scodeg1" Nullable="true" />
+    <Property Type="Double" Name="scodeg2" Nullable="true" />
+    <Property Type="Double" Name="scoForFull" Nullable="true" />
+    <Property Type="Double" Name="scoTotalAll" Nullable="true" />
+    <Property Type="Double" Name="scideg1" Nullable="true" />
+    <Property Type="Double" Name="scideg2" Nullable="true" />
+    <Property Type="Double" Name="sciForFull" Nullable="true" />
+    <Property Type="Double" Name="sciTotalAll" Nullable="true" />
+    <Property Type="Double" Name="compdeg1" Nullable="true" />
+    <Property Type="Double" Name="compdeg2" Nullable="true" />
+    <Property Type="Double" Name="compForFull" Nullable="true" />
+    <Property Type="Double" Name="compTotalAll" Nullable="true" />
+    <Property Type="Double" Name="artdeg1" Nullable="true" />
+    <Property Type="Double" Name="artdeg2" Nullable="true" />
+    <Property Type="Double" Name="artForFull" Nullable="true" />
+    <Property Type="Double" Name="artTotalAll" Nullable="true" />
+    <Property Type="Double" Name="sportdeg1" Nullable="true" />
+    <Property Type="Double" Name="sportdeg2" Nullable="true" />
+    <Property Type="Double" Name="sportForFull" Nullable="true" />
+    <Property Type="Double" Name="sportTotalAll" Nullable="true" />
+    <Property Type="Double" Name="PhysicDeg1" Nullable="true" />
+    <Property Type="Double" Name="PhysicDeg2" Nullable="true" />
+    <Property Type="Double" Name="PhysicForFull" Nullable="true" />
+    <Property Type="Double" Name="PhysicTotal" Nullable="true" />
+    <Property Type="Double" Name="chemistryDeg1" Nullable="true" />
+    <Property Type="Double" Name="chemistryDeg2" Nullable="true" />
+    <Property Type="Double" Name="chemistryForFull" Nullable="true" />
+    <Property Type="Double" Name="chemistryTotal" Nullable="true" />
+    <Property Type="Double" Name="BiologyDeg1" Nullable="true" />
+    <Property Type="Double" Name="BiologyDeg2" Nullable="true" />
+    <Property Type="Double" Name="BiologyForFull" Nullable="true" />
+    <Property Type="Double" Name="BiologyTotal" Nullable="true" />
+    <Property Type="Double" Name="Geographic1" Nullable="true" />
+    <Property Type="Double" Name="Geographic2" Nullable="true" />
+    <Property Type="Double" Name="GeographicForFull" Nullable="true" />
+    <Property Type="Double" Name="GeographicTotal" Nullable="true" />
+    <Property Type="Double" Name="History1" Nullable="true" />
+    <Property Type="Double" Name="History2" Nullable="true" />
+    <Property Type="Double" Name="HistoryFull" Nullable="true" />
+    <Property Type="Double" Name="History1Total" Nullable="true" />
+    <Property Type="Double" Name="Community1" Nullable="true" />
+    <Property Type="Double" Name="Community2" Nullable="true" />
+    <Property Type="Double" Name="Community1Full" Nullable="true" />
+    <Property Type="Double" Name="Community1Total" Nullable="true" />
+    <Property Type="Int32" Name="CountForFullCourse" Nullable="true" />
+    <Property Type="Int32" Name="CountCourseForFull" Nullable="false" />
+    <Property Type="Double" Name="TotalAllForFull" Nullable="true" />
+    <Property Type="Int32" Name="LevelCrsCounts" Nullable="true" />
+    <Property Type="Int32" Name="coursFialCount" Nullable="false" />
+    <Property Type="Int32" Name="amontapsentcourse" Nullable="true" />
+    <Property Type="Double" Name="ttl" Nullable="true" />
+    <Property Type="String" Name="RamkByGroupInner" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="RamkByLevelInner" Nullable="false" MaxLength="6" />
+    <Property Type="Int32" Name="yearID" Nullable="true" />
+    <Property Type="Int32" Name="genderNumber" Nullable="false" />
+    <Property Type="String" Name="RamkByGroup" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="RamkByLevel" Nullable="false" MaxLength="6" />
+    <Property Type="Double" Name="avarage" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_GetFinalResultStudentNew_Result">
+    <Property Type="Int32" Name="studentid" Nullable="true" />
+    <Property Type="Int32" Name="levelid" Nullable="true" />
+    <Property Type="Int32" Name="yearID" Nullable="true" />
+    <Property Type="String" Name="sname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="bdate" Nullable="true" />
+    <Property Type="String" Name="BirthPlace" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="sgroup" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="GroupID" Nullable="true" />
+    <Property Type="String" Name="lvlState" Nullable="true" MaxLength="20" />
+    <Property Type="Boolean" Name="IsLeave" Nullable="false" />
+    <Property Type="Int32" Name="SeqID" Nullable="false" />
+    <Property Type="String" Name="natianalityt" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="levelname" Nullable="true" MaxLength="20" />
+    <Property Type="Double" Name="qrn1" Nullable="true" />
+    <Property Type="Double" Name="qrn2" Nullable="true" />
+    <Property Type="Double" Name="qrnForFull" Nullable="true" />
+    <Property Type="Double" Name="qrnTotal" Nullable="true" />
+    <Property Type="Double" Name="Islamic1" Nullable="true" />
+    <Property Type="Double" Name="Islamic2" Nullable="true" />
+    <Property Type="Double" Name="IslamicForFull" Nullable="true" />
+    <Property Type="Double" Name="IslamicTotal" Nullable="true" />
+    <Property Type="Double" Name="Arabic1" Nullable="true" />
+    <Property Type="Double" Name="Arabic2" Nullable="true" />
+    <Property Type="Double" Name="ArabicForFull" Nullable="true" />
+    <Property Type="Double" Name="ArabicTotal" Nullable="true" />
+    <Property Type="Double" Name="English1" Nullable="true" />
+    <Property Type="Double" Name="English2" Nullable="true" />
+    <Property Type="Double" Name="EnglishForFull" Nullable="true" />
+    <Property Type="Double" Name="EnglishTotal" Nullable="true" />
+    <Property Type="Double" Name="Math1" Nullable="true" />
+    <Property Type="Double" Name="Math2" Nullable="true" />
+    <Property Type="Double" Name="MathForFull" Nullable="true" />
+    <Property Type="Double" Name="MathTotal" Nullable="true" />
+    <Property Type="Double" Name="Socil1" Nullable="true" />
+    <Property Type="Double" Name="Socil2" Nullable="true" />
+    <Property Type="Double" Name="ScoForFull" Nullable="true" />
+    <Property Type="Double" Name="ScoTotal" Nullable="true" />
+    <Property Type="Double" Name="Sciense1" Nullable="true" />
+    <Property Type="Double" Name="Sciense2" Nullable="true" />
+    <Property Type="Double" Name="SciForFull" Nullable="true" />
+    <Property Type="Double" Name="SciTotal" Nullable="true" />
+    <Property Type="Double" Name="Comp1" Nullable="true" />
+    <Property Type="Double" Name="Comp2" Nullable="true" />
+    <Property Type="Double" Name="ComputerForFull" Nullable="true" />
+    <Property Type="Double" Name="CompTotal" Nullable="true" />
+    <Property Type="Double" Name="Art1" Nullable="true" />
+    <Property Type="Double" Name="Art2" Nullable="true" />
+    <Property Type="Double" Name="ArtForFull" Nullable="true" />
+    <Property Type="Double" Name="ArtTotal" Nullable="true" />
+    <Property Type="Double" Name="Sport1" Nullable="true" />
+    <Property Type="Double" Name="Sport2" Nullable="true" />
+    <Property Type="Double" Name="SportForFull" Nullable="true" />
+    <Property Type="Double" Name="SportTotal" Nullable="true" />
+    <Property Type="Double" Name="Physic1" Nullable="true" />
+    <Property Type="Double" Name="Physic2" Nullable="true" />
+    <Property Type="Double" Name="PhysicForFull" Nullable="true" />
+    <Property Type="Double" Name="PhysicTotal" Nullable="true" />
+    <Property Type="Double" Name="chemistry1" Nullable="true" />
+    <Property Type="Double" Name="chemistry2" Nullable="true" />
+    <Property Type="Double" Name="chemistryForFull" Nullable="true" />
+    <Property Type="Double" Name="chemistryTotal" Nullable="true" />
+    <Property Type="Double" Name="Biology1" Nullable="true" />
+    <Property Type="Double" Name="Biology2" Nullable="true" />
+    <Property Type="Double" Name="BiologyForFull" Nullable="true" />
+    <Property Type="Double" Name="BiologyTotal" Nullable="true" />
+    <Property Type="Double" Name="Geographic1" Nullable="true" />
+    <Property Type="Double" Name="Geographic2" Nullable="true" />
+    <Property Type="Double" Name="GeographicFull" Nullable="true" />
+    <Property Type="Double" Name="GeographicTotal" Nullable="true" />
+    <Property Type="Double" Name="History1" Nullable="true" />
+    <Property Type="Double" Name="History2" Nullable="true" />
+    <Property Type="Double" Name="HistoryFull" Nullable="true" />
+    <Property Type="Double" Name="History1Total" Nullable="true" />
+    <Property Type="Double" Name="Community1" Nullable="true" />
+    <Property Type="Double" Name="Community2" Nullable="true" />
+    <Property Type="Double" Name="Community1Full" Nullable="true" />
+    <Property Type="Double" Name="Community1Total" Nullable="true" />
+    <Property Type="Int32" Name="CountCourseForFull" Nullable="false" />
+    <Property Type="Int32" Name="lvlCourseCount" Nullable="true" />
+    <Property Type="Double" Name="ttl" Nullable="true" />
+    <Property Type="Double" Name="TotalAllForFull" Nullable="true" />
+    <Property Type="Int64" Name="StudentRamkNumberByLevel" Nullable="true" />
+    <Property Type="String" Name="RamkByLevelInner" Nullable="false" MaxLength="6" />
+    <Property Type="Int64" Name="StudentRamkNumberByGroup" Nullable="true" />
+    <Property Type="String" Name="RamkByGroupInner" Nullable="false" MaxLength="6" />
+    <Property Type="Int32" Name="genderNumber" Nullable="false" />
+    <Property Type="Int32" Name="cntApsentCourse" Nullable="true" />
+    <Property Type="Int32" Name="coursFialCount" Nullable="false" />
+    <Property Type="Int32" Name="countFailYear" Nullable="true" />
+    <Property Type="String" Name="RamkByGroup" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="RamkByLevel" Nullable="false" MaxLength="6" />
+    <Property Type="Double" Name="avarage" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetProfileHorizontal_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="TeacherName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberWeek" Nullable="true" />
+    <Property Type="Int32" Name="TypeTeacherID" Nullable="true" />
+    <Property Type="String" Name="TypeTeacher" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="TypeName" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="YearProfile" Nullable="true" />
+    <Property Type="DateTime" Name="SaturdayDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PringTimeSaturday" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LogoutTimeSaturday" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="SundayDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PringTimeSunday" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LogoutTimeSunday" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="MondayDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PringTimeSMonday" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LogoutTimeMonday" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="TuesdayDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PringTimeTuesday" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LogoutTimeTuesday" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="WednesdayDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PringTimeWednesday" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LogoutTimeWednesday" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="ThursdayDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PringTimeThursday" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LogoutTimeThursday" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="FridayDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PringTimeFriday" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LogoutTimeFriday" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="GetProfileHorizontalNew_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="TeacherName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberWeek" Nullable="true" />
+    <Property Type="Int32" Name="TypeTeacherID" Nullable="true" />
+    <Property Type="String" Name="TypeTeacher" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="TypeName" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="YearProfile" Nullable="true" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="SaturdayDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PringTimeSaturday" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LogoutTimeSaturday" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="SundayDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PringTimeSunday" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LogoutTimeSunday" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="MondayDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PringTimeSMonday" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LogoutTimeMonday" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="TuesdayDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PringTimeTuesday" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LogoutTimeTuesday" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="WednesdayDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PringTimeWednesday" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LogoutTimeWednesday" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="ThursdayDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PringTimeThursday" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LogoutTimeThursday" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="FridayDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PringTimeFriday" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LogoutTimeFriday" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="GetStudentDataForTermNew_Result">
+    <Property Type="Int32" Name="stdid" Nullable="true" />
+    <Property Type="String" Name="sname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="levelid" Nullable="true" />
+    <Property Type="DateTime" Name="bdate" Nullable="true" Precision="10" />
+    <Property Type="String" Name="BirthPlace" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="sgroup" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="GroupID" Nullable="true" />
+    <Property Type="String" Name="lvlState" Nullable="true" MaxLength="20" />
+    <Property Type="Boolean" Name="IsLeave" Nullable="false" />
+    <Property Type="Int32" Name="SeqID" Nullable="false" />
+    <Property Type="Int32" Name="NumberPass" Nullable="true" />
+    <Property Type="String" Name="Village" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="natianalityt" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="levelname" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="termid" Nullable="true" />
+    <Property Type="Double" Name="Qrndeg1" Nullable="true" />
+    <Property Type="Double" Name="Qrndeg2" Nullable="true" />
+    <Property Type="Double" Name="QrnForFull" Nullable="true" />
+    <Property Type="Double" Name="QrnTotalAll" Nullable="true" />
+    <Property Type="Double" Name="Islamicdeg1" Nullable="true" />
+    <Property Type="Double" Name="Islamicdeg2" Nullable="true" />
+    <Property Type="Double" Name="IslamicForFull" Nullable="true" />
+    <Property Type="Double" Name="IslamicTotalAll" Nullable="true" />
+    <Property Type="Double" Name="ardeg1" Nullable="true" />
+    <Property Type="Double" Name="ardeg2" Nullable="true" />
+    <Property Type="Double" Name="arForFull" Nullable="true" />
+    <Property Type="Double" Name="arTotalAll" Nullable="true" />
+    <Property Type="Double" Name="Endeg1" Nullable="true" />
+    <Property Type="Double" Name="Endeg2" Nullable="true" />
+    <Property Type="Double" Name="EnForFull" Nullable="true" />
+    <Property Type="Double" Name="EnTotalAll" Nullable="true" />
+    <Property Type="Double" Name="mathdeg1" Nullable="true" />
+    <Property Type="Double" Name="mathdeg2" Nullable="true" />
+    <Property Type="Double" Name="mathForFull" Nullable="true" />
+    <Property Type="Double" Name="mathTotalAll" Nullable="true" />
+    <Property Type="Double" Name="scodeg1" Nullable="true" />
+    <Property Type="Double" Name="scodeg2" Nullable="true" />
+    <Property Type="Double" Name="scoForFull" Nullable="true" />
+    <Property Type="Double" Name="scoTotalAll" Nullable="true" />
+    <Property Type="Double" Name="scideg1" Nullable="true" />
+    <Property Type="Double" Name="scideg2" Nullable="true" />
+    <Property Type="Double" Name="sciForFull" Nullable="true" />
+    <Property Type="Double" Name="sciTotalAll" Nullable="true" />
+    <Property Type="Double" Name="compdeg1" Nullable="true" />
+    <Property Type="Double" Name="compdeg2" Nullable="true" />
+    <Property Type="Double" Name="compForFull" Nullable="true" />
+    <Property Type="Double" Name="compTotalAll" Nullable="true" />
+    <Property Type="Double" Name="artdeg1" Nullable="true" />
+    <Property Type="Double" Name="artdeg2" Nullable="true" />
+    <Property Type="Double" Name="artForFull" Nullable="true" />
+    <Property Type="Double" Name="artTotalAll" Nullable="true" />
+    <Property Type="Double" Name="sportdeg1" Nullable="true" />
+    <Property Type="Double" Name="sportdeg2" Nullable="true" />
+    <Property Type="Double" Name="sportForFull" Nullable="true" />
+    <Property Type="Double" Name="sportTotalAll" Nullable="true" />
+    <Property Type="Double" Name="PhysicDeg1" Nullable="true" />
+    <Property Type="Double" Name="PhysicDeg2" Nullable="true" />
+    <Property Type="Double" Name="PhysicForFull" Nullable="true" />
+    <Property Type="Double" Name="PhysicTotal" Nullable="true" />
+    <Property Type="Double" Name="chemistryDeg1" Nullable="true" />
+    <Property Type="Double" Name="chemistryDeg2" Nullable="true" />
+    <Property Type="Double" Name="chemistryForFull" Nullable="true" />
+    <Property Type="Double" Name="chemistryTotal" Nullable="true" />
+    <Property Type="Double" Name="BiologyDeg1" Nullable="true" />
+    <Property Type="Double" Name="BiologyDeg2" Nullable="true" />
+    <Property Type="Double" Name="BiologyForFull" Nullable="true" />
+    <Property Type="Double" Name="BiologyTotal" Nullable="true" />
+    <Property Type="Double" Name="Geographic1" Nullable="true" />
+    <Property Type="Double" Name="Geographic2" Nullable="true" />
+    <Property Type="Double" Name="GeographicForFull" Nullable="true" />
+    <Property Type="Double" Name="GeographicTotal" Nullable="true" />
+    <Property Type="Double" Name="History1" Nullable="true" />
+    <Property Type="Double" Name="History2" Nullable="true" />
+    <Property Type="Double" Name="HistoryFull" Nullable="true" />
+    <Property Type="Double" Name="History1Total" Nullable="true" />
+    <Property Type="Double" Name="Community1" Nullable="true" />
+    <Property Type="Double" Name="Community2" Nullable="true" />
+    <Property Type="Double" Name="Community1Full" Nullable="true" />
+    <Property Type="Double" Name="Community1Total" Nullable="true" />
+    <Property Type="Int32" Name="CountForFullCourse" Nullable="true" />
+    <Property Type="Int32" Name="CountCourseForFull" Nullable="false" />
+    <Property Type="Double" Name="TotalAllForFull" Nullable="true" />
+    <Property Type="Int32" Name="LevelCrsCounts" Nullable="true" />
+    <Property Type="Int32" Name="coursFialCount" Nullable="false" />
+    <Property Type="Int32" Name="amontapsentcourse" Nullable="true" />
+    <Property Type="Double" Name="ttl" Nullable="true" />
+    <Property Type="String" Name="RamkByGroupInner" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="RamkByLevelInner" Nullable="false" MaxLength="6" />
+    <Property Type="Int32" Name="yearID" Nullable="true" />
+    <Property Type="Int32" Name="genderNumber" Nullable="false" />
+    <Property Type="String" Name="RamkByGroup" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="RamkByLevel" Nullable="false" MaxLength="6" />
+    <Property Type="Double" Name="avarage" Nullable="true" />
+    <Property Type="String" Name="ResultTxt" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <EntityType Name="TblNotify">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LectureName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DayNum" Type="Int32" />
+    <Property Name="FromDate" Type="DateTime" Precision="3" />
+    <Property Name="TermID" Type="Int32" />
+    <Property Name="YearID" Type="Int32" />
+    <Property Name="FromTime" Type="Time" Precision="7" />
+  </EntityType>
+</Schema>
