@@ -1,0 +1,2 @@
+# schoolProject
+school managment system
